@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lucy Mukhethwa — Administrative Strategist</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0F2044;
+    --navy-mid: #1A3260;
+    --navy-light: #243D78;
+    --dusty-pink: #D4A0A0;
+    --pink-soft: #E8C4C4;
+    --pink-pale: #F5E8E8;
+    --white: #FFFFFF;
+    --off-white: #F8F6F9;
+    --charcoal: #3A3A4A;
+    --accent: #C07878;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--off-white);
+    color: var(--navy);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.2rem 5%;
+    background: rgba(15, 32, 68, 0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(212, 160, 160, 0.2);
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 600;
+    color: var(--dusty-pink); letter-spacing: 0.05em;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.82rem; font-weight: 500; letter-spacing: 0.08em;
+    text-transform: uppercase; color: rgba(255,255,255,0.7);
+    text-decoration: none; transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--dusty-pink); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid; grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 0 5%;
+    gap: 4rem;
+    background: var(--navy);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: 0; right: 0;
+    width: 45%; height: 100%;
+    background: linear-gradient(160deg, var(--navy-light) 0%, var(--navy-mid) 50%, #0F2044 100%);
+    clip-path: polygon(12% 0, 100% 0, 100% 100%, 0% 100%);
+    z-index: 0;
+  }
+  .hero::after {
+    content: '';
+    position: absolute; bottom: -60px; left: -60px;
+    width: 300px; height: 300px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(212,160,160,0.08) 0%, transparent 70%);
+    z-index: 0;
+  }
+  .hero-text { position: relative; z-index: 1; animation: fadeUp 1s ease both; }
+  .hero-tag {
+    display: inline-block;
+    font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--dusty-pink); font-weight: 500;
+    border: 1px solid rgba(212,160,160,0.4);
+    padding: 0.3rem 0.9rem; border-radius: 20px;
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 5vw, 5.5rem);
+    font-weight: 300; line-height: 1.1;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 em { font-style: italic; color: var(--dusty-pink); }
+  .hero p {
+    font-size: 1rem; line-height: 1.85;
+    color: rgba(255,255,255,0.72); max-width: 480px;
+    margin-bottom: 2.5rem;
+  }
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--dusty-pink); color: var(--navy);
+    padding: 0.85rem 2rem; border-radius: 4px;
+    font-size: 0.85rem; font-weight: 600; letter-spacing: 0.04em;
+    text-decoration: none; transition: all 0.3s;
+    border: 2px solid var(--dusty-pink);
+  }
+  .btn-primary:hover { background: var(--pink-soft); border-color: var(--pink-soft); }
+  .btn-secondary {
+    background: transparent; color: var(--dusty-pink);
+    padding: 0.85rem 2rem; border-radius: 4px;
+    font-size: 0.85rem; font-weight: 500; letter-spacing: 0.04em;
+    text-decoration: none; transition: all 0.3s;
+    border: 2px solid rgba(212,160,160,0.5);
+  }
+  .btn-secondary:hover { background: rgba(212,160,160,0.1); border-color: var(--dusty-pink); }
+
+  .hero-visual {
+    position: relative; z-index: 1;
+    display: flex; flex-direction: column; gap: 1.2rem;
+    animation: fadeUp 1s 0.3s ease both;
+  }
+  .hero-card {
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(12px);
+    border-radius: 12px; padding: 1.4rem 1.6rem;
+    border: 1px solid rgba(212,160,160,0.2);
+  }
+  .hero-card .label {
+    font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.14em;
+    color: var(--dusty-pink); font-weight: 500; margin-bottom: 0.3rem;
+  }
+  .hero-card .value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; font-weight: 600; color: var(--white);
+  }
+  .hero-card .sub { font-size: 0.8rem; color: rgba(255,255,255,0.55); margin-top: 0.2rem; }
+  .stats-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+
+  /* SECTIONS */
+  section { padding: 6rem 5%; }
+  .section-label {
+    font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.18em;
+    color: var(--accent); font-weight: 500; margin-bottom: 0.8rem;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3.5vw, 3.2rem);
+    font-weight: 300; line-height: 1.2; color: var(--navy);
+    margin-bottom: 0.5rem;
+  }
+  .section-title em { font-style: italic; color: var(--accent); }
+  .divider {
+    width: 55px; height: 2px;
+    background: linear-gradient(to right, var(--dusty-pink), var(--accent));
+    margin: 1rem 0 2.5rem;
+  }
+
+  /* ABOUT */
+  .about { background: var(--white); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 5rem; align-items: start; }
+  .about-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; font-style: italic; font-weight: 300;
+    color: var(--navy-mid); line-height: 1.55;
+    border-left: 3px solid var(--dusty-pink);
+    padding-left: 1.5rem; margin-bottom: 2rem;
+  }
+  .pillars { display: flex; gap: 0.7rem; flex-wrap: wrap; margin-top: 1.8rem; }
+  .pillar {
+    background: var(--pink-pale); border: 1px solid var(--pink-soft);
+    padding: 0.35rem 0.9rem; border-radius: 20px;
+    font-size: 0.78rem; color: var(--accent); font-weight: 500;
+  }
+  .about-text p {
+    font-size: 0.95rem; line-height: 1.9; color: var(--charcoal);
+    margin-bottom: 1.2rem;
+  }
+
+  /* EXPERIENCE */
+  .experience { background: var(--off-white); }
+  .exp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.8rem; margin-top: 3rem; }
+  .exp-card {
+    background: var(--white); border-radius: 12px;
+    padding: 2rem 2rem 2rem 2.4rem;
+    border: 1px solid rgba(15,32,68,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative; overflow: hidden;
+  }
+  .exp-card::before {
+    content: ''; position: absolute; top: 0; left: 0;
+    width: 4px; height: 100%;
+    background: linear-gradient(to bottom, var(--dusty-pink), var(--accent));
+  }
+  .exp-card:hover { transform: translateY(-4px); box-shadow: 0 14px 36px rgba(15,32,68,0.1); }
+  .exp-role {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem; font-weight: 600; color: var(--navy); margin-bottom: 0.3rem;
+  }
+  .exp-area { font-size: 0.82rem; color: var(--accent); font-weight: 500; margin-bottom: 0.8rem; }
+  .exp-desc { font-size: 0.87rem; line-height: 1.75; color: var(--charcoal); }
+  .exp-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem; }
+  .exp-tag {
+    background: var(--pink-pale); font-size: 0.72rem;
+    padding: 0.22rem 0.6rem; border-radius: 4px; color: var(--navy-mid);
+    border: 1px solid var(--pink-soft);
+  }
+
+  /* PORTFOLIO */
+  .portfolio { background: var(--navy); }
+  .portfolio .section-label { color: var(--dusty-pink); }
+  .portfolio .section-title { color: var(--white); }
+  .portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+  .port-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(212,160,160,0.18);
+    border-radius: 12px; padding: 2rem;
+    transition: all 0.3s;
+  }
+  .port-card:hover {
+    background: rgba(212,160,160,0.08);
+    border-color: rgba(212,160,160,0.4);
+    transform: translateY(-4px);
+  }
+  .port-icon { font-size: 1.8rem; margin-bottom: 1rem; }
+  .port-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem; font-weight: 600; color: var(--dusty-pink);
+    margin-bottom: 0.6rem;
+  }
+  .port-desc { font-size: 0.85rem; line-height: 1.75; color: rgba(255,255,255,0.62); }
+
+  /* SERVICES */
+  .services { background: var(--white); }
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.8rem; margin-top: 3rem; }
+  .service-card {
+    border: 1px solid rgba(15,32,68,0.1);
+    border-radius: 14px; padding: 2.2rem 1.8rem;
+    transition: all 0.3s; background: var(--off-white);
+    position: relative; overflow: hidden;
+  }
+  .service-card::after {
+    content: ''; position: absolute;
+    bottom: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(to right, var(--dusty-pink), var(--accent));
+    transform: scaleX(0); transition: transform 0.35s;
+    transform-origin: left;
+  }
+  .service-card:hover::after { transform: scaleX(1); }
+  .service-card:hover { transform: translateY(-6px); box-shadow: 0 18px 44px rgba(15,32,68,0.1); }
+  .service-icon {
+    width: 48px; height: 48px; border-radius: 10px;
+    background: linear-gradient(135deg, var(--dusty-pink), var(--accent));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem; margin-bottom: 1.4rem;
+  }
+  .service-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem; font-weight: 600; color: var(--navy);
+    margin-bottom: 0.7rem;
+  }
+  .service-desc { font-size: 0.87rem; line-height: 1.75; color: var(--charcoal); margin-bottom: 1.2rem; }
+  .service-price {
+    font-size: 0.76rem; font-weight: 600; color: var(--accent);
+    text-transform: uppercase; letter-spacing: 0.09em;
+  }
+
+  /* WHAT I OFFER */
+  .offer { background: var(--off-white); }
+  .offer-list { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 3rem; }
+  .offer-item {
+    display: flex; gap: 1rem; align-items: flex-start;
+    background: var(--white); padding: 1.5rem;
+    border-radius: 10px; border: 1px solid rgba(15,32,68,0.08);
+    transition: box-shadow 0.3s;
+  }
+  .offer-item:hover { box-shadow: 0 8px 24px rgba(15,32,68,0.08); }
+  .offer-dot {
+    width: 9px; height: 9px; border-radius: 50%;
+    background: var(--dusty-pink); flex-shrink: 0; margin-top: 6px;
+  }
+  .offer-content h4 { font-size: 0.93rem; font-weight: 500; color: var(--navy); margin-bottom: 0.3rem; }
+  .offer-content p { font-size: 0.83rem; line-height: 1.65; color: var(--charcoal); }
+
+  /* CTA */
+  .cta {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 60%, var(--navy-light) 100%);
+    text-align: center; padding: 7rem 5%;
+    position: relative; overflow: hidden;
+  }
+  .cta::before {
+    content: ''; position: absolute;
+    top: -80px; right: -80px;
+    width: 350px; height: 350px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(212,160,160,0.12) 0%, transparent 65%);
+  }
+  .cta h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    font-weight: 300; color: var(--white); margin-bottom: 1rem; line-height: 1.2;
+    position: relative;
+  }
+  .cta h2 em { color: var(--dusty-pink); font-style: italic; }
+  .cta p { font-size: 1rem; color: rgba(255,255,255,0.7); margin-bottom: 2.5rem; position: relative; }
+  .btn-pink {
+    background: var(--dusty-pink); color: var(--navy);
+    padding: 1rem 2.5rem; border-radius: 4px;
+    font-size: 0.9rem; font-weight: 600; letter-spacing: 0.04em;
+    text-decoration: none; transition: all 0.3s;
+    display: inline-block; position: relative;
+  }
+  .btn-pink:hover { background: var(--pink-soft); }
+
+  /* FOOTER */
+  footer {
+    background: #09162E; color: rgba(255,255,255,0.45);
+    padding: 3rem 5%; text-align: center;
+    font-size: 0.82rem; line-height: 1.9;
+  }
+  footer strong { color: var(--dusty-pink); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .reveal { opacity: 0; transform: translateY(22px); transition: all 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 900px) {
+    nav { display: none; }
+    .hero { grid-template-columns: 1fr; padding-top: 6rem; }
+    .hero::before { display: none; }
+    .about-grid, .exp-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .portfolio-grid, .services-grid { grid-template-columns: 1fr; }
+    .offer-list { grid-template-columns: 1fr; }
+    .stats-row { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Lucy M.</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#portfolio">Work</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#offer">What I Offer</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <div class="hero-tag">Administrative Strategist · AI Enthusiast · Career Consultant</div>
+    <h1>Lucy<br><em>Mukhethwa</em></h1>
+    <p>I bridge strategic operations, AI-powered workflows, and human potential. From COO-level coordination to career transformation — I help people and organisations move with clarity and purpose.</p>
+    <div class="hero-btns">
+      <a href="#services" class="btn-primary">View Services</a>
+      <a href="#contact" class="btn-secondary">Work With Me</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-card">
+      <div class="label">Current Role</div>
+      <div class="value">Administrative Coordinator</div>
+      <div class="sub">Dash BPO · Johannesburg, South Africa</div>
+    </div>
+    <div class="stats-row">
+      <div class="hero-card">
+        <div class="label">Experience</div>
+        <div class="value">6+ yrs</div>
+        <div class="sub">HR & Operations</div>
+      </div>
+      <div class="hero-card">
+        <div class="label">Reach</div>
+        <div class="value">Global</div>
+        <div class="sub">Multi-country ops</div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="label">Guiding Principle</div>
+      <div class="value" style="font-size:1.1rem; font-style:italic;">"Passion. Purpose. Peace."</div>
+      <div class="sub">Philippians 4:4</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-grid">
+    <div>
+      <div class="section-label">About Me</div>
+      <div class="section-title">Purpose-driven.<br><em>People-first.</em></div>
+      <div class="divider"></div>
+      <div class="about-quote">"Passion. Purpose. Peace — three words that define how I show up every single day."</div>
+      <div class="pillars">
+        <span class="pillar">Faith-led</span>
+        <span class="pillar">Detail-oriented</span>
+        <span class="pillar">AI-curious</span>
+        <span class="pillar">Growth mindset</span>
+        <span class="pillar">People-first</span>
+        <span class="pillar">Industrial Psychology</span>
+      </div>
+    </div>
+    <div class="about-text">
+      <p>I'm Lucy Mukhethwa — a 29-year-old South African Administrative Coordinator based near Johannesburg. I currently support C-suite operations at a global BPO organisation, working directly with the COO across multi-country strategic initiatives.</p>
+      <p>My background spans HR and administration — progressing from HR Assistant through to Generalist and into my current operational leadership-support role. Along the way, I've developed strong working knowledge of AI tools and automation technologies, including voice bots, chatbots, agent augmentation, and AI-first workflows that are reshaping the future of work.</p>
+      <p>I'm also a published Christian living author and a student of Industrial Psychology — always learning, always growing. My mission is simple: to help people and organisations operate with more clarity, more confidence, and more impact.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="experience" id="experience">
+  <div class="section-label reveal">Professional Experience</div>
+  <div class="section-title reveal">Where I've <em>made an impact</em></div>
+  <div class="divider reveal"></div>
+  <div class="exp-grid">
+    <div class="exp-card reveal">
+      <div class="exp-role">Administrative Coordinator</div>
+      <div class="exp-area">Dash BPO · Johannesburg, South Africa</div>
+      <div class="exp-desc">Supporting executive-level operations across multiple countries. Coordinating board presentations, strategic projects, contract reviews, mentorship programmes, and cross-functional initiatives at C-suite level.</div>
+      <div class="exp-tags">
+        <span class="exp-tag">C-Suite Support</span>
+        <span class="exp-tag">Global Operations</span>
+        <span class="exp-tag">Strategic Coordination</span>
+        <span class="exp-tag">AI Tools</span>
+      </div>
+    </div>
+    <div class="exp-card reveal">
+      <div class="exp-role">HR Professional</div>
+      <div class="exp-area">HR Assistant → Generalist → Coordinator</div>
+      <div class="exp-desc">Progressive HR career spanning employee relations, policy development, onboarding design, workforce engagement, and compliance — building a strong foundation in people operations across multiple industries.</div>
+      <div class="exp-tags">
+        <span class="exp-tag">HR Operations</span>
+        <span class="exp-tag">Policy Development</span>
+        <span class="exp-tag">Employee Relations</span>
+        <span class="exp-tag">Compliance</span>
+      </div>
+    </div>
+    <div class="exp-card reveal">
+      <div class="exp-role">AI & Automation Practitioner</div>
+      <div class="exp-area">Applied AI in the Workplace</div>
+      <div class="exp-desc">Hands-on experience with AI tools and platforms. Knowledgeable in current AI trends — voice bots, chatbots, agent augmentation, and automation strategies that transform operational efficiency in modern organisations.</div>
+      <div class="exp-tags">
+        <span class="exp-tag">Voice Bots</span>
+        <span class="exp-tag">Chatbots</span>
+        <span class="exp-tag">Agent Augmentation</span>
+        <span class="exp-tag">Workflow Automation</span>
+      </div>
+    </div>
+    <div class="exp-card reveal">
+      <div class="exp-role">Published Author & Ministry Leader</div>
+      <div class="exp-area">Faith · Writing · Church Administration</div>
+      <div class="exp-desc">Author of <em>Passion. Purpose. Peace. — Becoming Whole in Christ</em>. Active in church administration, producing ministry resources, facilitator guides, and leadership development materials.</div>
+      <div class="exp-tags">
+        <span class="exp-tag">Publishing</span>
+        <span class="exp-tag">Ministry Resources</span>
+        <span class="exp-tag">Leadership Development</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="portfolio" id="portfolio">
+  <div class="section-label reveal">Selected Work</div>
+  <div class="section-title reveal" style="color:var(--white);">What I've <em>delivered</em></div>
+  <div class="divider reveal"></div>
+  <div class="portfolio-grid">
+    <div class="port-card reveal">
+      <div class="port-icon">📄</div>
+      <div class="port-title">Cross-Border Legal Documentation</div>
+      <div class="port-desc">Adapted employment frameworks across different legal jurisdictions, ensuring full compliance with local labour laws and regulatory requirements.</div>
+    </div>
+    <div class="port-card reveal">
+      <div class="port-icon">🌍</div>
+      <div class="port-title">Global Expansion Support</div>
+      <div class="port-desc">Supported multi-country office and operational expansion — from research and cost analysis through to stakeholder coordination and documentation.</div>
+    </div>
+    <div class="port-card reveal">
+      <div class="port-icon">🤖</div>
+      <div class="port-title">AI-First Workflow Projects</div>
+      <div class="port-desc">Contributed to AI adoption initiatives including voice bot deployment, chatbot integration, and agent augmentation projects within contact centre environments.</div>
+    </div>
+    <div class="port-card reveal">
+      <div class="port-icon">🎨</div>
+      <div class="port-title">Brand & Digital Asset Development</div>
+      <div class="port-desc">Designed professional brand books, presentations, and digital collateral — maintaining visual consistency and quality across organisational deliverables.</div>
+    </div>
+    <div class="port-card reveal">
+      <div class="port-icon">📊</div>
+      <div class="port-title">Executive Presentations & Reporting</div>
+      <div class="port-desc">Produced board-level presentations and strategic reports, synthesising complex information into clear, decision-ready formats for senior leadership.</div>
+    </div>
+    <div class="port-card reveal">
+      <div class="port-icon">📚</div>
+      <div class="port-title">Published Book</div>
+      <div class="port-desc">Authored and independently published a Christian living book end-to-end — from manuscript to cover design, ISBN registration, and distribution.</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="section-label reveal">Services</div>
+  <div class="section-title reveal">How I can <em>help you</em></div>
+  <div class="divider reveal"></div>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-icon">💼</div>
+      <div class="service-title">LinkedIn Profile Revamp</div>
+      <div class="service-desc">Transform your LinkedIn from invisible to irresistible. I rewrite your headline, summary, and experience using strategic keywords that attract recruiters and the right opportunities.</div>
+      <div class="service-price">Starting from R350</div>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">📝</div>
+      <div class="service-title">CV Revamp</div>
+      <div class="service-desc">A professionally restructured, ATS-friendly CV that positions you for the roles you actually want — tailored to your industry and career level.</div>
+      <div class="service-price">Starting from R300</div>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">🗺️</div>
+      <div class="service-title">Career Development Roadmap</div>
+      <div class="service-desc">A personalised career roadmap for professionals and students. Includes skills gap analysis, goal setting, and a clear action plan to get you where you want to be.</div>
+      <div class="service-price">Starting from R500</div>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">🌐</div>
+      <div class="service-title">Website Building</div>
+      <div class="service-desc">Clean, modern websites for small businesses, consultants, and entrepreneurs. Built to represent you professionally and convert visitors into clients.</div>
+      <div class="service-price">Starting from R1,500</div>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">🖼️</div>
+      <div class="service-title">Personal Portfolio Website</div>
+      <div class="service-desc">A stunning digital portfolio that showcases your work and story. Perfect for creatives, graduates, freelancers, and professionals building their personal brand.</div>
+      <div class="service-price">Starting from R1,200</div>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">⚙️</div>
+      <div class="service-title">Admin Template Bundles</div>
+      <div class="service-desc">Ready-to-use SOP templates, email packs, onboarding checklists, and meeting frameworks that bring instant structure to your operations.</div>
+      <div class="service-price">Starting from R150</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT I OFFER -->
+<section class="offer" id="offer">
+  <div class="section-label reveal">What I Offer</div>
+  <div class="section-title reveal">Skills you can <em>count on</em></div>
+  <div class="divider reveal"></div>
+  <div class="offer-list">
+    <div class="offer-item reveal">
+      <div class="offer-dot"></div>
+      <div class="offer-content">
+        <h4>Strategic Executive Coordination</h4>
+        <p>Board-level presentations, COO-level support, cross-functional communication, and multi-country operations management.</p>
+      </div>
+    </div>
+    <div class="offer-item reveal">
+      <div class="offer-dot"></div>
+      <div class="offer-content">
+        <h4>AI Trends & Automation Knowledge</h4>
+        <p>Current working knowledge of AI tools, voice bots, chatbots, agent augmentation, and automation strategies reshaping modern workplaces.</p>
+      </div>
+    </div>
+    <div class="offer-item reveal">
+      <div class="offer-dot"></div>
+      <div class="offer-content">
+        <h4>HR & People Operations</h4>
+        <p>Policy development, employment documentation, onboarding frameworks, and employee engagement across industries.</p>
+      </div>
+    </div>
+    <div class="offer-item reveal">
+      <div class="offer-dot"></div>
+      <div class="offer-content">
+        <h4>Career Coaching & Development</h4>
+        <p>CV writing, LinkedIn optimisation, and personalised career roadmaps for professionals and students at any stage.</p>
+      </div>
+    </div>
+    <div class="offer-item reveal">
+      <div class="offer-dot"></div>
+      <div class="offer-content">
+        <h4>Document & Contract Drafting</h4>
+        <p>SOPs, proposals, employment contracts, facilitator guides, and professional correspondence across jurisdictions.</p>
+      </div>
+    </div>
+    <div class="offer-item reveal">
+      <div class="offer-dot"></div>
+      <div class="offer-content">
+        <h4>AI-Powered Admin Workflows</h4>
+        <p>Practical use of Claude, Fireflies, Monday.com, and Canva to modernise and automate everyday administrative tasks.</p>
+      </div>
+    </div>
+    <div class="offer-item reveal">
+      <div class="offer-dot"></div>
+      <div class="offer-content">
+        <h4>Website & Brand Building</h4>
+        <p>Personal portfolio sites, business landing pages, and brand identity documents for individuals and small businesses.</p>
+      </div>
+    </div>
+    <div class="offer-item reveal">
+      <div class="offer-dot"></div>
+      <div class="offer-content">
+        <h4>Digital Product Creation</h4>
+        <p>Template bundles, resource packs, ebooks, and digital tools designed to deliver immediate value and generate passive income.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <h2 class="reveal">Ready to work<br><em>together?</em></h2>
+  <p class="reveal">Whether you need a career boost, a professional website, or operational support — let's make it happen.</p>
+  <a href="mailto:hello@lucymukhethwa.co.za" class="btn-pink reveal">Get In Touch</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p><strong>Lucy Mukhethwa</strong> — Administrative Strategist</p>
+  <p style="margin-top:0.4rem;">Based in Johannesburg, South Africa · Available for remote services globally</p>
+  <p style="margin-top:0.4rem; font-size:0.74rem;">© 2026 Lucy Mukhethwa. All rights reserved.</p>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 75);
+      }
+    });
+  }, { threshold: 0.08 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
