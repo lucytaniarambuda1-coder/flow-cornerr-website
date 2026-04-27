@@ -54,6 +54,7 @@
   .nav-social a { color: rgba(255,255,255,0.55); transition: color 0.3s; display: flex; align-items: center; }
   .nav-social a:hover { color: var(--dusty-pink); }
 
+
   /* HERO */
   .hero {
     min-height: 100vh;
@@ -325,6 +326,134 @@
   .btn-whatsapp:hover { background: #1ebe5d; }
   .cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
+  /* HOW IT WORKS */
+  .how { background: var(--white); }
+  .steps-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; margin-top: 3rem; }
+  .step-card {
+    text-align: center; padding: 2.2rem 1.6rem;
+    border-radius: 14px; background: var(--off-white);
+    border: 1px solid rgba(15,32,68,0.08);
+    position: relative; transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .step-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(15,32,68,0.09); }
+  .step-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem; font-weight: 300; color: var(--pink-soft);
+    line-height: 1; margin-bottom: 0.8rem;
+  }
+  .step-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem; font-weight: 600; color: var(--navy); margin-bottom: 0.6rem;
+  }
+  .step-desc { font-size: 0.85rem; line-height: 1.75; color: var(--charcoal); }
+  .steps-connector {
+    display: flex; align-items: center; justify-content: center;
+    gap: 0; margin-top: 2rem;
+  }
+
+  /* ASSESSMENT */
+  .assessment { background: var(--off-white); }
+  .assess-intro { max-width: 640px; margin: 0 auto 3rem; text-align: center; font-size: 0.95rem; line-height: 1.8; color: var(--charcoal); }
+  .assess-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-bottom: 3.5rem; }
+  .assess-card {
+    border: 1px solid rgba(15,32,68,0.1); border-radius: 14px;
+    padding: 2rem 1.5rem; background: var(--white);
+    transition: all 0.3s; text-align: center;
+  }
+  .assess-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(15,32,68,0.09); border-color: var(--dusty-pink); }
+  .assess-emoji { font-size: 2rem; margin-bottom: 0.8rem; }
+  .assess-name { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; color: var(--navy); margin-bottom: 0.3rem; }
+  .assess-what { font-size: 0.72rem; color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.8rem; }
+  .assess-desc { font-size: 0.84rem; line-height: 1.7; color: var(--charcoal); margin-bottom: 0.8rem; }
+  .assess-time { font-size: 0.75rem; color: rgba(15,32,68,0.4); margin-bottom: 1.4rem; }
+  .btn-assess {
+    display: inline-block; background: var(--navy); color: var(--white);
+    padding: 0.65rem 1.4rem; border-radius: 4px; font-size: 0.8rem;
+    font-weight: 600; letter-spacing: 0.04em; text-decoration: none; transition: background 0.3s;
+  }
+  .btn-assess:hover { background: var(--navy-mid); }
+  .assess-form-wrap {
+    background: var(--navy); border-radius: 16px; padding: 2.8rem;
+    max-width: 680px; margin: 0 auto;
+  }
+  .assess-form-wrap h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 300; color: var(--white); margin-bottom: 0.5rem; }
+  .assess-form-wrap > p { font-size: 0.88rem; color: rgba(255,255,255,0.55); margin-bottom: 2rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-field { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1rem; }
+  .form-field label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--dusty-pink); font-weight: 600; }
+  .form-field input, .form-field select, .form-field textarea {
+    background: rgba(255,255,255,0.07); border: 1px solid rgba(212,160,160,0.22);
+    border-radius: 6px; padding: 0.75rem 1rem; color: var(--white);
+    font-family: 'DM Sans', sans-serif; font-size: 0.88rem; outline: none; transition: border-color 0.3s;
+  }
+  .form-field input::placeholder, .form-field textarea::placeholder { color: rgba(255,255,255,0.28); }
+  .form-field input:focus, .form-field select:focus, .form-field textarea:focus { border-color: var(--dusty-pink); }
+  .form-field select { appearance: none; cursor: pointer; }
+  .form-field select option { background: #0F2044; }
+  .form-field textarea { resize: vertical; min-height: 90px; }
+  .btn-submit {
+    width: 100%; background: var(--dusty-pink); color: var(--navy);
+    padding: 1rem; border: none; border-radius: 4px; cursor: pointer;
+    font-size: 0.9rem; font-weight: 700; letter-spacing: 0.04em;
+    font-family: 'DM Sans', sans-serif; transition: background 0.3s; margin-top: 0.5rem;
+  }
+  .btn-submit:hover { background: var(--pink-soft); }
+  .form-note { font-size: 0.74rem; color: rgba(255,255,255,0.3); text-align: center; margin-top: 1rem; line-height: 1.6; }
+
+  /* FOUNDING CLIENTS */
+  .founding { background: var(--white); text-align: center; }
+  .founding-content { max-width: 580px; margin: 0 auto; }
+  .founding-content p { font-size: 0.95rem; line-height: 1.85; color: var(--charcoal); margin-bottom: 1.2rem; }
+  .founding-what { background: var(--off-white); border-radius: 12px; padding: 1.5rem 2rem; margin: 1.8rem 0; border: 1px solid rgba(15,32,68,0.08); text-align: left; }
+  .founding-item { font-size: 0.92rem; color: var(--navy); padding: 0.6rem 0; border-bottom: 1px solid rgba(15,32,68,0.06); display: flex; justify-content: space-between; align-items: center; }
+  .founding-item:last-child { border-bottom: none; }
+  .founding-price strong { color: var(--accent); font-size: 1rem; }
+  .founding-price s { color: rgba(15,32,68,0.35); font-size: 0.8rem; margin-left: 0.4rem; }
+  .founding-note { font-size: 0.82rem; color: var(--accent); font-weight: 500; margin-bottom: 1.8rem !important; }
+
+  /* TESTIMONIALS */
+  .testimonials { background: var(--navy); }
+  .testimonials .section-label { color: var(--dusty-pink); }
+  .testimonials .section-title { color: var(--white); }
+  .testi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 3rem; }
+  .testi-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(212,160,160,0.2);
+    border-radius: 14px; padding: 2rem;
+    transition: all 0.3s;
+  }
+  .testi-card:hover { background: rgba(212,160,160,0.08); border-color: rgba(212,160,160,0.4); }
+  .testi-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem; font-style: italic; font-weight: 300;
+    color: rgba(255,255,255,0.85); line-height: 1.7; margin-bottom: 1.2rem;
+  }
+  .testi-quote::before { content: '\201C'; color: var(--dusty-pink); font-size: 2rem; line-height: 0; vertical-align: -0.4rem; margin-right: 2px; }
+  .testi-author { font-size: 0.8rem; color: var(--dusty-pink); font-weight: 500; }
+  .testi-role { font-size: 0.75rem; color: rgba(255,255,255,0.4); margin-top: 0.2rem; }
+  .testi-placeholder-notice {
+    text-align: center; margin-top: 2rem;
+    font-size: 0.8rem; color: rgba(255,255,255,0.3); font-style: italic;
+  }
+
+  /* FLOW BRAND BAR */
+  .flow-bar {
+    background: linear-gradient(135deg, var(--dusty-pink) 0%, var(--accent) 100%);
+    padding: 2rem 5%; text-align: center;
+  }
+  .flow-bar p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1rem, 2vw, 1.35rem); font-style: italic; font-weight: 300;
+    color: var(--navy); max-width: 820px; margin: 0 auto; line-height: 1.65;
+  }
+  .flow-bar strong { font-weight: 600; font-style: normal; }
+
+  @media (max-width: 900px) {
+    .steps-grid, .testi-grid, .assess-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .assess-form-wrap { padding: 1.8rem 1.4rem; }
+  }
+
   /* FOOTER */
   footer {
     background: #09162E; color: rgba(255,255,255,0.45);
@@ -361,10 +490,10 @@
   <div class="nav-logo">Lucy M.</div>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#portfolio">Work</a></li>
+    <li><a href="#how">How It Works</a></li>
     <li><a href="#services">Services</a></li>
-    <li><a href="#offer">What I Offer</a></li>
+    <li><a href="#portfolio">Work</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <div class="nav-social">
@@ -382,18 +511,18 @@
   <div class="hero-text">
     <div class="hero-tag">Administrative Strategist · AI Enthusiast · Career Consultant</div>
     <h1>Lucy<br><em>Mukhethwa</em></h1>
-    <p>I bridge strategic operations, AI-powered workflows, and human potential. From COO-level coordination to career transformation — I help people and organisations move with clarity and purpose.</p>
-    <p>Currently completing a Masters in Industrial and Organisational Psychology, specialising in career psychology — bringing both lived experience and academic rigour to every engagement.</p>
+    <p>You've sent the applications. You have the skills. But your CV is being ignored and your LinkedIn is invisible to the opportunities you deserve. <em style="color:var(--dusty-pink); font-style:normal;">That changes today.</em></p>
+    <p>I help South African professionals and graduates find their <em style="color:var(--dusty-pink); font-style:italic;">flow</em> — the career where your purpose, skills, and opportunities finally align.</p>
     <div class="hero-btns">
-      <a href="#services" class="btn-primary">View Services</a>
-      <a href="#contact" class="btn-secondary">Work With Me</a>
+      <a href="#how" class="btn-primary">How It Works</a>
+      <a href="#services" class="btn-secondary">View Services</a>
     </div>
   </div>
   <div class="hero-visual">
     <div class="hero-card">
-      <div class="label">Current Role</div>
-      <div class="value">Administrative Coordinator</div>
-      <div class="sub">Dash BPO · Johannesburg, South Africa</div>
+      <div class="label">What We Do</div>
+      <div class="value" style="font-size:1.25rem;">Find Your Flow</div>
+      <div class="sub">Career Clarity · Purpose · Direction</div>
     </div>
     <div class="stats-row">
       <div class="hero-card">
@@ -402,9 +531,9 @@
         <div class="sub">HR & Operations</div>
       </div>
       <div class="hero-card">
-        <div class="label">Reach</div>
-        <div class="value">Global</div>
-        <div class="sub">Multi-country ops</div>
+        <div class="label">Credentials</div>
+        <div class="value" style="font-size:1.1rem;">Masters</div>
+        <div class="sub">I&O Psychology</div>
       </div>
     </div>
     <div class="hero-card">
@@ -414,6 +543,11 @@
     </div>
   </div>
 </section>
+
+<!-- FLOW BRAND BAR -->
+<div class="flow-bar">
+  <p>Flow is that feeling when work stops feeling like work — when everything clicks, and your purpose finally speaks the same language as your career. <strong>Flow Corner exists for the professional who knows they're meant for more.</strong> I built it because I believe everyone deserves a career that feels that way.</p>
+</div>
 
 <!-- ABOUT -->
 <section class="about" id="about">
@@ -437,6 +571,33 @@
       <p>My background spans HR and administration — progressing from HR Assistant through to Generalist and into my current operational leadership-support role. Along the way, I've developed strong working knowledge of AI tools and automation technologies, including voice bots, chatbots, agent augmentation, and AI-first workflows that are reshaping the future of work.</p>
       <p>I'm also a published Christian living author and a student of Industrial Psychology — always learning, always growing. My mission is simple: to help people and organisations operate with more clarity, more confidence, and more impact.</p>
     </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <div class="section-label reveal">The Process</div>
+  <div class="section-title reveal">Three steps to your <em>next chapter</em></div>
+  <div class="divider reveal"></div>
+  <div class="steps-grid">
+    <div class="step-card reveal">
+      <div class="step-number">01</div>
+      <div class="step-title">Book a Free Discovery Call</div>
+      <div class="step-desc">Tell me where you are and where you want to be. In 15 minutes, we'll identify exactly what's holding you back and what needs to change.</div>
+    </div>
+    <div class="step-card reveal">
+      <div class="step-number">02</div>
+      <div class="step-title">We Build Your Strategy</div>
+      <div class="step-desc">CV, LinkedIn, career roadmap — or all three. I craft a tailored approach that positions you powerfully for the opportunities you actually want.</div>
+    </div>
+    <div class="step-card reveal">
+      <div class="step-number">03</div>
+      <div class="step-title">You Show Up Differently</div>
+      <div class="step-desc">Armed with a compelling story, a professional presence, and a clear direction — you stop being overlooked and start attracting the right doors.</div>
+    </div>
+  </div>
+  <div style="text-align:center; margin-top:2.5rem;">
+    <a href="#contact" class="btn-primary" style="display:inline-block; padding:0.9rem 2.2rem; font-size:0.88rem;">Book My Free Call</a>
   </div>
 </section>
 
@@ -488,16 +649,6 @@
         <span class="exp-tag">Digital Presence</span>
         <span class="exp-tag">CMS</span>
         <span class="exp-tag">Church & Corporate</span>
-      </div>
-    </div>
-    <div class="exp-card reveal">
-      <div class="exp-role">Published Author & Ministry Leader</div>
-      <div class="exp-area">Faith · Writing · Church Administration</div>
-      <div class="exp-desc">Author of <em>Passion. Purpose. Peace. — Becoming Whole in Christ</em>. Active in church administration, producing ministry resources, facilitator guides, and leadership development materials.</div>
-      <div class="exp-tags">
-        <span class="exp-tag">Publishing</span>
-        <span class="exp-tag">Ministry Resources</span>
-        <span class="exp-tag">Leadership Development</span>
       </div>
     </div>
   </div>
@@ -659,12 +810,108 @@
   </div>
 </section>
 
+<!-- CAREER ASSESSMENT -->
+<section class="assessment" id="assessment">
+  <div class="section-label reveal">Free Career Assessments</div>
+  <div class="section-title reveal">Find your <em>starting point</em></div>
+  <div class="divider reveal"></div>
+  <p class="assess-intro reveal">Not sure where to begin? Start with one of these internationally recognised, free career assessments. Once you have your result, fill in the form below — I'll reach out to book your free 15-minute discovery call where we unpack what it means for your career.</p>
+  <div class="assess-grid">
+    <div class="assess-card reveal">
+      <div class="assess-emoji">🧠</div>
+      <div class="assess-name">16Personalities</div>
+      <div class="assess-what">Personality Type</div>
+      <div class="assess-desc">One of the most widely used personality frameworks in the world. Discover how you think, work, and connect — and what careers align with your type.</div>
+      <div class="assess-time">⏱ 10–12 minutes · Free</div>
+      <a href="https://www.16personalities.com/" target="_blank" rel="noopener" class="btn-assess">Take Free Test →</a>
+    </div>
+    <div class="assess-card reveal">
+      <div class="assess-emoji">📊</div>
+      <div class="assess-name">DISC Assessment</div>
+      <div class="assess-what">Work Style</div>
+      <div class="assess-desc">Understand your dominant workplace behaviour style — Dominance, Influence, Steadiness, or Conscientiousness — and how it shapes your career fit.</div>
+      <div class="assess-time">⏱ 10 minutes · Free</div>
+      <a href="https://www.123test.com/disc-personality-test/" target="_blank" rel="noopener" class="btn-assess">Take Free Test →</a>
+    </div>
+    <div class="assess-card reveal">
+      <div class="assess-emoji">🗺️</div>
+      <div class="assess-name">Holland Code</div>
+      <div class="assess-what">Career Interests</div>
+      <div class="assess-desc">Based on John Holland's RIASEC theory — the foundation of career psychology. Matches your interests to real career paths and fields where you're most likely to thrive.</div>
+      <div class="assess-time">⏱ 10–15 minutes · Free</div>
+      <a href="https://www.mynextmove.org/explore/ip" target="_blank" rel="noopener" class="btn-assess">Take Free Test →</a>
+    </div>
+  </div>
+  <div class="assess-form-wrap reveal">
+    <h3>Share your result — get your free call</h3>
+    <p>Completed a test? Fill in your details below and I'll reach out within 24 hours to book your free 15-minute career discovery call.</p>
+    <form name="career-assessment" netlify netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="career-assessment">
+      <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
+      <div class="form-row">
+        <div class="form-field">
+          <label for="fname">Full Name *</label>
+          <input type="text" id="fname" name="name" placeholder="Your full name" required>
+        </div>
+        <div class="form-field">
+          <label for="femail">Email Address *</label>
+          <input type="email" id="femail" name="email" placeholder="your@email.com" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-field">
+          <label for="fphone">Phone / WhatsApp *</label>
+          <input type="tel" id="fphone" name="phone" placeholder="+27 82 000 0000" required>
+        </div>
+        <div class="form-field">
+          <label for="ftest">Which test did you complete? *</label>
+          <select id="ftest" name="test_taken" required>
+            <option value="" disabled selected>Select a test</option>
+            <option value="16Personalities">16Personalities</option>
+            <option value="DISC">DISC Assessment</option>
+            <option value="Holland Code">Holland Code (RIASEC)</option>
+            <option value="Multiple">I completed more than one</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-field">
+        <label for="fresult">Your Result Type *</label>
+        <input type="text" id="fresult" name="result_type" placeholder="e.g. INFJ, Dominant (D), Realistic-Investigative, etc." required>
+      </div>
+      <div class="form-field">
+        <label for="fchallenge">What is your biggest career challenge right now? *</label>
+        <textarea id="fchallenge" name="career_challenge" placeholder="Tell me what's holding you back or what you're trying to figure out..." required></textarea>
+      </div>
+      <button type="submit" class="btn-submit">Submit & Book My Free Discovery Call</button>
+      <p class="form-note">By submitting, you agree to be contacted via WhatsApp or email within 24 hours. No spam — ever.</p>
+    </form>
+  </div>
+</section>
+
+<!-- FOUNDING CLIENTS -->
+<section class="founding" id="founding">
+  <div class="section-label reveal">Founding Clients</div>
+  <div class="section-title reveal">Be part of the <em>beginning</em></div>
+  <div class="divider reveal"></div>
+  <div class="founding-content">
+    <p class="reveal">I'm currently taking on <strong>3 founding clients</strong> at a significantly reduced rate — in exchange for an honest, detailed testimonial once we've worked together.</p>
+    <p class="reveal">You get professional career support at a fraction of the normal price. I get the proof that my services deliver. Everyone wins.</p>
+    <div class="founding-what reveal">
+      <div class="founding-item"><span>✦ CV Revamp</span><span class="founding-price"><strong>R150</strong> <s>R300</s></span></div>
+      <div class="founding-item"><span>✦ LinkedIn Revamp</span><span class="founding-price"><strong>R175</strong> <s>R350</s></span></div>
+      <div class="founding-item"><span>✦ Career Roadmap</span><span class="founding-price"><strong>R250</strong> <s>R500</s></span></div>
+    </div>
+    <p class="founding-note reveal">Only 3 spots available. First come, first served.</p>
+    <a href="https://wa.me/27832610754?text=Hi%20Lucy%2C%20I%27d%20like%20to%20apply%20as%20a%20founding%20client" class="btn-pink reveal" target="_blank" rel="noopener">Apply as a Founding Client →</a>
+  </div>
+</section>
+
 <!-- CTA -->
 <section class="cta" id="contact">
-  <h2 class="reveal">Ready to work<br><em>together?</em></h2>
-  <p class="reveal">Whether you need a career boost, a professional website, or operational support — let's make it happen.</p>
+  <h2 class="reveal">Your career should feel<br>like <em>flow.</em></h2>
+  <p class="reveal">Stop being overlooked. Your skills are real — let's make sure the world can see them. Book your free 15-minute discovery call today.</p>
   <div class="cta-btns reveal">
-    <a href="mailto:hello@lucymukhethwa.co.za" class="btn-pink">Get In Touch</a>
+    <a href="mailto:hello@lucymukhethwa.co.za" class="btn-pink">Book My Free Call</a>
     <a href="https://wa.me/27832610754?text=Hi%20Lucy%2C%20I%20would%20like%20to%20enquire%20about%20your%20services" class="btn-whatsapp" target="_blank" rel="noopener">💬 Chat on WhatsApp</a>
   </div>
 </section>
