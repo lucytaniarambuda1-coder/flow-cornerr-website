@@ -411,30 +411,14 @@
   .founding-price s { color: rgba(15,32,68,0.35); font-size: 0.8rem; margin-left: 0.4rem; }
   .founding-note { font-size: 0.82rem; color: var(--accent); font-weight: 500; margin-bottom: 1.8rem !important; }
 
-  /* TESTIMONIALS */
-  .testimonials { background: var(--navy); }
-  .testimonials .section-label { color: var(--dusty-pink); }
-  .testimonials .section-title { color: var(--white); }
-  .testi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 3rem; }
-  .testi-card {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(212,160,160,0.2);
-    border-radius: 14px; padding: 2rem;
-    transition: all 0.3s;
-  }
-  .testi-card:hover { background: rgba(212,160,160,0.08); border-color: rgba(212,160,160,0.4); }
-  .testi-quote {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.05rem; font-style: italic; font-weight: 300;
-    color: rgba(255,255,255,0.85); line-height: 1.7; margin-bottom: 1.2rem;
-  }
-  .testi-quote::before { content: '\201C'; color: var(--dusty-pink); font-size: 2rem; line-height: 0; vertical-align: -0.4rem; margin-right: 2px; }
-  .testi-author { font-size: 0.8rem; color: var(--dusty-pink); font-weight: 500; }
-  .testi-role { font-size: 0.75rem; color: rgba(255,255,255,0.4); margin-top: 0.2rem; }
-  .testi-placeholder-notice {
-    text-align: center; margin-top: 2rem;
-    font-size: 0.8rem; color: rgba(255,255,255,0.3); font-style: italic;
-  }
+  /* WHY LUCY */
+  .whylucy { background: var(--off-white); text-align: center; }
+  .why-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; max-width: 960px; margin: 0 auto; }
+  .why-card { background: var(--white); border-radius: 14px; padding: 2rem 1.5rem; border: 1px solid rgba(15,32,68,0.07); text-align: left; transition: all 0.3s; }
+  .why-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(15,32,68,0.09); }
+  .why-icon { font-size: 2rem; margin-bottom: 0.8rem; }
+  .why-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600; color: var(--navy); margin-bottom: 0.6rem; }
+  .why-card p { font-size: 0.88rem; line-height: 1.75; color: var(--charcoal); }
 
   /* FLOW BRAND BAR */
   .flow-bar {
@@ -472,13 +456,23 @@
   .reveal { opacity: 0; transform: translateY(22px); transition: all 0.7s ease; }
   .reveal.visible { opacity: 1; transform: translateY(0); }
 
+  /* HAMBURGER / MOBILE NAV */
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; z-index: 1001; background: none; border: none; position: fixed; top: 1.1rem; right: 1.2rem; }
+  .hamburger span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: all 0.3s; }
+  .mobile-nav { display: none; position: fixed; inset: 0; background: var(--navy); z-index: 1000; flex-direction: column; align-items: center; justify-content: center; gap: 2.2rem; }
+  .mobile-nav.open { display: flex; }
+  .mobile-nav a { color: var(--white); font-size: 1.5rem; text-decoration: none; font-family: 'Cormorant Garamond', serif; font-weight: 300; letter-spacing: 0.04em; }
+  .mobile-nav a:hover { color: var(--dusty-pink); }
+  .mobile-nav-close { position: absolute; top: 1.5rem; right: 1.5rem; background: none; border: none; color: rgba(255,255,255,0.6); font-size: 2rem; cursor: pointer; line-height: 1; }
+
   @media (max-width: 900px) {
     nav { display: none; }
+    .hamburger { display: flex; }
     .hero { grid-template-columns: 1fr; padding-top: 6rem; }
     .hero::before { display: none; }
     .about-grid, .exp-grid { grid-template-columns: 1fr; gap: 2rem; }
     .portfolio-grid, .services-grid { grid-template-columns: 1fr; }
-    .offer-list { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
     .stats-row { grid-template-columns: 1fr 1fr; }
   }
 </style>
@@ -505,6 +499,22 @@
     </a>
   </div>
 </nav>
+
+<!-- HAMBURGER BUTTON (mobile only) -->
+<button class="hamburger" id="hamburger" aria-label="Open menu">
+  <span></span><span></span><span></span>
+</button>
+
+<!-- MOBILE NAV OVERLAY -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" id="mobileClose">✕</button>
+  <a href="#about" class="mobile-link">About</a>
+  <a href="#how" class="mobile-link">How It Works</a>
+  <a href="#services" class="mobile-link">Services</a>
+  <a href="#portfolio" class="mobile-link">Work</a>
+  <a href="#assessment" class="mobile-link">Free Assessment</a>
+  <a href="#contact" class="mobile-link">Contact</a>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -567,9 +577,9 @@
       </div>
     </div>
     <div class="about-text">
-      <p>I'm Lucy Mukhethwa — a 29-year-old South African Administrative Coordinator based near Johannesburg. I currently support C-suite operations at a global BPO organisation, working directly with the COO across multi-country strategic initiatives.</p>
+      <p>I'm Lucy Mukhethwa — a South African Administrative Strategist based near Johannesburg. I currently support C-suite operations at a global BPO organisation, working directly with the COO across multi-country strategic initiatives.</p>
       <p>My background spans HR and administration — progressing from HR Assistant through to Generalist and into my current operational leadership-support role. Along the way, I've developed strong working knowledge of AI tools and automation technologies, including voice bots, chatbots, agent augmentation, and AI-first workflows that are reshaping the future of work.</p>
-      <p>I'm also a published Christian living author and a student of Industrial Psychology — always learning, always growing. My mission is simple: to help people and organisations operate with more clarity, more confidence, and more impact.</p>
+      <p>I'm also a Christian living author (completing final review ahead of publication) and a student of Industrial Psychology — always learning, always growing. My mission is simple: to help people and organisations operate with more clarity, more confidence, and more impact.</p>
     </div>
   </div>
 </section>
@@ -657,9 +667,10 @@
 
 <!-- PORTFOLIO -->
 <section class="portfolio" id="portfolio">
-  <div class="section-label reveal">Selected Work</div>
-  <div class="section-title reveal" style="color:var(--white);">What I've <em>delivered</em></div>
+  <div class="section-label reveal">Experience Highlights</div>
+  <div class="section-title reveal" style="color:var(--white);">Work I've <em>been part of</em></div>
   <div class="divider reveal"></div>
+  <p class="reveal" style="text-align:center; color:rgba(255,255,255,0.6); font-size:0.9rem; max-width:580px; margin:0 auto 2.5rem; line-height:1.8;">Drawn from 6+ years across BPO, HR, and career development — highlights of what I've contributed and built.</p>
   <div class="portfolio-grid">
     <div class="port-card reveal">
       <div class="port-icon">📄</div>
@@ -739,74 +750,26 @@
   </div>
 </section>
 
-<!-- WHAT I OFFER -->
-<section class="offer" id="offer">
-  <div class="section-label reveal">What I Offer</div>
-  <div class="section-title reveal">Skills you can <em>count on</em></div>
+<!-- WHY LUCY -->
+<section class="whylucy" id="whylucy">
+  <div class="section-label reveal">Why Choose Lucy</div>
+  <div class="section-title reveal">What makes this <em>different</em></div>
   <div class="divider reveal"></div>
-  <div class="offer-list">
-    <div class="offer-item reveal">
-      <div class="offer-dot"></div>
-      <div class="offer-content">
-        <h4>Strategic Executive Coordination</h4>
-        <p>Board-level presentations, COO-level support, cross-functional communication, and multi-country operations management.</p>
-      </div>
+  <div class="why-grid">
+    <div class="why-card reveal">
+      <div class="why-icon">🎓</div>
+      <h3>Academic Rigour</h3>
+      <p>Currently completing a Masters in Industrial &amp; Organisational Psychology — specialising in career psychology. My coaching is grounded in validated theory, not guesswork.</p>
     </div>
-    <div class="offer-item reveal">
-      <div class="offer-dot"></div>
-      <div class="offer-content">
-        <h4>AI Tools & Workflow Optimisation</h4>
-        <p>Practical daily use of ChatGPT, Claude, Perplexity, NotebookLM, and Gemini to research, draft, analyse, and automate administrative and operational tasks. Experienced in AI-assisted workflows in contact centre and operations environments.</p>
-      </div>
+    <div class="why-card reveal">
+      <div class="why-icon">🏢</div>
+      <h3>C-Suite Insider Knowledge</h3>
+      <p>6+ years supporting executive leadership at a global BPO. I know exactly what decision-makers look for — and I build that into every CV, LinkedIn profile, and career plan I create.</p>
     </div>
-    <div class="offer-item reveal">
-      <div class="offer-dot"></div>
-      <div class="offer-content">
-        <h4>HR & People Operations</h4>
-        <p>Policy development, employment documentation, onboarding frameworks, and employee engagement across industries.</p>
-      </div>
-    </div>
-    <div class="offer-item reveal">
-      <div class="offer-dot"></div>
-      <div class="offer-content">
-        <h4>Career Coaching & Development</h4>
-        <p>CV writing, LinkedIn optimisation, and personalised career roadmaps for professionals and students at any stage.</p>
-      </div>
-    </div>
-    <div class="offer-item reveal">
-      <div class="offer-dot"></div>
-      <div class="offer-content">
-        <h4>Document & Contract Drafting</h4>
-        <p>SOPs, proposals, employment contracts, facilitator guides, and professional correspondence across jurisdictions.</p>
-      </div>
-    </div>
-    <div class="offer-item reveal">
-      <div class="offer-dot"></div>
-      <div class="offer-content">
-        <h4>AI-Powered Admin Workflows</h4>
-        <p>Practical use of Claude, Fireflies, Monday.com, and Canva to modernise and automate everyday administrative tasks.</p>
-      </div>
-    </div>
-    <div class="offer-item reveal">
-      <div class="offer-dot"></div>
-      <div class="offer-content">
-        <h4>Website & Brand Building</h4>
-        <p>Personal portfolio sites, business landing pages, and brand identity documents for individuals and small businesses.</p>
-      </div>
-    </div>
-    <div class="offer-item reveal">
-      <div class="offer-dot"></div>
-      <div class="offer-content">
-        <h4>Digital Product Creation</h4>
-        <p>Template bundles, resource packs, ebooks, and digital tools designed to deliver immediate value and generate passive income.</p>
-      </div>
-    </div>
-    <div class="offer-item reveal">
-      <div class="offer-dot"></div>
-      <div class="offer-content">
-        <h4>Career Coaching (Academic)</h4>
-        <p>Currently completing a Masters in Industrial and Organisational Psychology with a research focus on career psychology. This academic foundation underpins all career coaching, CV, and career development services offered.</p>
-      </div>
+    <div class="why-card reveal">
+      <div class="why-icon">🙏</div>
+      <h3>Purpose-Led, Not Just Career-Led</h3>
+      <p>I believe your career is part of a bigger story. My approach connects your professional goals to your purpose — so the work we do together has meaning beyond the job title.</p>
     </div>
   </div>
 </section>
@@ -816,7 +779,7 @@
   <div class="section-label reveal">Free Career Assessments</div>
   <div class="section-title reveal">Find your <em>starting point</em></div>
   <div class="divider reveal"></div>
-  <p class="assess-intro reveal">Not sure where to begin? Start with one of these internationally recognised, free career assessments. Once you have your result, fill in the form below — I'll reach out to book your free 15-minute discovery call where we unpack what it means for your career.</p>
+  <p class="assess-intro reveal">Not sure where to begin? Start with one of these internationally recognised, free career assessments. Once you have your result, fill in the form below — I'll reach out via WhatsApp or email within 24 hours to book your free 15-minute discovery call — and we'll unpack exactly what your result means for your career path.</p>
   <div class="assess-grid">
     <div class="assess-card reveal">
       <div class="assess-emoji">🧠</div>
@@ -901,6 +864,7 @@
       <div class="founding-item"><span>✦ CV Revamp</span><span class="founding-price"><strong>R150</strong> <s>R300</s></span></div>
       <div class="founding-item"><span>✦ LinkedIn Revamp</span><span class="founding-price"><strong>R175</strong> <s>R350</s></span></div>
       <div class="founding-item"><span>✦ Career Roadmap</span><span class="founding-price"><strong>R250</strong> <s>R500</s></span></div>
+      <p style="font-size:0.82rem; color:rgba(15,32,68,0.5); margin-top:0.9rem; text-align:left;">Each service includes one full delivery + one revision round. Once complete, I'll follow up with a short testimonial request.</p>
     </div>
     <p class="founding-note reveal">Only 3 spots available. First come, first served.</p>
     <a href="https://wa.me/27832610754?text=Hi%20Lucy%2C%20I%27d%20like%20to%20apply%20as%20a%20founding%20client" class="btn-pink reveal" target="_blank" rel="noopener">Apply as a Founding Client →</a>
@@ -942,6 +906,18 @@
     });
   }, { threshold: 0.08 });
   reveals.forEach(el => observer.observe(el));
+
+  // Mobile hamburger nav
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+  const mobileClose = document.getElementById('mobileClose');
+  if (hamburger && mobileNav && mobileClose) {
+    hamburger.addEventListener('click', () => mobileNav.classList.add('open'));
+    mobileClose.addEventListener('click', () => mobileNav.classList.remove('open'));
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => mobileNav.classList.remove('open'));
+    });
+  }
 </script>
 
 </body>
