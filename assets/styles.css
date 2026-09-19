@@ -121,10 +121,10 @@
 
   @media (max-width: 900px) {
     .explore-grid { grid-template-columns: 1fr 1fr; }
+    .page-header { padding: 8rem 6% 3.5rem; }
   }
   @media (max-width: 560px) {
     .explore-grid { grid-template-columns: 1fr; }
-    .page-header { padding: 8rem 6% 3.5rem; }
   }
 
 
@@ -402,7 +402,7 @@
     margin: 3rem 0 0.4rem;
   }
   .hub-category-intro { font-size: 0.88rem; color: var(--charcoal); margin-bottom: 0.5rem; max-width: 640px; }
-  @media (max-width: 700px) { .resource-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 900px) { .resource-grid { grid-template-columns: 1fr; } }
 
   /* HUB LANDING GRID */
   .hub-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.6rem; margin-top: 2.5rem; }
@@ -416,7 +416,31 @@
   .hub-card-title { font-family: 'Baloo 2', sans-serif; font-size: 1.35rem; font-weight: 800; color: var(--navy); margin-bottom: 0.6rem; }
   .hub-card-desc { font-size: 0.9rem; line-height: 1.7; color: var(--charcoal); margin-bottom: 1rem; }
   .hub-card-arrow { font-size: 0.82rem; color: var(--pink-deep); font-weight: 700; }
-  @media (max-width: 700px) { .hub-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 900px) { .hub-grid { grid-template-columns: 1fr; } }
+
+  /* ARTICLE (Learning Hub long-form content) */
+  .article { background: var(--white); }
+  .article-inner { max-width: 720px; margin: 0 auto; }
+  .article-byline {
+    font-size: 0.8rem; font-weight: 700; color: var(--pink-deep);
+    text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 2.2rem;
+  }
+  .article-body p { font-size: 1rem; line-height: 1.85; color: var(--charcoal); margin-bottom: 1.3rem; }
+  .article-body h2 {
+    font-family: 'Baloo 2', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--navy);
+    margin: 2.4rem 0 1rem;
+  }
+  .article-body ul, .article-body ol { margin: 0 0 1.3rem 1.4rem; }
+  .article-body li { font-size: 1rem; line-height: 1.8; color: var(--charcoal); margin-bottom: 0.6rem; }
+  .article-body strong { color: var(--navy); }
+  .article-cta {
+    background: var(--navy); border-radius: var(--radius-xl); padding: 2.2rem;
+    text-align: center; margin-top: 3rem;
+  }
+  .article-cta p { color: rgba(255,255,255,0.75); font-size: 0.95rem; margin-bottom: 1.3rem; }
+  @media (max-width: 560px) {
+    .article-body h2 { font-size: 1.3rem; }
+  }
 
   /* CV CHECK TOOL */
   .cv-tool { background: var(--white); }
@@ -692,10 +716,12 @@
   @media (max-width: 900px) {
     nav { display: none; }
     .hamburger { display: flex; }
-    .hero { grid-template-columns: 1fr; padding-top: 6rem; }
+    .hero { grid-template-columns: 1fr; padding-top: 6rem; min-height: auto; }
     .hero::before { display: none; }
+    .hero-blob-yellow { display: none; }
     .about-grid, .exp-grid { grid-template-columns: 1fr; gap: 2rem; }
     .portfolio-grid, .services-grid { grid-template-columns: 1fr; }
     .why-grid { grid-template-columns: 1fr; }
-    .stats-row { grid-template-columns: 1fr 1fr; }
+    .founding-item { flex-wrap: wrap; gap: 0.4rem; }
+    .stats-row { grid-template-columns: 1fr; }
   }
