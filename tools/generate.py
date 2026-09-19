@@ -121,7 +121,7 @@ home_body = f'''<!-- HERO -->
 about_body = f'''<div class="page-header">
   <div class="section-label">About Me</div>
   <h1>Purpose-driven. <em>People-first.</em></h1>
-  <div class="hero-tag" style="margin:0.5rem auto 1.6rem;">Career Strategist · CV & LinkedIn Specialist · I&O Psychology</div>
+  <div class="hero-tag" style="margin:0.5rem auto 1.6rem;">Career Strategist · AI Projects Lead · I&O Psychology</div>
   <div class="stats-row" style="max-width:420px; margin:0 auto 1.8rem;">
     <div class="hero-card">
       <div class="label">Experience</div>
@@ -151,7 +151,7 @@ about_body = f'''<div class="page-header">
     </div>
     <div class="about-text">
       <p>I'm Lucy Mukhethwa — a South African career strategist based near Johannesburg. I currently support C-suite operations at a global BPO organisation, working directly with the COO across multi-country strategic initiatives.</p>
-      <p>My background spans HR and administration — progressing from HR Assistant through to Generalist and into my current operational leadership-support role. Along the way, I've developed strong working knowledge of AI tools and automation technologies that are reshaping how modern workplaces operate.</p>
+      <p>My background spans HR and administration — progressing from HR Assistant through to Generalist and into my current operational leadership-support role. Alongside that, I lead AI adoption initiatives at Dash BPO — voice bots, chatbot integration, and automation strategy — giving me a hands-on, practitioner's view of how AI is reshaping modern workplaces, not just a theoretical one.</p>
       <p>I'm also a student of Industrial &amp; Organisational Psychology, and a Christian living author completing final review ahead of publication. My mission is simple: to help people operate with more clarity, more confidence, and more impact in their careers.</p>
     </div>
   </div>
@@ -336,13 +336,13 @@ work_body = f'''<div class="page-header">
       </div>
     </div>
     <div class="exp-card reveal">
-      <div class="exp-role">AI & Automation Practitioner</div>
-      <div class="exp-area">AI Tools User & Practitioner</div>
-      <div class="exp-desc">Working knowledge of AI tools including ChatGPT, Claude, Perplexity, NotebookLM, and Gemini. Experienced in environments where voice bots, chatbots, and automation strategies are deployed — with hands-on use of these tools to enhance operational and administrative efficiency.</div>
+      <div class="exp-role">AI Projects Lead</div>
+      <div class="exp-area">Dash BPO · AI Adoption & Automation</div>
+      <div class="exp-desc">Leading AI adoption initiatives within a contact-centre environment — voice bot deployment, chatbot integration, and automation strategy — alongside hands-on use of ChatGPT, Claude, Perplexity, NotebookLM, and Gemini to enhance operational and administrative efficiency.</div>
       <div class="exp-tags">
+        <span class="exp-tag">AI Strategy</span>
         <span class="exp-tag">ChatGPT</span>
         <span class="exp-tag">Claude</span>
-        <span class="exp-tag">Perplexity</span>
         <span class="exp-tag">Workflow Automation</span>
       </div>
     </div>
@@ -471,9 +471,10 @@ hub_body = f'''<div class="page-header">
 </section>'''
 
 # ============================================================== LEARNING HUB — learn-ai
-def resource_card(title, desc, icon_key="bulb", href="#", placeholder=True):
+def resource_card(title, desc, icon_key="bulb", href="#", placeholder=True, external=True):
     note = '<div class="resource-placeholder-note">Link to be added — verified before launch</div>' if placeholder else ''
-    return f'''<a href="{href}" class="resource-card reveal"{' target="_blank" rel="noopener"' if not placeholder else ''}>
+    target_attr = ' target="_blank" rel="noopener"' if (not placeholder and external) else ''
+    return f'''<a href="{href}" class="resource-card reveal"{target_attr}>
       <div class="resource-icon">{ICON[icon_key]}</div>
       <div>
         <div class="resource-title">{title}</div>
@@ -494,16 +495,16 @@ learn_ai_body = f'''<div class="page-header">
   <div class="hub-category-label">AI Basics</div>
   <p class="hub-category-intro">New to AI? Start here — these break down what AI actually is, without the hype.</p>
   <div class="resource-grid">
-    {resource_card("What Is AI, Really?", "A beginner-friendly explainer of what AI actually is — no jargon, no hype.", "bulb")}
-    {resource_card("How Tools Like ChatGPT & Claude Work", "A plain-language look at how modern AI chat tools actually work under the hood.", "zap")}
+    {resource_card("What Is AI, Really?", "A beginner-friendly explainer of what AI actually is — no jargon, no hype.", "bulb", "/learning-hub/learn-ai/what-is-ai/", False, False)}
+    {resource_card("How Tools Like ChatGPT & Claude Work", "A plain-language look at how modern AI chat tools actually work under the hood.", "zap", "/learning-hub/learn-ai/how-ai-chat-tools-work/", False, False)}
   </div>
 
   <div class="hub-category-label">Using AI Practically</div>
   <p class="hub-category-intro">Ready to put it to work? These focus on real, everyday use.</p>
   <div class="resource-grid">
-    {resource_card("Prompting 101", "A beginner's guide to getting better, more useful results from AI chat tools.", "message")}
-    {resource_card("Free AI Tools Worth Trying", "A roundup of genuinely useful, free AI tools for everyday work and study.", "star")}
-    {resource_card("Using AI to Sharpen Your CV & LinkedIn", "How to use AI as a drafting assistant — not a replacement for your own voice.", "filecheck")}
+    {resource_card("Prompting 101", "A beginner's guide to getting better, more useful results from AI chat tools.", "message", "/learning-hub/learn-ai/prompting-101/", False, False)}
+    {resource_card("Free AI Tools Worth Trying", "A roundup of genuinely useful, free AI tools for everyday work and study.", "star", "/learning-hub/learn-ai/free-ai-tools/", False, False)}
+    {resource_card("Using AI to Sharpen Your CV & LinkedIn", "How to use AI as a drafting assistant — not a replacement for your own voice.", "filecheck", "/learning-hub/learn-ai/ai-for-cv-linkedin/", False, False)}
   </div>
 
   <p style="text-align:center; margin-top:3rem; font-size:0.95rem;">Ready to see how your CV stacks up? <a href="/learning-hub/cv-check/" style="color:var(--pink-deep); font-weight:700;">Try the free CV Check →</a></p>
@@ -520,9 +521,9 @@ find_job_body = f'''<div class="page-header">
   <div class="hub-category-label">Where to Search</div>
   <p class="hub-category-intro">South African job boards and platforms worth checking regularly.</p>
   <div class="resource-grid">
-    {resource_card("LinkedIn Jobs", "One of the most active platforms for professional roles in South Africa.", "search")}
-    {resource_card("Indeed South Africa", "A large general job board covering roles across every industry.", "search")}
-    {resource_card("PNet", "A long-standing, popular South African job board.", "search")}
+    {resource_card("LinkedIn Jobs", "One of the most active platforms for professional roles in South Africa.", "search", "https://www.linkedin.com/jobs", False)}
+    {resource_card("Indeed South Africa", "A large general job board covering roles across every industry.", "search", "https://za.indeed.com", False)}
+    {resource_card("PNet", "A long-standing, popular South African job board.", "search", "https://www.pnet.co.za", False)}
   </div>
 
   <div class="hub-category-label">How to Stand Out</div>
@@ -536,7 +537,7 @@ find_job_body = f'''<div class="page-header">
         <div class="resource-link">See the service →</div>
       </div>
     </a>
-    {resource_card("Interview Prep Basics", "A solid, free starting point for common interview questions and how to answer them.", "star")}
+    {resource_card("Interview Prep Basics", "A solid, free starting point for common interview questions and how to answer them.", "star", "https://www.indeed.com/career-advice/interviewing/top-interview-questions-and-answers", False)}
   </div>
 
   <div class="hub-category-label">Direct from Lucy</div>
@@ -679,6 +680,117 @@ cv_check_body = f'''<div class="page-header">
   <div class="cv-results" id="cvResults"></div>
 </section>'''
 
+# ============================================================== LEARNING HUB — AI articles
+def article_page(title, dek, body_html):
+    return f'''<div class="page-header">
+  <div class="section-label">Learning Hub · Understand &amp; Use AI</div>
+  <h1>{title}</h1>
+  <p>{dek}</p>
+  <p style="margin-top:0.9rem;"><a href="/learning-hub/learn-ai/" style="color:var(--pink); font-weight:700; font-style:normal;">← Back to Understand &amp; Use AI</a></p>
+</div>
+
+<section class="article">
+  <div class="article-inner">
+    <div class="article-byline">By Lucy Mukhethwa · AI Projects Lead &amp; Career Strategist</div>
+    <div class="article-body">
+{body_html}
+    </div>
+    <div class="article-cta">
+      <h3 style="font-family:'Baloo 2',sans-serif; color:var(--white); font-size:1.3rem; font-weight:800; margin-bottom:0.6rem;">Want this applied to your own CV?</h3>
+      <p>Try the free CV Check, or book a call and we'll work through it together.</p>
+      <div class="cta-btns" style="justify-content:center;">
+        <a href="/learning-hub/cv-check/" class="btn-pink">Try the Free CV Check</a>
+        <a href="/contact/" class="btn-secondary" style="border-color: rgba(255,111,165,0.5); color:var(--pink);">Book a Call</a>
+      </div>
+    </div>
+  </div>
+</section>'''
+
+
+article_what_is_ai = article_page(
+    "What Is AI, Really?",
+    "No jargon — just a clear, honest answer to a question everyone's asking.",
+    '''      <p>"Artificial intelligence" gets thrown around so often it's started to feel like a buzzword rather than a real, useful idea. So let's strip away the hype and answer the actual question: what is AI, really?</p>
+      <p>At its core, AI is a broad term for computer systems that can perform tasks that would normally require human intelligence — recognising patterns, making predictions, generating text or images, or making decisions based on data. That's it. It's not magic, and it's not a mind. It's very sophisticated pattern-matching, running at a scale no human could do by hand.</p>
+      <h2>Why Everyone's Talking About It Now</h2>
+      <p>AI itself isn't new — it's been part of everyday life for years, quietly powering things like spam filters, spell check, and the recommendations you see on streaming apps. What changed recently is the arrival of <strong>large language models</strong> — the technology behind tools like ChatGPT and Claude — which can hold a conversation, write in a natural voice, and help with tasks that used to require a human writer or researcher sitting next to you.</p>
+      <h2>What AI Is Not</h2>
+      <p>It's worth being clear about the limits, too. AI doesn't "understand" the world the way you do. It doesn't have opinions, memories of you between conversations (unless a tool is specifically built to keep them), or genuine judgement about what's true. It's excellent at generating plausible, well-structured text — which means it can also generate plausible-sounding <em>wrong</em> answers with total confidence. Treat it as a very capable assistant, not an authority.</p>
+      <h2>Why This Matters for Your Career</h2>
+      <p>Whether or not you ever touch a line of code, AI is already changing how work gets done — how CVs get screened, how job ads get written, how colleagues draft emails and reports. Understanding the basics isn't optional anymore; it's becoming as fundamental as knowing your way around a spreadsheet. The good news: you don't need to be technical to use it well. You just need to understand what it's actually doing — which is exactly what the rest of this series covers.</p>''',
+)
+
+article_how_ai_works = article_page(
+    "How Tools Like ChatGPT &amp; Claude Actually Work",
+    "A plain-language look under the hood — so you know what you're really working with.",
+    '''      <p>Tools like ChatGPT and Claude can feel like magic — you type a question, and a thoughtful, well-written answer appears in seconds. Here's what's actually happening, in plain language.</p>
+      <h2>They Predict, They Don't "Know"</h2>
+      <p>These tools are built on <strong>large language models</strong> — systems trained on enormous amounts of text to learn the patterns of language: which words and ideas tend to follow which others. When you ask a question, the model isn't looking up a stored answer. It's generating a response one piece at a time, predicting what should come next based on everything it learned during training.</p>
+      <p>That's a subtle but important distinction. It means these tools are exceptional at producing fluent, well-structured, plausible-sounding text — but "plausible-sounding" and "correct" aren't always the same thing.</p>
+      <h2>What They're Genuinely Good At</h2>
+      <ul>
+        <li>Drafting and rewriting — turning a rough idea into a structured first draft</li>
+        <li>Summarising long documents or explaining a complex topic simply</li>
+        <li>Brainstorming — generating options quickly when you're stuck</li>
+        <li>Editing — tightening wordy sentences, checking tone and clarity</li>
+      </ul>
+      <h2>Where They Fall Short</h2>
+      <p>These tools can sometimes state incorrect information with total confidence — often called "hallucinating." They don't automatically know about very recent events unless the tool is specifically connected to the internet. And they don't know <em>you</em> — your actual achievements, your voice, your context — unless you give it to them clearly.</p>
+      <h2>The Practical Takeaway</h2>
+      <p>Use these tools as a fast, capable first-draft partner — never as the final word. Always read critically, fact-check anything that matters, and make sure the final result still sounds like you. That's the difference between using AI well and letting it use you.</p>''',
+)
+
+article_prompting_101 = article_page(
+    "Prompting 101",
+    "The difference between a mediocre AI answer and a genuinely useful one usually comes down to how you ask.",
+    '''      <p>Most people's first experience with AI chat tools is underwhelming — a vague question gets a vague, generic answer. The good news: getting dramatically better results isn't about learning to "code" or master some secret technique. It's about being a clearer communicator. Here's how.</p>
+      <h2>1. Be Specific</h2>
+      <p>"Write me a CV bullet point" will get you something generic. "Rewrite this bullet point to lead with a measurable result, in one sentence, for a customer service role" will get you something usable. The more specific your request, the less generic the output.</p>
+      <h2>2. Give Context</h2>
+      <p>Tell the tool who you are, what you're trying to achieve, and who the output is for. For example: "I'm applying for a graduate role in banking. Rewrite this paragraph to sound confident but not arrogant, for a recruiter reading dozens of applications."</p>
+      <h2>3. Iterate — Don't Expect Perfection First Try</h2>
+      <p>Treat the first response as a draft, not a final answer. Follow up with "make it shorter," "make it sound more like me," or "give me three alternative versions." Refining in conversation almost always beats trying to write the perfect prompt upfront.</p>
+      <h2>4. Break Big Tasks Into Steps</h2>
+      <p>Instead of "help me with my job search," try smaller, specific asks: "help me identify the top 5 keywords in this job ad," then "check if my CV includes those keywords," then "suggest where I could naturally work in the ones that are missing."</p>
+      <h2>5. Always Fact-Check</h2>
+      <p>Never take a specific fact, statistic, or claim from an AI response at face value if it matters. Verify it yourself before you rely on it or repeat it to someone else.</p>
+      <h2>Try It Yourself</h2>
+      <p>Next time you're stuck on a CV bullet or a LinkedIn line, try this prompt: <em>"Rewrite this to lead with a specific, quantified result, in one sentence, for a [your target role] application: [paste your text]."</em> Notice how much more useful the result is than just asking it to "make this better."</p>''',
+)
+
+article_free_ai_tools = article_page(
+    "Free AI Tools Worth Trying",
+    "A grounded, no-hype tour of what's actually useful right now — organised by what you're trying to do.",
+    '''      <p>There's a new AI tool announced practically every week, and most people don't need to track any of that. What you actually need is a small, reliable toolkit for the handful of things AI is genuinely useful for. Here's a grounded starting point, organised by task rather than by hype.</p>
+      <h2>For Writing &amp; Drafting</h2>
+      <p><strong>ChatGPT</strong> (OpenAI) and <strong>Claude</strong> (Anthropic) are both excellent general-purpose assistants for drafting emails, CV bullets, cover letters, and LinkedIn copy. Both have free tiers that are more than enough for everyday career-related use. Try both and see which one's tone you prefer — they genuinely do write a little differently.</p>
+      <h2>For Research (With Sources)</h2>
+      <p><strong>Perplexity</strong> is built specifically for research — it answers questions and shows you the sources it pulled from, which makes it easier to verify what it's telling you. Useful when researching a company before an interview, or checking facts about an industry you're moving into.</p>
+      <h2>For Organising Your Own Notes</h2>
+      <p><strong>NotebookLM</strong> (Google) is designed to work with documents you upload — your own notes, a set of job ads, your CV drafts — and helps you summarise and query them. Genuinely useful for pulling your own scattered career notes into something organised.</p>
+      <h2>If You're Already in Google Workspace</h2>
+      <p><strong>Gemini</strong> is built directly into Gmail, Docs, and Sheets, which makes it convenient if you're already living in those tools day to day — no need to copy-paste between apps.</p>
+      <h2>A Word of Caution</h2>
+      <p>Free tiers change, and new tools launch constantly — treat any specific list (including this one) as a starting point, not gospel. The skill that doesn't go out of date is knowing <em>what</em> to ask these tools to do — which is exactly what the rest of this series is for.</p>''',
+)
+
+article_ai_for_cv = article_page(
+    "Using AI to Sharpen Your CV &amp; LinkedIn (Without Losing Your Voice)",
+    "AI is a great editor and a terrible ghostwriter. Here's how to use it as the former.",
+    '''      <p>This is the question I get asked most often: "Can I just use AI to write my CV?" The honest answer is — you can, but you shouldn't, at least not entirely. Here's the technique I actually recommend and use with clients.</p>
+      <h2>Use It to Tighten, Not to Invent</h2>
+      <p>AI is excellent at taking something you've already written and making it clearer and more concise. It is not a reliable source of your own achievements — never let it invent or exaggerate results you didn't actually deliver. Start with your real experience, in your own words, then use AI to sharpen the language.</p>
+      <h2>A Prompt Worth Stealing</h2>
+      <p>Paste in a CV bullet and ask: <em>"Rewrite this to start with a strong action verb and include a measurable result if one is implied — don't invent numbers I haven't given you: [paste your bullet]."</em> This forces the tool to improve structure and clarity without fabricating impact.</p>
+      <h2>Check Keyword Alignment</h2>
+      <p>Paste in a job description alongside your CV and ask which important keywords from the ad are missing from your CV. This is one of the fastest ways to improve how your CV performs against applicant tracking systems (ATS) — assuming you genuinely have the skill or experience being asked about.</p>
+      <h2>Use It for Structure, Not Your Final Voice</h2>
+      <p>AI can be genuinely useful for suggesting a first-draft structure — what sections to include, what order to put them in. But the final wording should sound like you, not like a template. If a recruiter or interviewer meets you after reading an AI-polished-beyond-recognition CV, the mismatch is obvious and it undermines trust.</p>
+      <h2>The Line I Tell Every Client</h2>
+      <p>AI should sound like your best editor, not your ghostwriter. If you wouldn't say a sentence out loud in an interview, don't let it stay on your CV — no matter how good it looks on the page.</p>
+      <p>Want a second pair of eyes on the real thing? Run your CV through the free CV Check tool below, or book a call and we'll sharpen it together, line by line.</p>''',
+)
+
 # ============================================================== PAGES
 PAGES = [
     ("index.html", "Flow Corner — Free AI Career Tools & Guidance",
@@ -714,6 +826,21 @@ PAGES = [
     ("learning-hub/cv-check/index.html", "Free CV Check — Flow Corner Learning Hub",
      "Paste or upload your CV for an instant, free, automated checklist — no sign-up, nothing leaves your browser.",
      "/learning-hub/", cv_check_body, '<script src="/assets/cv-check.js" defer></script>\n'),
+    ("learning-hub/learn-ai/what-is-ai/index.html", "What Is AI, Really? — Flow Corner Learning Hub",
+     "A no-jargon explainer of what AI actually is, written by career strategist and AI Projects Lead Lucy Mukhethwa.",
+     "/learning-hub/", article_what_is_ai, ""),
+    ("learning-hub/learn-ai/how-ai-chat-tools-work/index.html", "How ChatGPT & Claude Actually Work — Flow Corner Learning Hub",
+     "A plain-language look at how large language models generate answers, what they're good at, and where they fall short.",
+     "/learning-hub/", article_how_ai_works, ""),
+    ("learning-hub/learn-ai/prompting-101/index.html", "Prompting 101 — Flow Corner Learning Hub",
+     "A practical, no-jargon guide to getting genuinely useful results from AI chat tools.",
+     "/learning-hub/", article_prompting_101, ""),
+    ("learning-hub/learn-ai/free-ai-tools/index.html", "Free AI Tools Worth Trying — Flow Corner Learning Hub",
+     "A grounded, no-hype tour of genuinely useful free AI tools, organised by what you're trying to do.",
+     "/learning-hub/", article_free_ai_tools, ""),
+    ("learning-hub/learn-ai/ai-for-cv-linkedin/index.html", "Using AI to Sharpen Your CV & LinkedIn — Flow Corner Learning Hub",
+     "How to use AI as a drafting assistant for your CV and LinkedIn — without losing your own voice.",
+     "/learning-hub/", article_ai_for_cv, ""),
 ]
 
 if __name__ == "__main__":
