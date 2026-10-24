@@ -725,3 +725,110 @@
     .founding-item { flex-wrap: wrap; gap: 0.4rem; }
     .stats-row { grid-template-columns: 1fr; }
   }
+
+  /* ===================================================================
+     START A BUSINESS SECTION + SHARED ADDITIONS
+     (All overrides sit AFTER their base rules: equal-specificity cascade.)
+     =================================================================== */
+
+  /* Skip link (keyboard / screen-reader users) */
+  .skip-link {
+    position: absolute; left: -9999px; top: 0; z-index: 2000;
+    background: var(--yellow); color: var(--navy); font-weight: 700; font-size: 0.9rem;
+    padding: 0.7rem 1.2rem; border-radius: 0 0 var(--radius-md) 0; text-decoration: none;
+  }
+  .skip-link:focus { left: 0; }
+  .mobile-nav-close svg { display: block; }
+  .inline-star { color: var(--pink-deep); vertical-align: -1px; margin-right: 0.3rem; }
+
+  /* Article: links, sub-headings, anchors */
+  .article-body a { color: #C42E68; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+  .article-body a:hover { color: var(--navy); }
+  .article-body h2[id] { scroll-margin-top: 6rem; }
+  .article-body h3 {
+    font-family: 'Baloo 2', sans-serif; font-size: 1.2rem; font-weight: 800; color: var(--navy);
+    margin: 2rem 0 0.6rem;
+  }
+
+  /* Article: numbered step list */
+  .article-body ol.step-list { list-style: none; margin: 0 0 1.5rem; padding: 0; counter-reset: step; }
+  .article-body ol.step-list > li { counter-increment: step; position: relative; padding-left: 3rem; margin-bottom: 1rem; }
+  .article-body ol.step-list > li::before {
+    content: counter(step); position: absolute; left: 0; top: 0.1rem;
+    width: 2rem; height: 2rem; border-radius: 50%; background: var(--pink); color: var(--navy);
+    font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 1rem;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  /* Article: callout box */
+  .callout {
+    background: var(--pink-pale); border-left: 5px solid var(--pink); border-radius: var(--radius-md);
+    padding: 1.3rem 1.5rem; margin: 0 0 2rem;
+  }
+  .callout-title { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 1.05rem; color: var(--navy); margin-bottom: 0.4rem; }
+  .callout-title:not(:first-child) { margin-top: 1.1rem; }
+  .article-body .callout p, .article-body .callout li { font-size: 0.93rem; line-height: 1.7; margin-bottom: 0.4rem; }
+  .article-body .callout ul { margin-bottom: 0; }
+
+  /* Article: table of contents */
+  .toc { background: var(--off-white); border: 1px solid rgba(15,32,68,0.08); border-radius: var(--radius-lg); padding: 1.4rem 1.6rem; margin: 0 0 2rem; }
+  .toc-title { font-family: 'Baloo 2', sans-serif; font-weight: 800; color: var(--navy); margin-bottom: 0.6rem; }
+  .article-body .toc ol { margin: 0 0 0 1.2rem; columns: 2; column-gap: 2rem; }
+  .article-body .toc li { font-size: 0.92rem; margin-bottom: 0.4rem; break-inside: avoid; }
+  .article-body .toc a { text-decoration: none; }
+  .article-body .toc a:hover { text-decoration: underline; }
+
+  /* Article: tables (scroll sideways inside the wrapper on small screens) */
+  .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0 0 1.8rem; border: 1px solid rgba(15,32,68,0.1); border-radius: var(--radius-md); }
+  .article-body table { border-collapse: collapse; width: 100%; min-width: 640px; font-size: 0.86rem; }
+  .article-body th {
+    background: var(--navy); color: var(--white); text-align: left; padding: 0.8rem 1rem;
+    font-family: 'Baloo 2', sans-serif; font-size: 0.85rem; font-weight: 700; white-space: nowrap;
+  }
+  .article-body td { padding: 0.85rem 1rem; vertical-align: top; border-top: 1px solid rgba(15,32,68,0.08); line-height: 1.6; color: var(--charcoal); }
+  .article-body tbody tr:nth-child(even) td { background: var(--off-white); }
+
+  .table-hint { display: none; font-size: 0.78rem; font-style: italic; color: rgba(50,44,69,0.65); margin: -0.4rem 0 0.5rem; }
+  .article-body table.funding-table { min-width: 880px; }
+  .article-body .funding-table td:nth-child(1) { width: 20%; }
+  .article-body .funding-table td:nth-child(2) { width: 22%; }
+  .article-body .funding-table td:nth-child(3) { width: 12%; }
+  .article-body .funding-table td:nth-child(4) { width: 46%; }
+
+  /* Learning Hub: 5th card spans the grid */
+  .hub-grid .hub-card-wide { grid-column: 1 / -1; background: var(--navy); border-color: var(--navy); }
+  .hub-card-wide .explore-icon { background: var(--pink); color: var(--navy); }
+  .hub-card-wide .hub-card-title { color: var(--white); }
+  .hub-card-wide .hub-card-desc { color: rgba(255,255,255,0.78); max-width: 760px; }
+  .hub-card-wide .hub-card-arrow { color: var(--pink); }
+
+  /* Services: Business Start-Up Support panel */
+  .biz-support { background: var(--off-white); padding: 4rem 5%; }
+  .biz-support-inner {
+    max-width: 960px; margin: 0 auto; background: var(--navy); border-radius: var(--radius-xl);
+    padding: 2.6rem; display: flex; gap: 2rem; align-items: flex-start;
+  }
+  .biz-support-icon {
+    flex-shrink: 0; width: 64px; height: 64px; border-radius: var(--radius-md);
+    background: var(--pink); color: var(--navy); display: flex; align-items: center; justify-content: center;
+  }
+  .biz-support-icon svg { width: 32px; height: 32px; }
+  .biz-support .extra-services-label { color: var(--pink); margin-bottom: 0.3rem; text-align: left; justify-content: flex-start; }
+  .biz-support h2 { font-family: 'Baloo 2', sans-serif; color: var(--white); font-size: 1.8rem; font-weight: 800; line-height: 1.15; margin: 0.2rem 0 0.8rem; text-align: left; }
+  .biz-support p { color: rgba(255,255,255,0.78); font-size: 0.95rem; line-height: 1.75; margin-bottom: 1rem; }
+  .biz-support ul { margin: 0 0 1.2rem 1.2rem; }
+  .biz-support li { color: rgba(255,255,255,0.88); font-size: 0.93rem; line-height: 1.7; margin-bottom: 0.3rem; }
+  .biz-support li::marker { color: var(--pink); }
+  .biz-support .biz-note strong { color: var(--yellow); }
+  .biz-support-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+  @media (max-width: 900px) {
+    .table-hint { display: block; }
+    .biz-support { padding: 3rem 5%; }
+    .biz-support-inner { flex-direction: column; padding: 1.8rem; gap: 1.2rem; }
+  }
+  @media (max-width: 560px) {
+    .article-body .toc ol { columns: 1; }
+    .article-body h3 { font-size: 1.1rem; }
+    .callout { padding: 1.1rem 1.1rem; }
+  }

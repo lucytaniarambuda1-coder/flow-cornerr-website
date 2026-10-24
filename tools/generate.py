@@ -13,7 +13,8 @@ import os
 import sys
 
 sys.path.insert(0, os.path.dirname(__file__))
-from site_template import page  # noqa: E402
+from site_template import page, SITE_URL  # noqa: E402
+import business_pages as biz  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -29,6 +30,7 @@ ICON = {
     "zap": '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>',
     "star": '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>',
     "compass": '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>',
+    "rocket": '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>',
     "upload": '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14.9A5 5 0 0 1 6 5.3 6.5 6.5 0 0 1 19 8a4.5 4.5 0 0 1-1 8.9"/><path d="M12 12v9"/><path d="m8 16 4-4 4 4"/></svg>',
 }
 
@@ -62,7 +64,7 @@ home_body = f'''<!-- HERO -->
       </div>
       <div class="hero-card">
         <div class="label">Learning Hub</div>
-        <div class="value" style="font-size:1.1rem;">AI · Jobs · Careers</div>
+        <div class="value" style="font-size:1.1rem;">AI · Jobs · Business</div>
         <div class="sub">Curated & Growing</div>
       </div>
     </div>
@@ -83,7 +85,7 @@ home_body = f'''<!-- HERO -->
     <a href="/learning-hub/" class="explore-card reveal">
       <div class="explore-icon">{ICON['book']}</div>
       <div class="explore-title">Learning Hub</div>
-      <div class="explore-desc">Free AI tools, curated resources, and a CV check — the best place to start.</div>
+      <div class="explore-desc">Free AI tools, job-search resources, a CV check and a business start-up guide — the best place to start.</div>
       <span class="explore-arrow">Start here →</span>
     </a>
     <a href="/services/" class="explore-card reveal">
@@ -112,7 +114,7 @@ home_body = f'''<!-- HERO -->
   <h2 class="reveal">Your career should feel<br>like <em>flow.</em></h2>
   <p class="reveal">Stop being overlooked. Your skills are real — let's make sure the world can see them. Book your free 15-minute discovery call today.</p>
   <div class="cta-btns reveal">
-    <a href="mailto:hello@lucymukhethwa.co.za" class="btn-pink">Book My Free Call</a>
+    <a href="/contact/" class="btn-pink">Book My Free Call</a>
     <a href="https://wa.me/27832610754?text=Hi%20Lucy%2C%20I%20would%20like%20to%20enquire%20about%20your%20services" class="btn-whatsapp" target="_blank" rel="noopener">{WHATSAPP_SVG}Chat on WhatsApp</a>
   </div>
 </section>'''
@@ -219,13 +221,14 @@ how_body = '''<div class="page-header">
     <a href="/learning-hub/free-assessment/" class="btn-secondary" style="display:inline-block;">Take Free Assessment First →</a>
   </div>
   <p style="text-align:center; margin-top:1.3rem; font-size:0.85rem; color:var(--charcoal);">Not ready to book? <a href="/learning-hub/cv-check/" style="color:var(--pink-deep); font-weight:700;">Try the free CV Check</a> first.</p>
+  <p style="text-align:center; margin-top:0.6rem; font-size:0.85rem; color:var(--charcoal);">Starting a business instead of looking for a job? The same three steps apply. <a href="/learning-hub/start-a-business/" style="color:var(--pink-deep); font-weight:700;">Start with our free guide</a>.</p>
 </section>'''
 
 # ============================================================== SERVICES
 services_body = '''<div class="page-header">
   <div class="section-label">Services</div>
   <h1>How I can <em>help you</em></h1>
-  <p>Straightforward, ATS-aware career support — priced for the professionals it's built for.</p>
+  <p>Straightforward, ATS-aware career support, and a helping hand if you're starting your own business.</p>
 </div>
 
 <section class="services">
@@ -250,6 +253,29 @@ services_body = '''<div class="page-header">
     </div>
   </div>
   <p style="text-align:center; margin-top:2rem; font-size:0.88rem; color:var(--charcoal);">Not ready to book? <a href="/learning-hub/cv-check/" style="color:var(--pink-deep); font-weight:700;">Try our free CV Check</a> first — it's instant and it's free.</p>
+</section>
+
+<!-- BUSINESS START-UP SUPPORT -->
+<section class="biz-support">
+  <div class="biz-support-inner reveal">
+    <div class="biz-support-icon">@@ROCKET@@</div>
+    <div class="biz-support-text">
+      <div class="extra-services-label">For Entrepreneurs</div>
+      <h2>Business Start-Up Support</h2>
+      <p>Thinking of starting your own business? I'll walk with you from idea to first customer: testing the idea, choosing a structure, getting registered, and getting ready to apply for funding.</p>
+      <ul>
+        <li>Idea check and a simple business plan</li>
+        <li>Choosing a structure and getting registered (CIPC and SARS)</li>
+        <li>Funding-readiness: your plan, pitch and documents</li>
+        <li>Planning your first customers and first 90 days</li>
+      </ul>
+      <p class="biz-note"><strong>Free intro call, then a quote</strong> based on what you need. I'm a career strategist, not an accountant or attorney, so for tax and legal advice I'll point you to the right people.</p>
+      <div class="biz-support-btns">
+        <a href="https://wa.me/27832610754?text=Hi%20Lucy%2C%20I%27d%20like%20help%20starting%20a%20business" class="btn-pink" target="_blank" rel="noopener">Book a Free Intro Call</a>
+        <a href="/learning-hub/start-a-business/" class="btn-secondary" style="border-color: rgba(255,111,165,0.5); color:var(--pink);">Read the Free Guides</a>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- ALSO AVAILABLE -->
@@ -294,9 +320,9 @@ services_body = '''<div class="page-header">
     <p class="reveal">I'm currently taking on <strong>3 founding clients</strong> at a significantly reduced rate — in exchange for an honest, detailed testimonial once we've worked together.</p>
     <p class="reveal">You get professional career support at a fraction of the normal price, and I get a genuine testimonial to build on.</p>
     <div class="founding-what reveal" style="background: var(--white);">
-      <div class="founding-item"><span>✦ CV Revamp</span><span class="founding-price"><strong>R150</strong> <s>R300</s></span></div>
-      <div class="founding-item"><span>✦ LinkedIn Revamp</span><span class="founding-price"><strong>R175</strong> <s>R350</s></span></div>
-      <div class="founding-item"><span>✦ Career Roadmap</span><span class="founding-price"><strong>R250</strong> <s>R500</s></span></div>
+      <div class="founding-item"><span><svg class="inline-star" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> CV Revamp</span><span class="founding-price"><strong>R150</strong> <s>R300</s></span></div>
+      <div class="founding-item"><span><svg class="inline-star" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> LinkedIn Revamp</span><span class="founding-price"><strong>R175</strong> <s>R350</s></span></div>
+      <div class="founding-item"><span><svg class="inline-star" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Career Roadmap</span><span class="founding-price"><strong>R250</strong> <s>R500</s></span></div>
       <p style="font-size:0.82rem; color:rgba(15,32,68,0.5); margin-top:0.9rem; text-align:left;">Each service includes one full delivery + one revision round. Once complete, I'll follow up with a short testimonial request.</p>
     </div>
     <p class="founding-note reveal">Only 3 spots available. First come, first served.</p>
@@ -419,7 +445,7 @@ contact_body = '''<div class="page-header">
   <h2 class="reveal">Book your free 15-minute<br>discovery call <em>today.</em></h2>
   <p class="reveal">Prefer WhatsApp? Message me directly and I'll respond within 24 hours.</p>
   <div class="cta-btns reveal">
-    <a href="mailto:hello@lucymukhethwa.co.za" class="btn-pink">Book My Free Call</a>
+    <a href="https://wa.me/27832610754?text=Hi%20Lucy%2C%20I%27d%20like%20to%20book%20my%20free%2015-minute%20discovery%20call" class="btn-pink" target="_blank" rel="noopener">Book My Free Call</a>
     <a href="https://wa.me/27832610754?text=Hi%20Lucy%2C%20I%20would%20like%20to%20enquire%20about%20your%20services" class="btn-whatsapp" target="_blank" rel="noopener">''' + WHATSAPP_SVG + '''Chat on WhatsApp</a>
   </div>
 </section>
@@ -430,6 +456,17 @@ contact_body = '''<div class="page-header">
   <div class="divider reveal" style="margin-left:auto; margin-right:auto;"></div>
   <p class="reveal" style="max-width:560px; margin:0 auto 2rem; color:var(--charcoal); font-size:0.95rem; line-height:1.85;">Take a free career test first, share your result, and I'll reach out to book your call.</p>
   <a href="/learning-hub/free-assessment/" class="btn-primary reveal" style="display:inline-block;">Take Free Assessment</a>
+</section>
+
+<section class="about" style="text-align:center; background: var(--off-white);">
+  <div class="section-label reveal" style="justify-content:center; display:flex;">Starting a Business?</div>
+  <div class="section-title reveal">Let's get your idea <em>off the ground</em></div>
+  <div class="divider reveal" style="margin-left:auto; margin-right:auto;"></div>
+  <p class="reveal" style="max-width:560px; margin:0 auto 2rem; color:var(--charcoal); font-size:0.95rem; line-height:1.85;">Start with the free step-by-step guide and funding guide, or message me about Business Start-Up Support. The first call is free.</p>
+  <div class="cta-btns reveal" style="justify-content:center;">
+    <a href="/learning-hub/start-a-business/" class="btn-primary" style="display:inline-block;">Read the Free Guides</a>
+    <a href="https://wa.me/27832610754?text=Hi%20Lucy%2C%20I%27d%20like%20help%20starting%20a%20business" class="btn-secondary" style="display:inline-block;" target="_blank" rel="noopener">Ask About Start-Up Support</a>
+  </div>
 </section>'''
 
 # ============================================================== LEARNING HUB — landing
@@ -440,7 +477,7 @@ hub_body = f'''<div class="page-header">
 </div>
 
 <section class="explore">
-  <p style="max-width:680px; margin:0 auto 1rem; text-align:center; color:var(--charcoal); font-size:0.95rem; line-height:1.85;">AI is changing how people find work — from writing a standout CV to discovering roles you didn't know existed. This hub exists to make that useful for you, for free.</p>
+  <p style="max-width:680px; margin:0 auto 1rem; text-align:center; color:var(--charcoal); font-size:0.95rem; line-height:1.85;">AI is changing how people find work — from writing a standout CV to discovering roles you didn't know existed. This hub exists to make that useful for you, for free. And if you'd rather work for yourself, there's a guide for that too.</p>
   <div class="hub-grid">
     <a href="/learning-hub/learn-ai/" class="hub-card reveal">
       <div class="explore-icon">{ICON['bulb']}</div>
@@ -466,21 +503,28 @@ hub_body = f'''<div class="page-header">
       <div class="hub-card-desc">Take a free career assessment and I'll personally follow up with guidance for your situation.</div>
       <span class="hub-card-arrow">Take the test →</span>
     </a>
+    <a href="/learning-hub/start-a-business/" class="hub-card hub-card-wide reveal">
+      <div class="explore-icon">{ICON['rocket']}</div>
+      <div class="hub-card-title">Start a Business</div>
+      <div class="hub-card-desc">A step-by-step guide to starting a small business in South Africa, the funding available to youth and entrepreneurs, and the official links to get it done.</div>
+      <span class="hub-card-arrow">Start your business →</span>
+    </a>
   </div>
   <p style="text-align:center; margin-top:3rem; font-size:0.88rem; color:var(--charcoal);">Want to talk to a real person instead? <a href="/contact/" style="color:var(--pink-deep); font-weight:700;">Get in touch</a>.</p>
 </section>'''
 
 # ============================================================== LEARNING HUB — learn-ai
-def resource_card(title, desc, icon_key="bulb", href="#", placeholder=True, external=True):
-    note = '<div class="resource-placeholder-note">Link to be added — verified before launch</div>' if placeholder else ''
-    target_attr = ' target="_blank" rel="noopener"' if (not placeholder and external) else ''
+def resource_card(title, desc, icon_key="bulb", href="#", external=None, label="Read more →"):
+    """Card linking to an internal page or an external site (external links open in a new tab)."""
+    if external is None:
+        external = href.startswith("http")
+    target_attr = ' target="_blank" rel="noopener"' if external else ''
     return f'''<a href="{href}" class="resource-card reveal"{target_attr}>
       <div class="resource-icon">{ICON[icon_key]}</div>
       <div>
         <div class="resource-title">{title}</div>
         <div class="resource-desc">{desc}</div>
-        <div class="resource-link">{'Read more →' if not placeholder else 'Coming soon'}</div>
-        {note}
+        <div class="resource-link">{label}</div>
       </div>
     </a>'''
 
@@ -495,16 +539,16 @@ learn_ai_body = f'''<div class="page-header">
   <div class="hub-category-label">AI Basics</div>
   <p class="hub-category-intro">New to AI? Start here — these break down what AI actually is, without the hype.</p>
   <div class="resource-grid">
-    {resource_card("What Is AI, Really?", "A beginner-friendly explainer of what AI actually is — no jargon, no hype.", "bulb", "/learning-hub/learn-ai/what-is-ai/", False, False)}
-    {resource_card("How Tools Like ChatGPT & Claude Work", "A plain-language look at how modern AI chat tools actually work under the hood.", "zap", "/learning-hub/learn-ai/how-ai-chat-tools-work/", False, False)}
+    {resource_card("What Is AI, Really?", "A beginner-friendly explainer of what AI actually is — no jargon, no hype.", "bulb", "/learning-hub/learn-ai/what-is-ai/")}
+    {resource_card("How Tools Like ChatGPT & Claude Work", "A plain-language look at how modern AI chat tools actually work under the hood.", "zap", "/learning-hub/learn-ai/how-ai-chat-tools-work/")}
   </div>
 
   <div class="hub-category-label">Using AI Practically</div>
   <p class="hub-category-intro">Ready to put it to work? These focus on real, everyday use.</p>
   <div class="resource-grid">
-    {resource_card("Prompting 101", "A beginner's guide to getting better, more useful results from AI chat tools.", "message", "/learning-hub/learn-ai/prompting-101/", False, False)}
-    {resource_card("Free AI Tools Worth Trying", "A roundup of genuinely useful, free AI tools for everyday work and study.", "star", "/learning-hub/learn-ai/free-ai-tools/", False, False)}
-    {resource_card("Using AI to Sharpen Your CV & LinkedIn", "How to use AI as a drafting assistant — not a replacement for your own voice.", "filecheck", "/learning-hub/learn-ai/ai-for-cv-linkedin/", False, False)}
+    {resource_card("Prompting 101", "A beginner's guide to getting better, more useful results from AI chat tools.", "message", "/learning-hub/learn-ai/prompting-101/")}
+    {resource_card("Free AI Tools Worth Trying", "A roundup of genuinely useful, free AI tools for everyday work and study.", "star", "/learning-hub/learn-ai/free-ai-tools/")}
+    {resource_card("Using AI to Sharpen Your CV & LinkedIn", "How to use AI as a drafting assistant — not a replacement for your own voice.", "filecheck", "/learning-hub/learn-ai/ai-for-cv-linkedin/")}
   </div>
 
   <p style="text-align:center; margin-top:3rem; font-size:0.95rem;">Ready to see how your CV stacks up? <a href="/learning-hub/cv-check/" style="color:var(--pink-deep); font-weight:700;">Try the free CV Check →</a></p>
@@ -521,9 +565,9 @@ find_job_body = f'''<div class="page-header">
   <div class="hub-category-label">Where to Search</div>
   <p class="hub-category-intro">South African job boards and platforms worth checking regularly.</p>
   <div class="resource-grid">
-    {resource_card("LinkedIn Jobs", "One of the most active platforms for professional roles in South Africa.", "search", "https://www.linkedin.com/jobs", False)}
-    {resource_card("Indeed South Africa", "A large general job board covering roles across every industry.", "search", "https://za.indeed.com", False)}
-    {resource_card("PNet", "A long-standing, popular South African job board.", "search", "https://www.pnet.co.za", False)}
+    {resource_card("LinkedIn Jobs", "One of the most active platforms for professional roles in South Africa.", "search", "https://www.linkedin.com/jobs")}
+    {resource_card("Indeed South Africa", "A large general job board covering roles across every industry.", "search", "https://za.indeed.com")}
+    {resource_card("PNet", "A long-standing, popular South African job board.", "search", "https://www.pnet.co.za")}
   </div>
 
   <div class="hub-category-label">How to Stand Out</div>
@@ -537,8 +581,10 @@ find_job_body = f'''<div class="page-header">
         <div class="resource-link">See the service →</div>
       </div>
     </a>
-    {resource_card("Interview Prep Basics", "A solid, free starting point for common interview questions and how to answer them.", "star", "https://www.indeed.com/career-advice/interviewing/top-interview-questions-and-answers", False)}
+    {resource_card("Interview Prep Basics", "A solid, free starting point for common interview questions and how to answer them.", "star", "https://www.indeed.com/career-advice/interviewing/top-interview-questions-and-answers")}
   </div>
+
+  <p class="hub-category-intro" style="margin-top:2.5rem;">Would you rather work for yourself? <a href="/learning-hub/start-a-business/" style="color:var(--pink-deep); font-weight:700;">See our Start a Business guides</a>.</p>
 
   <div class="hub-category-label">Direct from Lucy</div>
   <p class="hub-category-intro">Prefer a more personal starting point?</p>
@@ -681,26 +727,35 @@ cv_check_body = f'''<div class="page-header">
 </section>'''
 
 # ============================================================== LEARNING HUB — AI articles
-def article_page(title, dek, body_html):
+CV_CTA_BUTTONS = '''<a href="/learning-hub/cv-check/" class="btn-pink">Try the Free CV Check</a>
+        <a href="/contact/" class="btn-secondary" style="border-color: rgba(255,111,165,0.5); color:var(--pink);">Book a Call</a>'''
+
+
+def article_page(title, dek, body_html,
+                 section_label="Learning Hub · Understand &amp; Use AI",
+                 back_href="/learning-hub/learn-ai/", back_label="← Back to Understand &amp; Use AI",
+                 byline="By Lucy Mukhethwa · AI Projects Lead &amp; Career Strategist",
+                 cta_heading="Want this applied to your own CV?",
+                 cta_text="Try the free CV Check, or book a call and we'll work through it together.",
+                 cta_buttons=CV_CTA_BUTTONS):
     return f'''<div class="page-header">
-  <div class="section-label">Learning Hub · Understand &amp; Use AI</div>
+  <div class="section-label">{section_label}</div>
   <h1>{title}</h1>
   <p>{dek}</p>
-  <p style="margin-top:0.9rem;"><a href="/learning-hub/learn-ai/" style="color:var(--pink); font-weight:700; font-style:normal;">← Back to Understand &amp; Use AI</a></p>
+  <p style="margin-top:0.9rem;"><a href="{back_href}" style="color:var(--pink); font-weight:700; font-style:normal;">{back_label}</a></p>
 </div>
 
 <section class="article">
   <div class="article-inner">
-    <div class="article-byline">By Lucy Mukhethwa · AI Projects Lead &amp; Career Strategist</div>
+    <div class="article-byline">{byline}</div>
     <div class="article-body">
 {body_html}
     </div>
     <div class="article-cta">
-      <h3 style="font-family:'Baloo 2',sans-serif; color:var(--white); font-size:1.3rem; font-weight:800; margin-bottom:0.6rem;">Want this applied to your own CV?</h3>
-      <p>Try the free CV Check, or book a call and we'll work through it together.</p>
+      <h3 style="font-family:'Baloo 2',sans-serif; color:var(--white); font-size:1.3rem; font-weight:800; margin-bottom:0.6rem;">{cta_heading}</h3>
+      <p>{cta_text}</p>
       <div class="cta-btns" style="justify-content:center;">
-        <a href="/learning-hub/cv-check/" class="btn-pink">Try the Free CV Check</a>
-        <a href="/contact/" class="btn-secondary" style="border-color: rgba(255,111,165,0.5); color:var(--pink);">Book a Call</a>
+        {cta_buttons}
       </div>
     </div>
   </div>
@@ -792,6 +847,83 @@ article_ai_for_cv = article_page(
 )
 
 # ============================================================== PAGES
+services_body = services_body.replace("@@ROCKET@@", ICON["rocket"])
+
+# ============================================================== LEARNING HUB — Start a Business
+BIZ_ARTICLE = dict(
+    section_label="Learning Hub · Start a Business",
+    back_href="/learning-hub/start-a-business/",
+    back_label="← Back to Start a Business",
+    byline="By Lucy Mukhethwa · Career Strategist · Last reviewed October 2026",
+    cta_heading="Want help with your business idea?",
+    cta_text="Business Start-Up Support: a free intro call, then a quote based on what you need.",
+    cta_buttons=f'''<a href="{biz.WA_BIZ}" class="btn-pink" target="_blank" rel="noopener">Book a Free Intro Call</a>
+        <a href="/learning-hub/start-a-business/" class="btn-secondary" style="border-color: rgba(255,111,165,0.5); color:var(--pink);">More Start-Up Guides</a>''',
+)
+
+start_business_body = f'''<div class="page-header">
+  <div class="section-label">Learning Hub</div>
+  <h1>Start a <em>Business</em></h1>
+  <p>Step-by-step guides, funding options and official links for anyone in South Africa who wants to start a small business.</p>
+</div>
+
+<section class="explore">
+  <p style="max-width:680px; margin:0 auto 1rem; text-align:center; color:var(--charcoal); font-size:0.95rem; line-height:1.85;">Starting a business is exciting, and confusing. These free guides take you from idea to first customer, with the funding that exists for young people and entrepreneurs, and the official places where each step happens. No jargon, no fees.</p>
+  <div class="hub-category-label">Start here</div>
+  <p class="hub-category-intro">Read them in order, or jump to what you need.</p>
+  <div class="resource-grid">
+    {resource_card("How to Start a Small Business in South Africa", "The full step-by-step guide: your idea, the right structure, registration, tax, money, customers, and what to do differently for each type of business.", "rocket", "/learning-hub/start-a-business/how-to-start-a-small-business/", label="Read the guide →")}
+    {resource_card("Funding for Youth & Entrepreneurs", "Grants, loans and free support: what each programme is for, who qualifies, how to get funding-ready, and how to avoid scams.", "star", "/learning-hub/start-a-business/funding-for-youth-and-entrepreneurs/", label="Read the funding guide →")}
+    {resource_card("Useful Links", "Every official site you will need, in one place: registration, tax, free advice, funding, tenders and permits.", "compass", "/learning-hub/start-a-business/useful-links/", label="See the links →")}
+    {resource_card("Not sure what business suits you?", "Start with the free career assessment: it helps you see your strengths and what to build on.", "message", "/learning-hub/free-assessment/", label="Take the free test →")}
+  </div>
+</section>
+
+<section class="cta">
+  <h2 class="reveal">Want someone in your corner<br>while you <em>build it?</em></h2>
+  <p class="reveal">Business Start-Up Support: a free intro call, then a quote based on what you need. I'll help you plan, prepare, and find the right official support.</p>
+  <div class="cta-btns reveal">
+    <a href="{biz.WA_BIZ}" class="btn-pink" target="_blank" rel="noopener">Book a Free Intro Call</a>
+    <a href="/services/" class="btn-secondary" style="border-color: rgba(255,111,165,0.5); color:var(--pink);">See All Services</a>
+  </div>
+</section>'''
+
+article_how_to_start = article_page(
+    "How to Start a Small Business in South Africa",
+    "The full step-by-step guide: from idea to first customer, for every kind of business.",
+    biz.guide_body(), **BIZ_ARTICLE)
+
+article_funding = article_page(
+    "Funding for Youth & Entrepreneurs",
+    "Grants, loans and free support: who qualifies, how to apply, and how to avoid scams.",
+    biz.funding_body(), **BIZ_ARTICLE)
+
+useful_links_body = f'''<div class="page-header">
+  <div class="section-label">Learning Hub · Start a Business</div>
+  <h1>Useful <em>Links</em></h1>
+  <p>The official sites you will need, in one place. Last reviewed October 2026.</p>
+  <p style="margin-top:0.9rem;"><a href="/learning-hub/start-a-business/" style="color:var(--pink); font-weight:700; font-style:normal;">← Back to Start a Business</a></p>
+</div>
+
+<section class="explore">
+  <p style="max-width:680px; margin:0 auto 1.5rem; text-align:center; color:var(--charcoal); font-size:0.95rem; line-height:1.85;">These are the official pages behind our guides. Funding programmes, fees and deadlines change, so always read the current details on each site. Applying to government funders is free: never pay anyone to apply for you.</p>
+{biz.links_sections(resource_card)}
+  <p style="text-align:center; margin-top:3rem; font-size:0.88rem; color:var(--charcoal);">Missing a link, or found one that no longer works? <a href="/contact/" style="color:var(--pink-deep); font-weight:700;">Let me know</a>.</p>
+</section>'''
+
+not_found_body = '''<div class="page-header">
+  <div class="section-label">404</div>
+  <h1>Page not <em>found</em></h1>
+  <p>That page has moved or doesn't exist. Let's get you back on track.</p>
+</div>
+
+<section class="cta" style="padding-top: 4rem;">
+  <div class="cta-btns">
+    <a href="/" class="btn-pink">Go to Home</a>
+    <a href="/learning-hub/" class="btn-secondary" style="border-color: rgba(255,111,165,0.5); color:var(--pink);">Visit the Learning Hub</a>
+  </div>
+</section>'''
+
 PAGES = [
     ("index.html", "Flow Corner — Free AI Career Tools & Guidance",
      "A free platform helping South Africans find career direction with AI-powered tools, a Learning Hub, and real guidance from career strategist Lucy Mukhethwa.",
@@ -841,12 +973,47 @@ PAGES = [
     ("learning-hub/learn-ai/ai-for-cv-linkedin/index.html", "Using AI to Sharpen Your CV & LinkedIn — Flow Corner Learning Hub",
      "How to use AI as a drafting assistant for your CV and LinkedIn — without losing your own voice.",
      "/learning-hub/", article_ai_for_cv, ""),
+    ("learning-hub/start-a-business/index.html", "Start a Business — Flow Corner Learning Hub",
+     "Free guides, funding options and official links for anyone in South Africa starting a small business.",
+     "/learning-hub/", start_business_body, ""),
+    ("learning-hub/start-a-business/how-to-start-a-small-business/index.html", "How to Start a Small Business in South Africa — Flow Corner",
+     "A step-by-step guide to starting a small business in South Africa: idea, structure, CIPC and SARS registration, money, customers and permits.",
+     "/learning-hub/", article_how_to_start, ""),
+    ("learning-hub/start-a-business/funding-for-youth-and-entrepreneurs/index.html", "Funding for Youth & Entrepreneurs in South Africa — Flow Corner",
+     "NYDA, sefa, NEF, GEP and more: what each funder offers, who qualifies, how to get funding-ready and how to avoid scams.",
+     "/learning-hub/", article_funding, ""),
+    ("learning-hub/start-a-business/useful-links/index.html", "Start a Business: Useful Links — Flow Corner",
+     "Official South African links for registering a business, tax, free advice, funding, tenders and permits.",
+     "/learning-hub/", useful_links_body, ""),
 ]
+
+# Pages generated but not listed in the sitemap
+EXTRA_PAGES = [
+    ("404.html", "Page not found — Flow Corner", "This page doesn't exist. Head back to the Flow Corner home page or Learning Hub.",
+     None, not_found_body, "", "noindex"),
+]
+
+def write(path, content):
+    full_path = os.path.join(ROOT, path)
+    os.makedirs(os.path.dirname(full_path), exist_ok=True)
+    with open(full_path, "w") as f:
+        f.write(content)
+    print("wrote", path)
+
 
 if __name__ == "__main__":
     for path, title, desc, active, body, extra_scripts in PAGES:
-        full_path = os.path.join(ROOT, path)
-        os.makedirs(os.path.dirname(full_path), exist_ok=True)
-        with open(full_path, "w") as f:
-            f.write(page(title, desc, active, body, extra_scripts=extra_scripts))
-        print("wrote", path)
+        write(path, page(title, desc, active, body, extra_scripts=extra_scripts, path=path))
+
+    for path, title, desc, active, body, extra_scripts, robots in EXTRA_PAGES:
+        write(path, page(title, desc, active, body, extra_scripts=extra_scripts, robots=robots))
+
+    # sitemap.xml + robots.txt are generated from PAGES so they never drift
+    from site_template import canonical_url
+    urls = "\n".join(f"  <url><loc>{canonical_url(p[0])}</loc></url>" for p in PAGES)
+    write("sitemap.xml", f'''<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{urls}
+</urlset>
+''')
+    write("robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {SITE_URL}/sitemap.xml\n")
