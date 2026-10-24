@@ -57,7 +57,7 @@ def nav(active_path):
 
 <!-- MOBILE NAV OVERLAY -->
 <div class="mobile-nav" id="mobileNav">
-  <button class="mobile-nav-close" id="mobileClose">✕</button>
+  <button class="mobile-nav-close" id="mobileClose" aria-label="Close menu"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg></button>
   <a href="/" class="mobile-link">Home</a>
 {mobile_links}
 </div>'''
@@ -103,7 +103,41 @@ SCRIPT = '''<script>
 </script>'''
 
 
-def page(title, description, active_path, body, extra_head="", extra_scripts=""):
+import html as _html
+
+SITE_URL = "https://flowcornerr.netlify.app"
+OG_IMAGE = SITE_URL + "/assets/og-image.png"
+ICON_LINK = '<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2716%27 fill=%27%230F2044%27/%3E%3Ctext x=%2732%27 y=%2745%27 font-size=%2738%27 font-weight=%27800%27 font-family=%27Arial,sans-serif%27 text-anchor=%27middle%27 fill=%27%23FF6FA5%27%3EF%3C/text%3E%3C/svg%3E">'
+
+
+def canonical_url(path):
+    """path like 'learning-hub/cv-check/index.html' -> https://.../learning-hub/cv-check/"""
+    if path in (None, "index.html"):
+        return SITE_URL + "/"
+    return SITE_URL + "/" + path[: -len("index.html")] if path.endswith("index.html") else SITE_URL + "/" + path
+
+
+def page(title, description, active_path, body, extra_head="", extra_scripts="", path=None, robots=None):
+    """path: the output path of this page (e.g. 'about/index.html'); used for the canonical + share tags."""
+    seo = ""
+    if path is not None:
+        url = canonical_url(path)
+        t_attr = _html.escape(title, quote=True)
+        d_attr = _html.escape(description, quote=True)
+        seo = f'''<link rel="canonical" href="{url}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Flow Corner">
+<meta property="og:title" content="{t_attr}">
+<meta property="og:description" content="{d_attr}">
+<meta property="og:url" content="{url}">
+<meta property="og:image" content="{OG_IMAGE}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{t_attr}">
+<meta name="twitter:description" content="{d_attr}">
+<meta name="twitter:image" content="{OG_IMAGE}">
+'''
+    if robots:
+        seo += f'<meta name="robots" content="{robots}">\n'
     return f'''<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -111,14 +145,18 @@ def page(title, description, active_path, body, extra_head="", extra_scripts="")
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{title}</title>
 <meta name="description" content="{description}">
+{seo}{ICON_LINK}
 {FONT_LINK}
 <link rel="stylesheet" href="/assets/styles.css">
 {extra_head}</head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 {nav(active_path)}
 
+<main id="main">
 {body}
+</main>
 
 {footer()}
 
