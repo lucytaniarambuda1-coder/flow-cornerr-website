@@ -241,7 +241,7 @@
     html += groupHtml('Length', checks.length);
     html += `<div class="cv-cta-box">
       <h3>Want a professional to fix this with you?</h3>
-      <p>These are automated pointers. A real CV Revamp gets it recruiter-ready, tailored to the roles you actually want.</p>
+      <p>These are automated pointers. A real CV Revamp gets it recruiter-ready, tailored to the roles you're applying for.</p>
       <div class="cta-btns">
         <a href="/services/" class="btn-pink">Book the CV Revamp (R300)</a>
         <a href="https://wa.me/27832610754?text=Hi%20Lucy%2C%20I%20just%20used%20the%20free%20CV%20Check%20and%20would%20like%20help" class="btn-whatsapp" target="_blank" rel="noopener">Chat on WhatsApp</a>
