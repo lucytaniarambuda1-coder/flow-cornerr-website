@@ -848,3 +848,29 @@
     .article-body h3 { font-size: 1.1rem; }
     .callout { padding: 1.1rem 1.1rem; }
   }
+
+  /* LUCY'S PHOTO (home hero + About) */
+  .hero-photo {
+    position: relative; margin: 0;
+    border-radius: var(--radius-xl); overflow: hidden;
+    border: 1px solid rgba(255,111,165,0.3);
+    box-shadow: 0 30px 70px rgba(0,0,0,0.35);
+    max-width: 420px; width: 100%; align-self: center;
+  }
+  .hero-photo img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
+  .hero-photo figcaption {
+    position: absolute; left: 1rem; right: 1rem; bottom: 1rem;
+    background: rgba(15,32,68,0.82); backdrop-filter: blur(10px);
+    border-radius: var(--radius-md); padding: 0.75rem 1rem;
+    color: rgba(255,255,255,0.75); font-size: 0.82rem;
+  }
+  .hero-photo figcaption strong { display: block; color: var(--white); font-family: 'Baloo 2', sans-serif; font-size: 1.05rem; }
+  .about-photo {
+    display: block; width: 100%; max-width: 440px; height: auto; aspect-ratio: 4 / 5; object-fit: cover;
+    border-radius: var(--radius-xl); margin-bottom: 1.6rem;
+    box-shadow: 0 20px 50px rgba(15,32,68,0.18);
+  }
+  @media (max-width: 900px) {
+    .hero-photo { max-width: 360px; justify-self: center; }
+    .about-photo { max-width: 360px; margin-left: auto; margin-right: auto; }
+  }
