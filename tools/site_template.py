@@ -121,7 +121,7 @@ def canonical_url(path):
     return SITE_URL + "/" + path[: -len("index.html")] if path.endswith("index.html") else SITE_URL + "/" + path
 
 
-def page(title, description, active_path, body, extra_head="", extra_scripts="", path=None, robots=None):
+def page(title, description, active_path, body, extra_head="", extra_scripts="", path=None, robots=None, og_image=None):
     """path: the output path of this page (e.g. 'about/index.html'); used for the canonical + share tags."""
     seo = ""
     if path is not None:
@@ -134,11 +134,11 @@ def page(title, description, active_path, body, extra_head="", extra_scripts="",
 <meta property="og:title" content="{t_attr}">
 <meta property="og:description" content="{d_attr}">
 <meta property="og:url" content="{url}">
-<meta property="og:image" content="{OG_IMAGE}">
+<meta property="og:image" content="{og_image or OG_IMAGE}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{t_attr}">
 <meta name="twitter:description" content="{d_attr}">
-<meta name="twitter:image" content="{OG_IMAGE}">
+<meta name="twitter:image" content="{og_image or OG_IMAGE}">
 '''
     if robots:
         seo += f'<meta name="robots" content="{robots}">\n'

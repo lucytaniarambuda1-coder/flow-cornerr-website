@@ -25,7 +25,7 @@ URL = {
     "sars_small": "https://www.sars.gov.za/businesses-and-employers/small-businesses-taxpayers/",
     "sars_vat": "https://www.sars.gov.za/businesses-and-employers/small-businesses-taxpayers/small-businesses-and-vat/",
     "sars_tot": "https://www.sars.gov.za/faq/faq-what-are-the-requirements-for-a-micro-business-to-qualify-for-turnover-tax/",
-    "csd": "https://www.csd.gov.za",
+    "csd": "https://secure.csd.gov.za",
     "dtic": "https://www.thedtic.gov.za",
     "labour_guide": "https://www.labour.gov.za/DocumentCenter/Publications/Public%20Employment%20Services/Entrepreneurship_Starting%20and%20Running%20your%20own%20business_.pdf",
     "nyda_grant": "https://www.nyda.gov.za/Products-Services/NYDA-Grant-Programme.html",
