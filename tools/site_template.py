@@ -40,7 +40,7 @@ def nav(active_path):
     )
     return f'''<!-- NAV -->
 <nav>
-  <a href="/" class="nav-logo" style="text-decoration:none;">Lucy M.</a>
+  <a href="/" class="nav-logo" aria-label="Flow Corner home"><img src="/assets/logo-mark.png" alt="" width="40" height="40"><span>Flow Corner</span></a>
   <ul class="nav-links">
 {links_html}
   </ul>
@@ -49,6 +49,9 @@ def nav(active_path):
     <a href="https://www.instagram.com/flow_cornerr/" target="_blank" rel="noopener" aria-label="Instagram">{ig_svg}</a>
   </div>
 </nav>
+
+<!-- MOBILE BRAND BAR (mobile only) -->
+<a href="/" class="mobile-brand" aria-label="Flow Corner home"><img src="/assets/logo-mark.png" alt="" width="36" height="36"><span>Flow Corner</span></a>
 
 <!-- HAMBURGER BUTTON (mobile only) -->
 <button class="hamburger" id="hamburger" aria-label="Open menu">
@@ -68,7 +71,7 @@ def footer():
     ig_svg = SOCIAL_SVGS["instagram"].format(size=16)
     return f'''<!-- FOOTER -->
 <footer>
-  <p><strong>Lucy Mukhethwa | Flow Corner</strong> — Career Strategist & Coach</p>
+  <p><strong>Lucy Mukhethwa | Flow Corner</strong> · Career Strategist & Coach</p>
   <p style="margin-top:0.4rem;">Based in Johannesburg, South Africa · Available for remote services globally</p>
   <div class="footer-social">
     <a href="https://www.linkedin.com/in/mukhethwa-lucytania-rambuda-836575169/" target="_blank" rel="noopener" aria-label="LinkedIn">{li_svg}</a>
@@ -107,7 +110,8 @@ import html as _html
 
 SITE_URL = "https://flowcornerr.netlify.app"
 OG_IMAGE = SITE_URL + "/assets/og-image.png"
-ICON_LINK = '<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2716%27 fill=%27%230F2044%27/%3E%3Ctext x=%2732%27 y=%2745%27 font-size=%2738%27 font-weight=%27800%27 font-family=%27Arial,sans-serif%27 text-anchor=%27middle%27 fill=%27%23FF6FA5%27%3EF%3C/text%3E%3C/svg%3E">'
+ICON_LINK = '''<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">'''
 
 
 def canonical_url(path):

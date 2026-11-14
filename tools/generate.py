@@ -43,8 +43,8 @@ home_body = f'''<!-- HERO -->
   <div class="hero-text">
     <div class="hero-tag">Free AI Learning Hub · CV Check · Career Guidance</div>
     <h1>Find Your <em>Flow.</em></h1>
-    <p>You've sent the applications. You have the skills. But your CV isn't getting through, and your LinkedIn isn't showing up when it counts. <em style="color:var(--pink); font-style:normal;">That changes today.</em></p>
-    <p>This is a free space built to help you find direction — AI explained simply, real job-search resources, an instant CV check, and guidance from a real person when you're ready for it.</p>
+    <p>You've sent the applications. You have the skills. But your CV isn't getting through, and your LinkedIn isn't showing up when it counts. <em style="color:var(--pink); font-style:normal;">I can help you fix that.</em></p>
+    <p>Everything here is free: plain-English guides to AI, the South African job sites worth your time, an instant CV check, and me, when you want a real person to look at your application.</p>
     <div class="hero-btns">
       <a href="/learning-hub/cv-check/" class="btn-primary">Try the Free CV Check</a>
       <a href="/learning-hub/" class="btn-secondary">Explore Learning Hub</a>
@@ -54,7 +54,7 @@ home_body = f'''<!-- HERO -->
     <div class="hero-card">
       <div class="label">What We Do</div>
       <div class="value" style="font-size:1.25rem;">Find Your Flow</div>
-      <div class="sub">Career Clarity · Purpose · Direction</div>
+      <div class="sub">CVs, LinkedIn &amp; career plans</div>
     </div>
     <div class="stats-row">
       <div class="hero-card">
@@ -65,7 +65,7 @@ home_body = f'''<!-- HERO -->
       <div class="hero-card">
         <div class="label">Learning Hub</div>
         <div class="value" style="font-size:1.1rem;">AI · Jobs · Business</div>
-        <div class="sub">Curated & Growing</div>
+        <div class="sub">Written for South Africa</div>
       </div>
     </div>
   </div>
@@ -73,7 +73,7 @@ home_body = f'''<!-- HERO -->
 
 <!-- FLOW BRAND BAR -->
 <div class="flow-bar">
-  <p>Flow is that feeling when work stops feeling like work — when your purpose, your skills, and your career finally line up. <strong>We built this space to help you get there:</strong> free AI-powered tools, curated resources, and real guidance when you need it.</p>
+  <p>Flow is when work stops feeling like a fight: you're in a role that fits what you're good at and what you care about. <strong>Flow Corner is here to help you get there,</strong> with free tools, practical guides and one-on-one help when you need it.</p>
 </div>
 
 <!-- EXPLORE -->
@@ -85,13 +85,13 @@ home_body = f'''<!-- HERO -->
     <a href="/learning-hub/" class="explore-card reveal">
       <div class="explore-icon">{ICON['book']}</div>
       <div class="explore-title">Learning Hub</div>
-      <div class="explore-desc">Free AI tools, job-search resources, a CV check and a business start-up guide — the best place to start.</div>
+      <div class="explore-desc">Free AI tools, job-search resources, a CV check and a business start-up guide. The best place to start.</div>
       <span class="explore-arrow">Start here →</span>
     </a>
     <a href="/services/" class="explore-card reveal">
       <div class="explore-icon">{ICON['briefcase']}</div>
       <div class="explore-title">Services & Pricing</div>
-      <div class="explore-desc">CV, LinkedIn & career roadmaps — plus a limited founding-client offer.</div>
+      <div class="explore-desc">CV, LinkedIn & career roadmaps, plus a limited founding-client offer.</div>
       <span class="explore-arrow">See services →</span>
     </a>
     <a href="/about/" class="explore-card reveal">
@@ -103,7 +103,7 @@ home_body = f'''<!-- HERO -->
     <a href="/work/" class="explore-card reveal">
       <div class="explore-icon">{ICON['folder']}</div>
       <div class="explore-title">Experience & Work</div>
-      <div class="explore-desc">6+ years across BPO, HR, and career development — the highlights.</div>
+      <div class="explore-desc">What I've done in HR, BPO operations and AI projects.</div>
       <span class="explore-arrow">See the work →</span>
     </a>
   </div>
@@ -112,7 +112,7 @@ home_body = f'''<!-- HERO -->
 <!-- CTA -->
 <section class="cta">
   <h2 class="reveal">Your career should feel<br>like <em>flow.</em></h2>
-  <p class="reveal">Stop being overlooked. Your skills are real — let's make sure the world can see them. Book your free 15-minute discovery call today.</p>
+  <p class="reveal">Tell me where you're stuck. The first 15-minute call is free, and we'll work out your next step together.</p>
   <div class="cta-btns reveal">
     <a href="/contact/" class="btn-pink">Book My Free Call</a>
     <a href="https://wa.me/27832610754?text=Hi%20Lucy%2C%20I%20would%20like%20to%20enquire%20about%20your%20services" class="btn-whatsapp" target="_blank" rel="noopener">{WHATSAPP_SVG}Chat on WhatsApp</a>
@@ -122,7 +122,7 @@ home_body = f'''<!-- HERO -->
 # ============================================================== ABOUT
 about_body = f'''<div class="page-header">
   <div class="section-label">About Me</div>
-  <h1>Purpose-driven. <em>People-first.</em></h1>
+  <h1>Hi, I'm <em>Lucy.</em></h1>
   <div class="hero-tag" style="margin:0.5rem auto 1.6rem;">Career Strategist · AI Projects Lead · I&O Psychology</div>
   <div class="stats-row" style="max-width:420px; margin:0 auto 1.8rem;">
     <div class="hero-card">
@@ -133,15 +133,16 @@ about_body = f'''<div class="page-header">
     <div class="hero-card">
       <div class="label">Credentials</div>
       <div class="value" style="font-size:1.1rem;">Masters</div>
-      <div class="sub">I&O Psychology</div>
+      <div class="sub">I&amp;O Psychology (in progress)</div>
     </div>
   </div>
-  <p>"Passion. Purpose. Peace — three words that define how I show up every single day." <span style="opacity:0.6;">— Philippians 4:4</span></p>
+  <p>"Passion. Purpose. Peace." <span style="opacity:0.6;">The title of my upcoming book, and how I try to show up every day.</span></p>
 </div>
 
 <section class="about">
   <div class="about-grid">
     <div>
+      <img class="about-photo" src="/assets/lucy.jpg" srcset="/assets/lucy-480.jpg 480w, /assets/lucy.jpg 768w" sizes="220px" width="220" height="220" alt="Lucy Mukhethwa" loading="lazy">
       <div class="pillars">
         <span class="pillar">ATS-Optimised CVs</span>
         <span class="pillar">LinkedIn Strategy</span>
@@ -152,9 +153,9 @@ about_body = f'''<div class="page-header">
       </div>
     </div>
     <div class="about-text">
-      <p>I'm Lucy Mukhethwa — a South African career strategist based near Johannesburg. I currently support C-suite operations at a global BPO organisation, working directly with the COO across multi-country strategic initiatives.</p>
-      <p>My background spans HR and administration — progressing from HR Assistant through to Generalist and into my current operational leadership-support role. Alongside that, I lead AI adoption initiatives at Dash BPO — voice bots, chatbot integration, and automation strategy — giving me a hands-on, practitioner's view of how AI is reshaping modern workplaces, not just a theoretical one.</p>
-      <p>I'm also a student of Industrial &amp; Organisational Psychology, and a Christian living author completing final review ahead of publication. My mission is simple: to help people operate with more clarity, more confidence, and more impact in their careers.</p>
+      <p>I'm Lucy Mukhethwa, a South African career strategist based near Johannesburg. I currently support C-suite operations at a global BPO organisation, working directly with the COO across multi-country strategic initiatives.</p>
+      <p>My background spans HR and administration, progressing from HR Assistant through to Generalist and into my current operational leadership-support role. Alongside that, I lead AI adoption initiatives at Dash BPO (voice bots, chatbot integration and automation strategy), which gives me a hands-on, practitioner's view of how AI is reshaping modern workplaces, not just a theoretical one.</p>
+      <p>I'm also a student of Industrial &amp; Organisational Psychology, and a Christian living author completing final review ahead of publication. What I want is simple: for capable people to stop getting filtered out because of a weak CV or a LinkedIn profile nobody can find.</p>
     </div>
   </div>
 </section>
@@ -162,23 +163,23 @@ about_body = f'''<div class="page-header">
 <!-- WHY LUCY -->
 <section class="whylucy">
   <div class="section-label reveal">Why Choose Lucy</div>
-  <div class="section-title reveal">What makes this <em>different</em></div>
+  <div class="section-title reveal">What I <em>bring</em></div>
   <div class="divider reveal"></div>
   <div class="why-grid">
     <div class="why-card reveal">
       <div class="why-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/><path d="M22 10v6"/></svg></div>
-      <h3>Academic Rigour</h3>
-      <p>Currently completing a Masters in Industrial &amp; Organisational Psychology — specialising in career psychology. My coaching is grounded in validated theory, not guesswork.</p>
+      <h3>Grounded in psychology</h3>
+      <p>I'm completing a Masters in Industrial &amp; Organisational Psychology, specialising in career psychology, so the assessments and advice I use come from research, not guesswork.</p>
     </div>
     <div class="why-card reveal">
       <div class="why-icon">{ICON['briefcase']}</div>
-      <h3>C-Suite Insider Knowledge</h3>
-      <p>6+ years supporting executive leadership at a global BPO. I know exactly what decision-makers look for — and I build that into every CV, LinkedIn profile, and career plan I create.</p>
+      <h3>I've seen how executives decide</h3>
+      <p>For over six years I've worked alongside executive leadership at a global BPO. I know what decision-makers look for, and I build that into every CV, LinkedIn profile and career plan.</p>
     </div>
     <div class="why-card reveal">
       <div class="why-icon">{ICON['compass']}</div>
-      <h3>Purpose-Led, Not Just Career-Led</h3>
-      <p>I believe your career is part of a bigger story. My approach connects your professional goals to your purpose — so the work we do together has meaning beyond the job title.</p>
+      <h3>Your work, your values</h3>
+      <p>I care about where your career is going, not only the next job title. We'll connect your goals to what matters to you.</p>
     </div>
   </div>
 </section>
@@ -194,8 +195,8 @@ about_body = f'''<div class="page-header">
 # ============================================================== HOW IT WORKS
 how_body = '''<div class="page-header">
   <div class="section-label">The Process</div>
-  <h1>Three steps to your <em>next chapter</em></h1>
-  <p>A simple, guided path from "overlooked" to "in demand."</p>
+  <h1>How we'll <em>work together</em></h1>
+  <p>Three steps, from a free call to a CV and profile you're proud to send.</p>
 </div>
 
 <section class="how">
@@ -208,12 +209,12 @@ how_body = '''<div class="page-header">
     <div class="step-card reveal">
       <div class="step-number">02</div>
       <div class="step-title">We Build Your Strategy</div>
-      <div class="step-desc">CV, LinkedIn, career roadmap — or all three. I craft a tailored approach that positions you powerfully for the opportunities you actually want.</div>
+      <div class="step-desc">CV, LinkedIn, career roadmap, or all three. I rework them around the specific roles you're applying for, not a one-size-fits-all template.</div>
     </div>
     <div class="step-card reveal">
       <div class="step-number">03</div>
       <div class="step-title">You Show Up Differently</div>
-      <div class="step-desc">Armed with a compelling story, a professional presence, and a clear direction — you stop being overlooked and start attracting the right doors.</div>
+      <div class="step-desc">You apply with a CV that shows your results, a LinkedIn profile recruiters can find, and a clear idea of what you're aiming for.</div>
     </div>
   </div>
   <div style="text-align:center; margin-top:2.5rem; display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
@@ -236,13 +237,13 @@ services_body = '''<div class="page-header">
     <div class="service-card reveal">
       <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></div>
       <div class="service-title">LinkedIn Profile Revamp</div>
-      <div class="service-desc">I rewrite your headline, summary, and experience using strategic keywords that attract recruiters and the right opportunities.</div>
+      <div class="service-desc">I rewrite your headline, summary, and experience using the keywords recruiters in your field actually search for.</div>
       <div class="service-price">Starting from R350</div>
     </div>
     <div class="service-card reveal">
       <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M9 13h6"/><path d="M9 17h6"/></svg></div>
       <div class="service-title">CV Revamp</div>
-      <div class="service-desc">A professionally restructured, ATS-friendly CV that positions you for the roles you actually want — tailored to your industry and career level.</div>
+      <div class="service-desc">I restructure your CV so it gets through applicant tracking systems and reads well to a person, tailored to your industry and level.</div>
       <div class="service-price">Starting from R300</div>
     </div>
     <div class="service-card reveal">
@@ -252,7 +253,7 @@ services_body = '''<div class="page-header">
       <div class="service-price">Starting from R500</div>
     </div>
   </div>
-  <p style="text-align:center; margin-top:2rem; font-size:0.88rem; color:var(--charcoal);">Not ready to book? <a href="/learning-hub/cv-check/" style="color:var(--pink-deep); font-weight:700;">Try our free CV Check</a> first — it's instant and it's free.</p>
+  <p style="text-align:center; margin-top:2rem; font-size:0.88rem; color:var(--charcoal);">Not ready to book? <a href="/learning-hub/cv-check/" style="color:var(--pink-deep); font-weight:700;">Try our free CV Check</a> first. It's instant and it's free.</p>
 </section>
 
 <!-- BUSINESS START-UP SUPPORT -->
@@ -314,11 +315,11 @@ services_body = '''<div class="page-header">
 <!-- FOUNDING CLIENTS -->
 <section class="founding" style="background: var(--off-white);">
   <div class="section-label reveal">Founding Clients</div>
-  <div class="section-title reveal">Be part of the <em>beginning</em></div>
+  <div class="section-title reveal">Founding client <em>rates</em></div>
   <div class="divider reveal"></div>
   <div class="founding-content">
-    <p class="reveal">I'm currently taking on <strong>3 founding clients</strong> at a significantly reduced rate — in exchange for an honest, detailed testimonial once we've worked together.</p>
-    <p class="reveal">You get professional career support at a fraction of the normal price, and I get a genuine testimonial to build on.</p>
+    <p class="reveal">I'm currently taking on <strong>3 founding clients</strong> at a significantly reduced rate, in exchange for an honest, detailed testimonial once we've worked together.</p>
+    <p class="reveal">You get professional career support at a fraction of the normal price, and I get a testimonial to build on.</p>
     <div class="founding-what reveal" style="background: var(--white);">
       <div class="founding-item"><span><svg class="inline-star" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> CV Revamp</span><span class="founding-price"><strong>R150</strong> <s>R300</s></span></div>
       <div class="founding-item"><span><svg class="inline-star" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> LinkedIn Revamp</span><span class="founding-price"><strong>R175</strong> <s>R350</s></span></div>
@@ -333,7 +334,7 @@ services_body = '''<div class="page-header">
 # ============================================================== WORK
 work_body = f'''<div class="page-header">
   <div class="section-label">Professional Experience</div>
-  <h1>Where I've <em>made an impact</em></h1>
+  <h1>Where I've <em>worked</em></h1>
   <p>6+ years across BPO, HR, and career development.</p>
 </div>
 
@@ -353,7 +354,7 @@ work_body = f'''<div class="page-header">
     <div class="exp-card reveal">
       <div class="exp-role">HR Professional</div>
       <div class="exp-area">HR Assistant → Generalist → Coordinator</div>
-      <div class="exp-desc">Progressive HR career spanning employee relations, policy development, onboarding design, workforce engagement, and compliance — building a strong foundation in people operations across multiple industries.</div>
+      <div class="exp-desc">Progressive HR career spanning employee relations, policy development, onboarding design, workforce engagement, and compliance, building a strong foundation in people operations across multiple industries.</div>
       <div class="exp-tags">
         <span class="exp-tag">HR Operations</span>
         <span class="exp-tag">Policy Development</span>
@@ -364,7 +365,7 @@ work_body = f'''<div class="page-header">
     <div class="exp-card reveal">
       <div class="exp-role">AI Projects Lead</div>
       <div class="exp-area">Dash BPO · AI Adoption & Automation</div>
-      <div class="exp-desc">Leading AI adoption initiatives within a contact-centre environment — voice bot deployment, chatbot integration, and automation strategy — alongside hands-on use of ChatGPT, Claude, Perplexity, NotebookLM, and Gemini to enhance operational and administrative efficiency.</div>
+      <div class="exp-desc">Leading AI adoption initiatives within a contact-centre environment (voice bot deployment, chatbot integration and automation strategy), alongside hands-on use of ChatGPT, Claude, Perplexity, NotebookLM, and Gemini to enhance operational and administrative efficiency.</div>
       <div class="exp-tags">
         <span class="exp-tag">AI Strategy</span>
         <span class="exp-tag">ChatGPT</span>
@@ -391,7 +392,7 @@ work_body = f'''<div class="page-header">
   <div class="section-label reveal">Experience Highlights</div>
   <div class="section-title reveal" style="color:var(--white);">Work I've <em>been part of</em></div>
   <div class="divider reveal"></div>
-  <p class="reveal" style="text-align:center; color:rgba(255,255,255,0.6); font-size:0.9rem; max-width:580px; margin:0 auto 2.5rem; line-height:1.8;">Drawn from 6+ years across BPO, HR, and career development — highlights of what I've contributed and built.</p>
+  <p class="reveal" style="text-align:center; color:rgba(255,255,255,0.6); font-size:0.9rem; max-width:580px; margin:0 auto 2.5rem; line-height:1.8;">A few projects I'm proud of from my HR and BPO roles.</p>
   <div class="portfolio-grid">
     <div class="port-card reveal">
       <div class="port-icon">{ICON['filecheck']}</div>
@@ -401,7 +402,7 @@ work_body = f'''<div class="page-header">
     <div class="port-card reveal">
       <div class="port-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15 15 0 0 1 0 20a15 15 0 0 1 0-20"/></svg></div>
       <div class="port-title">Global Expansion Support</div>
-      <div class="port-desc">Supported multi-country office and operational expansion — from research and cost analysis through to stakeholder coordination and documentation.</div>
+      <div class="port-desc">Supported multi-country office and operational expansion, from research and cost analysis through to stakeholder coordination and documentation.</div>
     </div>
     <div class="port-card reveal">
       <div class="port-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/></svg></div>
@@ -411,7 +412,7 @@ work_body = f'''<div class="page-header">
     <div class="port-card reveal">
       <div class="port-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></div>
       <div class="port-title">Brand & Digital Asset Development</div>
-      <div class="port-desc">Designed professional brand books, presentations, and digital collateral — maintaining visual consistency and quality across organisational deliverables.</div>
+      <div class="port-desc">Designed professional brand books, presentations, and digital collateral, maintaining visual consistency and quality across organisational deliverables.</div>
     </div>
     <div class="port-card reveal">
       <div class="port-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg></div>
@@ -420,8 +421,8 @@ work_body = f'''<div class="page-header">
     </div>
     <div class="port-card reveal">
       <div class="port-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
-      <div class="port-title">Book — Coming Soon</div>
-      <div class="port-desc">Authored a Christian living book end-to-end — from manuscript to cover design and editorial review. Currently under final review ahead of publication. Title: Passion. Purpose. Peace. — Becoming Whole in Christ.</div>
+      <div class="port-title">Book: Coming Soon</div>
+      <div class="port-desc">Authored a Christian living book end-to-end, from manuscript to cover design and editorial review. Currently under final review ahead of publication. Title: <em>Passion. Purpose. Peace: Becoming Whole in Christ</em>.</div>
     </div>
   </div>
 </section>
@@ -438,7 +439,7 @@ work_body = f'''<div class="page-header">
 contact_body = '''<div class="page-header">
   <div class="section-label">Contact</div>
   <h1>Let's talk <em>flow.</em></h1>
-  <p>Stop being overlooked. Your skills are real — let's make sure the world can see them.</p>
+  <p>Tell me where you're stuck, and we'll work out the next step together.</p>
 </div>
 
 <section class="cta" style="padding-top: 5rem;">
@@ -473,28 +474,28 @@ contact_body = '''<div class="page-header">
 hub_body = f'''<div class="page-header">
   <div class="section-label">Learning Hub</div>
   <h1>Your Free <em>Career Toolkit</em></h1>
-  <p>AI explained simply, real job-search resources, and tools to help you move forward — free, no sign-up required.</p>
+  <p>AI explained simply, real job-search resources, and tools to help you move forward. Free, no sign-up required.</p>
 </div>
 
 <section class="explore">
-  <p style="max-width:680px; margin:0 auto 1rem; text-align:center; color:var(--charcoal); font-size:0.95rem; line-height:1.85;">AI is changing how people find work — from writing a standout CV to discovering roles you didn't know existed. This hub exists to make that useful for you, for free. And if you'd rather work for yourself, there's a guide for that too.</p>
+  <p style="max-width:680px; margin:0 auto 1rem; text-align:center; color:var(--charcoal); font-size:0.95rem; line-height:1.85;">AI is changing how people find work, from writing a standout CV to discovering roles you didn't know existed. This hub exists to make that useful for you, for free. And if you'd rather work for yourself, there's a guide for that too.</p>
   <div class="hub-grid">
     <a href="/learning-hub/learn-ai/" class="hub-card reveal">
       <div class="explore-icon">{ICON['bulb']}</div>
       <div class="hub-card-title">Understand & Use AI</div>
-      <div class="hub-card-desc">What AI actually is, and how to use it to write better, work smarter, and stand out — no jargon.</div>
+      <div class="hub-card-desc">What AI is, and how to use it for your CV, applications and everyday work.</div>
       <span class="hub-card-arrow">Start learning →</span>
     </a>
     <a href="/learning-hub/find-a-job/" class="hub-card reveal">
       <div class="explore-icon">{ICON['search']}</div>
       <div class="hub-card-title">Find a Job</div>
-      <div class="hub-card-desc">Where South African job-seekers actually find roles, plus how to stand out once you do.</div>
+      <div class="hub-card-desc">Where South African job-seekers find roles, plus how to stand out once you do.</div>
       <span class="hub-card-arrow">Start searching →</span>
     </a>
     <a href="/learning-hub/cv-check/" class="hub-card reveal">
       <div class="explore-icon">{ICON['filecheck']}</div>
       <div class="hub-card-title">Check Your CV Instantly</div>
-      <div class="hub-card-desc">Paste or upload your CV and get instant, free pointers — nothing leaves your browser.</div>
+      <div class="hub-card-desc">Paste or upload your CV and get instant, free pointers. Nothing leaves your browser.</div>
       <span class="hub-card-arrow">Check my CV →</span>
     </a>
     <a href="/learning-hub/free-assessment/" class="hub-card reveal">
@@ -532,23 +533,23 @@ def resource_card(title, desc, icon_key="bulb", href="#", external=None, label="
 learn_ai_body = f'''<div class="page-header">
   <div class="section-label">Learning Hub</div>
   <h1>Understand & Use <em>AI</em></h1>
-  <p>No jargon — just what AI actually is, and how to put it to work for your career.</p>
+  <p>What AI is, in plain English, and how to use it for your career.</p>
 </div>
 
 <section class="explore">
   <div class="hub-category-label">AI Basics</div>
-  <p class="hub-category-intro">New to AI? Start here — these break down what AI actually is, without the hype.</p>
+  <p class="hub-category-intro">New to AI? Start here.</p>
   <div class="resource-grid">
-    {resource_card("What Is AI, Really?", "A beginner-friendly explainer of what AI actually is — no jargon, no hype.", "bulb", "/learning-hub/learn-ai/what-is-ai/")}
-    {resource_card("How Tools Like ChatGPT & Claude Work", "A plain-language look at how modern AI chat tools actually work under the hood.", "zap", "/learning-hub/learn-ai/how-ai-chat-tools-work/")}
+    {resource_card("What Is AI, Really?", "A beginner's explainer: what AI is, and what it isn't.", "bulb", "/learning-hub/learn-ai/what-is-ai/")}
+    {resource_card("How Tools Like ChatGPT & Claude Work", "A plain-language look at how AI chat tools work under the hood.", "zap", "/learning-hub/learn-ai/how-ai-chat-tools-work/")}
   </div>
 
   <div class="hub-category-label">Using AI Practically</div>
   <p class="hub-category-intro">Ready to put it to work? These focus on real, everyday use.</p>
   <div class="resource-grid">
     {resource_card("Prompting 101", "A beginner's guide to getting better, more useful results from AI chat tools.", "message", "/learning-hub/learn-ai/prompting-101/")}
-    {resource_card("Free AI Tools Worth Trying", "A roundup of genuinely useful, free AI tools for everyday work and study.", "star", "/learning-hub/learn-ai/free-ai-tools/")}
-    {resource_card("Using AI to Sharpen Your CV & LinkedIn", "How to use AI as a drafting assistant — not a replacement for your own voice.", "filecheck", "/learning-hub/learn-ai/ai-for-cv-linkedin/")}
+    {resource_card("Free AI Tools Worth Trying", "A short list of free AI tools worth using for work and study.", "star", "/learning-hub/learn-ai/free-ai-tools/")}
+    {resource_card("Using AI to Sharpen Your CV & LinkedIn", "How to use AI as a drafting assistant, not a replacement for your own voice.", "filecheck", "/learning-hub/learn-ai/ai-for-cv-linkedin/")}
   </div>
 
   <p style="text-align:center; margin-top:3rem; font-size:0.95rem;">Ready to see how your CV stacks up? <a href="/learning-hub/cv-check/" style="color:var(--pink-deep); font-weight:700;">Try the free CV Check →</a></p>
@@ -571,13 +572,13 @@ find_job_body = f'''<div class="page-header">
   </div>
 
   <div class="hub-category-label">How to Stand Out</div>
-  <p class="hub-category-intro">Getting found is only step one — here's how to make an impression once you are.</p>
+  <p class="hub-category-intro">Getting found is only step one. Here's how to make an impression once you are.</p>
   <div class="resource-grid">
     <a href="/services/" class="resource-card reveal">
       <div class="resource-icon">{ICON['briefcase']}</div>
       <div>
         <div class="resource-title">LinkedIn Profile Revamp</div>
-        <div class="resource-desc">Let's rewrite your headline and summary so recruiters actually notice you.</div>
+        <div class="resource-desc">Let's rewrite your headline and summary so recruiters notice you.</div>
         <div class="resource-link">See the service →</div>
       </div>
     </a>
@@ -613,13 +614,13 @@ free_assessment_body = '''<div class="page-header">
 </div>
 
 <section class="assessment">
-  <p class="assess-intro reveal">Once you have your result, fill in the form below — I'll reach out via WhatsApp or email within 24 hours to book your free 15-minute discovery call — and we'll unpack exactly what your result means for your career path.</p>
+  <p class="assess-intro reveal">Once you have your result, fill in the form below. I'll reach out via WhatsApp or email within 24 hours to book your free 15-minute discovery call, and we'll unpack exactly what your result means for your career path.</p>
   <div class="assess-grid">
     <div class="assess-card reveal">
       <div class="assess-emoji"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/></svg></div>
       <div class="assess-name">16Personalities</div>
       <div class="assess-what">Personality Type</div>
-      <div class="assess-desc">One of the most widely used personality frameworks in the world. Discover how you think, work, and connect — and what careers align with your type.</div>
+      <div class="assess-desc">One of the most widely used personality frameworks in the world. Discover how you think, work and connect, and which careers align with your type.</div>
       <div class="assess-time">⏱ 10–12 minutes · Free</div>
       <a href="https://www.16personalities.com/" target="_blank" rel="noopener" class="btn-assess">Take Free Test →</a>
     </div>
@@ -627,7 +628,7 @@ free_assessment_body = '''<div class="page-header">
       <div class="assess-emoji"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg></div>
       <div class="assess-name">DISC Assessment</div>
       <div class="assess-what">Work Style</div>
-      <div class="assess-desc">Understand your dominant workplace behaviour style — Dominance, Influence, Steadiness, or Conscientiousness — and how it shapes your career fit.</div>
+      <div class="assess-desc">Understand your dominant workplace behaviour style (Dominance, Influence, Steadiness or Conscientiousness) and how it shapes your career fit.</div>
       <div class="assess-time">⏱ 10 minutes · Free</div>
       <a href="https://www.123test.com/disc-personality-test/" target="_blank" rel="noopener" class="btn-assess">Take Free Test →</a>
     </div>
@@ -635,13 +636,13 @@ free_assessment_body = '''<div class="page-header">
       <div class="assess-emoji"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></div>
       <div class="assess-name">Holland Code</div>
       <div class="assess-what">Career Interests</div>
-      <div class="assess-desc">Based on John Holland's RIASEC theory — the foundation of career psychology. Matches your interests to real career paths and fields where you're most likely to thrive.</div>
+      <div class="assess-desc">Based on John Holland's RIASEC theory, the foundation of career psychology. Matches your interests to real career paths and fields where you're most likely to thrive.</div>
       <div class="assess-time">⏱ 10–15 minutes · Free</div>
       <a href="https://www.mynextmove.org/explore/ip" target="_blank" rel="noopener" class="btn-assess">Take Free Test →</a>
     </div>
   </div>
   <div class="assess-form-wrap reveal">
-    <h3>Share your result — get your free call</h3>
+    <h3>Share your result, get your free call</h3>
     <p>Completed a test? Fill in your details below and I'll reach out within 24 hours to book your free 15-minute career discovery call.</p>
     <form name="career-assessment" netlify netlify-honeypot="bot-field">
       <input type="hidden" name="form-name" value="career-assessment">
@@ -681,7 +682,7 @@ free_assessment_body = '''<div class="page-header">
         <textarea id="fchallenge" name="career_challenge" placeholder="Tell me what's holding you back or what you're trying to figure out..." required></textarea>
       </div>
       <button type="submit" class="btn-submit">Submit & Book My Free Discovery Call</button>
-      <p class="form-note">By submitting, you agree to be contacted via WhatsApp or email within 24 hours. No spam — ever.</p>
+      <p class="form-note">By submitting, you agree to be contacted via WhatsApp or email within 24 hours. No spam, ever.</p>
     </form>
   </div>
 </section>'''
@@ -690,7 +691,7 @@ free_assessment_body = '''<div class="page-header">
 cv_check_body = f'''<div class="page-header">
   <div class="section-label">Learning Hub</div>
   <h1>Check Your <em>CV</em>, Instantly</h1>
-  <p>Paste your CV or upload a file — get free, instant pointers. Nothing leaves your browser.</p>
+  <p>Paste your CV or upload a file to get free, instant pointers. Nothing leaves your browser.</p>
 </div>
 
 <section class="cv-tool">
@@ -720,7 +721,7 @@ cv_check_body = f'''<div class="page-header">
 
   <div style="text-align:center;">
     <button class="btn-analyze" id="analyzeBtn" type="button">Check My CV</button>
-    <div class="cv-privacy-note">Your CV never leaves your browser — nothing is uploaded or stored.</div>
+    <div class="cv-privacy-note">Your CV never leaves your browser. Nothing is uploaded or stored.</div>
   </div>
 
   <div class="cv-results" id="cvResults"></div>
@@ -764,46 +765,46 @@ def article_page(title, dek, body_html,
 
 article_what_is_ai = article_page(
     "What Is AI, Really?",
-    "No jargon — just a clear, honest answer to a question everyone's asking.",
+    "A clear, honest answer to a question everyone's asking.",
     '''      <p>"Artificial intelligence" gets thrown around so often it's started to feel like a buzzword rather than a real, useful idea. So let's strip away the hype and answer the actual question: what is AI, really?</p>
-      <p>At its core, AI is a broad term for computer systems that can perform tasks that would normally require human intelligence — recognising patterns, making predictions, generating text or images, or making decisions based on data. That's it. It's not magic, and it's not a mind. It's very sophisticated pattern-matching, running at a scale no human could do by hand.</p>
+      <p>At its core, AI is a broad term for computer systems that can perform tasks that would normally require human intelligence: recognising patterns, making predictions, generating text or images, or making decisions based on data. That's it. It's not magic, and it's not a mind. It's very sophisticated pattern-matching, running at a scale no human could do by hand.</p>
       <h2>Why Everyone's Talking About It Now</h2>
-      <p>AI itself isn't new — it's been part of everyday life for years, quietly powering things like spam filters, spell check, and the recommendations you see on streaming apps. What changed recently is the arrival of <strong>large language models</strong> — the technology behind tools like ChatGPT and Claude — which can hold a conversation, write in a natural voice, and help with tasks that used to require a human writer or researcher sitting next to you.</p>
+      <p>AI itself isn't new. It's been part of everyday life for years, quietly powering things like spam filters, spell check, and the recommendations you see on streaming apps. What changed recently is the arrival of <strong>large language models</strong>, the technology behind tools like ChatGPT and Claude. They can hold a conversation, write in a natural voice, and help with tasks that used to require a human writer or researcher sitting next to you.</p>
       <h2>What AI Is Not</h2>
-      <p>It's worth being clear about the limits, too. AI doesn't "understand" the world the way you do. It doesn't have opinions, memories of you between conversations (unless a tool is specifically built to keep them), or genuine judgement about what's true. It's excellent at generating plausible, well-structured text — which means it can also generate plausible-sounding <em>wrong</em> answers with total confidence. Treat it as a very capable assistant, not an authority.</p>
+      <p>It's worth being clear about the limits, too. AI doesn't "understand" the world the way you do. It doesn't have opinions, memories of you between conversations (unless a tool is specifically built to keep them), or genuine judgement about what's true. It's excellent at generating plausible, well-structured text, which means it can also generate plausible-sounding <em>wrong</em> answers with total confidence. Treat it as a very capable assistant, not an authority.</p>
       <h2>Why This Matters for Your Career</h2>
-      <p>Whether or not you ever touch a line of code, AI is already changing how work gets done — how CVs get screened, how job ads get written, how colleagues draft emails and reports. Understanding the basics isn't optional anymore; it's becoming as fundamental as knowing your way around a spreadsheet. The good news: you don't need to be technical to use it well. You just need to understand what it's actually doing — which is exactly what the rest of this series covers.</p>''',
+      <p>Whether or not you ever touch a line of code, AI is already changing how work gets done: how CVs get screened, how job ads get written, how colleagues draft emails and reports. Understanding the basics isn't optional anymore; it's becoming as fundamental as knowing your way around a spreadsheet. The good news: you don't need to be technical to use it well. You just need to understand what it's doing, and that's what the rest of this series covers.</p>''',
 )
 
 article_how_ai_works = article_page(
     "How Tools Like ChatGPT &amp; Claude Actually Work",
-    "A plain-language look under the hood — so you know what you're really working with.",
-    '''      <p>Tools like ChatGPT and Claude can feel like magic — you type a question, and a thoughtful, well-written answer appears in seconds. Here's what's actually happening, in plain language.</p>
+    "A plain-language look under the hood, so you know what you're really working with.",
+    '''      <p>Tools like ChatGPT and Claude can feel like magic: you type a question, and a thoughtful, well-written answer appears in seconds. Here's what's happening behind the scenes.</p>
       <h2>They Predict, They Don't "Know"</h2>
-      <p>These tools are built on <strong>large language models</strong> — systems trained on enormous amounts of text to learn the patterns of language: which words and ideas tend to follow which others. When you ask a question, the model isn't looking up a stored answer. It's generating a response one piece at a time, predicting what should come next based on everything it learned during training.</p>
-      <p>That's a subtle but important distinction. It means these tools are exceptional at producing fluent, well-structured, plausible-sounding text — but "plausible-sounding" and "correct" aren't always the same thing.</p>
-      <h2>What They're Genuinely Good At</h2>
+      <p>These tools are built on <strong>large language models</strong>, systems trained on enormous amounts of text to learn the patterns of language: which words and ideas tend to follow which others. When you ask a question, the model isn't looking up a stored answer. It's generating a response one piece at a time, predicting what should come next based on everything it learned during training.</p>
+      <p>That's a subtle but important distinction. It means these tools are exceptional at producing fluent, well-structured, plausible-sounding text. But "plausible-sounding" and "correct" aren't always the same thing.</p>
+      <h2>What They're Good At</h2>
       <ul>
-        <li>Drafting and rewriting — turning a rough idea into a structured first draft</li>
+        <li>Drafting and rewriting: turning a rough idea into a structured first draft</li>
         <li>Summarising long documents or explaining a complex topic simply</li>
-        <li>Brainstorming — generating options quickly when you're stuck</li>
-        <li>Editing — tightening wordy sentences, checking tone and clarity</li>
+        <li>Brainstorming: generating options quickly when you're stuck</li>
+        <li>Editing: tightening wordy sentences, checking tone and clarity</li>
       </ul>
       <h2>Where They Fall Short</h2>
-      <p>These tools can sometimes state incorrect information with total confidence — often called "hallucinating." They don't automatically know about very recent events unless the tool is specifically connected to the internet. And they don't know <em>you</em> — your actual achievements, your voice, your context — unless you give it to them clearly.</p>
+      <p>These tools can sometimes state incorrect information with total confidence (often called "hallucinating"). They don't automatically know about very recent events unless the tool is specifically connected to the internet. And they don't know <em>you</em> (your actual achievements, your voice, your context) unless you give it to them clearly.</p>
       <h2>The Practical Takeaway</h2>
-      <p>Use these tools as a fast, capable first-draft partner — never as the final word. Always read critically, fact-check anything that matters, and make sure the final result still sounds like you. That's the difference between using AI well and letting it use you.</p>''',
+      <p>Use these tools as a fast, capable first-draft partner, never as the final word. Always read critically, fact-check anything that matters, and make sure the final result still sounds like you. That's the difference between using AI well and letting it use you.</p>''',
 )
 
 article_prompting_101 = article_page(
     "Prompting 101",
-    "The difference between a mediocre AI answer and a genuinely useful one usually comes down to how you ask.",
-    '''      <p>Most people's first experience with AI chat tools is underwhelming — a vague question gets a vague, generic answer. The good news: getting dramatically better results isn't about learning to "code" or master some secret technique. It's about being a clearer communicator. Here's how.</p>
+    "The difference between a mediocre AI answer and a useful one usually comes down to how you ask.",
+    '''      <p>Most people's first experience with AI chat tools is underwhelming: a vague question gets a vague, generic answer. The good news: getting dramatically better results isn't about learning to "code" or master some secret technique. It's about being a clearer communicator. Here's how.</p>
       <h2>1. Be Specific</h2>
       <p>"Write me a CV bullet point" will get you something generic. "Rewrite this bullet point to lead with a measurable result, in one sentence, for a customer service role" will get you something usable. The more specific your request, the less generic the output.</p>
       <h2>2. Give Context</h2>
       <p>Tell the tool who you are, what you're trying to achieve, and who the output is for. For example: "I'm applying for a graduate role in banking. Rewrite this paragraph to sound confident but not arrogant, for a recruiter reading dozens of applications."</p>
-      <h2>3. Iterate — Don't Expect Perfection First Try</h2>
+      <h2>3. Iterate: Don't Expect Perfection First Try</h2>
       <p>Treat the first response as a draft, not a final answer. Follow up with "make it shorter," "make it sound more like me," or "give me three alternative versions." Refining in conversation almost always beats trying to write the perfect prompt upfront.</p>
       <h2>4. Break Big Tasks Into Steps</h2>
       <p>Instead of "help me with my job search," try smaller, specific asks: "help me identify the top 5 keywords in this job ad," then "check if my CV includes those keywords," then "suggest where I could naturally work in the ones that are missing."</p>
@@ -815,34 +816,34 @@ article_prompting_101 = article_page(
 
 article_free_ai_tools = article_page(
     "Free AI Tools Worth Trying",
-    "A grounded, no-hype tour of what's actually useful right now — organised by what you're trying to do.",
-    '''      <p>There's a new AI tool announced practically every week, and most people don't need to track any of that. What you actually need is a small, reliable toolkit for the handful of things AI is genuinely useful for. Here's a grounded starting point, organised by task rather than by hype.</p>
+    "The free tools worth your time, organised by what you're trying to do.",
+    '''      <p>There's a new AI tool announced practically every week, and most people don't need to track any of that. What you need is a small, reliable toolkit for the handful of things AI does well. Here's a starting point, organised by task.</p>
       <h2>For Writing &amp; Drafting</h2>
-      <p><strong>ChatGPT</strong> (OpenAI) and <strong>Claude</strong> (Anthropic) are both excellent general-purpose assistants for drafting emails, CV bullets, cover letters, and LinkedIn copy. Both have free tiers that are more than enough for everyday career-related use. Try both and see which one's tone you prefer — they genuinely do write a little differently.</p>
+      <p><strong>ChatGPT</strong> (OpenAI) and <strong>Claude</strong> (Anthropic) are both excellent general-purpose assistants for drafting emails, CV bullets, cover letters, and LinkedIn copy. Both have free tiers that are more than enough for everyday career-related use. Try both and see which one's tone you prefer. They do write a little differently.</p>
       <h2>For Research (With Sources)</h2>
-      <p><strong>Perplexity</strong> is built specifically for research — it answers questions and shows you the sources it pulled from, which makes it easier to verify what it's telling you. Useful when researching a company before an interview, or checking facts about an industry you're moving into.</p>
+      <p><strong>Perplexity</strong> is built specifically for research. It answers questions and shows you the sources it pulled from, which makes it easier to verify what it's telling you. Useful when researching a company before an interview, or checking facts about an industry you're moving into.</p>
       <h2>For Organising Your Own Notes</h2>
-      <p><strong>NotebookLM</strong> (Google) is designed to work with documents you upload — your own notes, a set of job ads, your CV drafts — and helps you summarise and query them. Genuinely useful for pulling your own scattered career notes into something organised.</p>
+      <p><strong>NotebookLM</strong> (Google) is designed to work with documents you upload (your own notes, a set of job ads, your CV drafts) and helps you summarise and query them. Handy for pulling your own scattered career notes into something organised.</p>
       <h2>If You're Already in Google Workspace</h2>
-      <p><strong>Gemini</strong> is built directly into Gmail, Docs, and Sheets, which makes it convenient if you're already living in those tools day to day — no need to copy-paste between apps.</p>
+      <p><strong>Gemini</strong> is built directly into Gmail, Docs, and Sheets, which makes it convenient if you're already living in those tools day to day. No need to copy-paste between apps.</p>
       <h2>A Word of Caution</h2>
-      <p>Free tiers change, and new tools launch constantly — treat any specific list (including this one) as a starting point, not gospel. The skill that doesn't go out of date is knowing <em>what</em> to ask these tools to do — which is exactly what the rest of this series is for.</p>''',
+      <p>Free tiers change, and new tools launch constantly, so treat any specific list (including this one) as a starting point, not gospel. The skill that doesn't go out of date is knowing <em>what</em> to ask these tools to do, and that's what what the rest of this series is for.</p>''',
 )
 
 article_ai_for_cv = article_page(
     "Using AI to Sharpen Your CV &amp; LinkedIn (Without Losing Your Voice)",
     "AI is a great editor and a terrible ghostwriter. Here's how to use it as the former.",
-    '''      <p>This is the question I get asked most often: "Can I just use AI to write my CV?" The honest answer is — you can, but you shouldn't, at least not entirely. Here's the technique I actually recommend and use with clients.</p>
+    '''      <p>This is the question I get asked most often: "Can I just use AI to write my CV?" The honest answer: you can, but you shouldn't, at least not entirely. Here's the approach I recommend to clients.</p>
       <h2>Use It to Tighten, Not to Invent</h2>
-      <p>AI is excellent at taking something you've already written and making it clearer and more concise. It is not a reliable source of your own achievements — never let it invent or exaggerate results you didn't actually deliver. Start with your real experience, in your own words, then use AI to sharpen the language.</p>
+      <p>AI is excellent at taking something you've already written and making it clearer and more concise. It is not a reliable source of your own achievements, so never let it invent or exaggerate results you didn't deliver. Start with your real experience, in your own words, then use AI to sharpen the language.</p>
       <h2>A Prompt Worth Stealing</h2>
-      <p>Paste in a CV bullet and ask: <em>"Rewrite this to start with a strong action verb and include a measurable result if one is implied — don't invent numbers I haven't given you: [paste your bullet]."</em> This forces the tool to improve structure and clarity without fabricating impact.</p>
+      <p>Paste in a CV bullet and ask: <em>"Rewrite this to start with a strong action verb and include a measurable result if one is implied. Don't invent numbers I haven't given you: [paste your bullet]."</em> This forces the tool to improve structure and clarity without fabricating impact.</p>
       <h2>Check Keyword Alignment</h2>
-      <p>Paste in a job description alongside your CV and ask which important keywords from the ad are missing from your CV. This is one of the fastest ways to improve how your CV performs against applicant tracking systems (ATS) — assuming you genuinely have the skill or experience being asked about.</p>
+      <p>Paste in a job description alongside your CV and ask which important keywords from the ad are missing from your CV. This is one of the fastest ways to improve how your CV performs against applicant tracking systems (ATS), as long as you really have the skill or experience being asked about.</p>
       <h2>Use It for Structure, Not Your Final Voice</h2>
-      <p>AI can be genuinely useful for suggesting a first-draft structure — what sections to include, what order to put them in. But the final wording should sound like you, not like a template. If a recruiter or interviewer meets you after reading an AI-polished-beyond-recognition CV, the mismatch is obvious and it undermines trust.</p>
+      <p>AI is useful for suggesting a first-draft structure: what sections to include, what order to put them in. But the final wording should sound like you, not like a template. If a recruiter or interviewer meets you after reading an AI-polished-beyond-recognition CV, the mismatch is obvious and it undermines trust.</p>
       <h2>The Line I Tell Every Client</h2>
-      <p>AI should sound like your best editor, not your ghostwriter. If you wouldn't say a sentence out loud in an interview, don't let it stay on your CV — no matter how good it looks on the page.</p>
+      <p>AI should sound like your best editor, not your ghostwriter. If you wouldn't say a sentence out loud in an interview, don't let it stay on your CV, no matter how good it looks on the page.</p>
       <p>Want a second pair of eyes on the real thing? Run your CV through the free CV Check tool below, or book a call and we'll sharpen it together, line by line.</p>''',
 )
 
@@ -868,7 +869,7 @@ start_business_body = f'''<div class="page-header">
 </div>
 
 <section class="explore">
-  <p style="max-width:680px; margin:0 auto 1rem; text-align:center; color:var(--charcoal); font-size:0.95rem; line-height:1.85;">Starting a business is exciting, and confusing. These free guides take you from idea to first customer, with the funding that exists for young people and entrepreneurs, and the official places where each step happens. No jargon, no fees.</p>
+  <p style="max-width:680px; margin:0 auto 1rem; text-align:center; color:var(--charcoal); font-size:0.95rem; line-height:1.85;">Starting a business is exciting, and confusing. These free guides take you from idea to first customer, with the funding that exists for young people and entrepreneurs, and the official places where each step happens. Plain language, no fees.</p>
   <div class="hub-category-label">Start here</div>
   <p class="hub-category-intro">Read them in order, or jump to what you need.</p>
   <div class="resource-grid">
@@ -925,71 +926,71 @@ not_found_body = '''<div class="page-header">
 </section>'''
 
 PAGES = [
-    ("index.html", "Flow Corner — Free AI Career Tools & Guidance",
+    ("index.html", "Flow Corner | Free AI Career Tools & Guidance",
      "A free platform helping South Africans find career direction with AI-powered tools, a Learning Hub, and real guidance from career strategist Lucy Mukhethwa.",
      None, home_body, ""),
-    ("about/index.html", "About Lucy — Flow Corner",
+    ("about/index.html", "About Lucy | Flow Corner",
      "Meet Lucy Mukhethwa, a career strategist and HR professional pursuing a Masters in Industrial & Organisational Psychology.",
      "/about/", about_body, ""),
-    ("how-it-works/index.html", "How It Works — Flow Corner",
+    ("how-it-works/index.html", "How It Works | Flow Corner",
      "Three simple steps to a career that finally fits: a free discovery call, a tailored strategy, and a stronger professional presence.",
      "/how-it-works/", how_body, ""),
-    ("services/index.html", "Services & Pricing — Flow Corner",
-     "CV revamps, LinkedIn profile rewrites, and career roadmaps — plus a limited founding-client offer.",
+    ("services/index.html", "Services & Pricing | Flow Corner",
+     "CV revamps, LinkedIn profile rewrites, and career roadmaps, plus a limited founding-client offer.",
      "/services/", services_body, ""),
-    ("work/index.html", "Experience & Work — Flow Corner",
-     "6+ years of HR, BPO, and career development experience — professional highlights from Lucy Mukhethwa.",
+    ("work/index.html", "Experience & Work | Flow Corner",
+     "6+ years of HR, BPO, and career development experience: professional highlights from Lucy Mukhethwa.",
      "/work/", work_body, ""),
-    ("contact/index.html", "Contact — Flow Corner",
+    ("contact/index.html", "Contact | Flow Corner",
      "Book a free 15-minute discovery call or message Lucy Mukhethwa on WhatsApp.",
      "/contact/", contact_body, ""),
-    ("learning-hub/index.html", "Learning Hub — Flow Corner",
-     "Free AI tools, curated career resources, an instant CV check, and personalised guidance — all in one place.",
+    ("learning-hub/index.html", "Learning Hub | Flow Corner",
+     "Free AI guides, South African job resources, an instant CV check, and personal guidance in one place.",
      "/learning-hub/", hub_body, ""),
-    ("learning-hub/learn-ai/index.html", "Understand & Use AI — Flow Corner Learning Hub",
+    ("learning-hub/learn-ai/index.html", "Understand & Use AI | Flow Corner Learning Hub",
      "AI explained simply: the basics, and how to practically use AI tools to work smarter and sharpen your CV or LinkedIn.",
      "/learning-hub/", learn_ai_body, ""),
-    ("learning-hub/find-a-job/index.html", "Find a Job — Flow Corner Learning Hub",
+    ("learning-hub/find-a-job/index.html", "Find a Job | Flow Corner Learning Hub",
      "Where to search for jobs in South Africa, how to stand out, and how to get personal guidance from Lucy.",
      "/learning-hub/", find_job_body, ""),
-    ("learning-hub/free-assessment/index.html", "Free Career Assessment — Flow Corner Learning Hub",
+    ("learning-hub/free-assessment/index.html", "Free Career Assessment | Flow Corner Learning Hub",
      "Take a free personality or career assessment and book a free discovery call to unpack your results.",
      "/learning-hub/", free_assessment_body, ""),
-    ("learning-hub/cv-check/index.html", "Free CV Check — Flow Corner Learning Hub",
-     "Paste or upload your CV for an instant, free, automated checklist — no sign-up, nothing leaves your browser.",
+    ("learning-hub/cv-check/index.html", "Free CV Check | Flow Corner Learning Hub",
+     "Paste or upload your CV for an instant, free, automated checklist. No sign-up, and nothing leaves your browser.",
      "/learning-hub/", cv_check_body, '<script src="/assets/cv-check.js" defer></script>\n'),
-    ("learning-hub/learn-ai/what-is-ai/index.html", "What Is AI, Really? — Flow Corner Learning Hub",
-     "A no-jargon explainer of what AI actually is, written by career strategist and AI Projects Lead Lucy Mukhethwa.",
+    ("learning-hub/learn-ai/what-is-ai/index.html", "What Is AI, Really? | Flow Corner Learning Hub",
+     "A plain-English explainer of what AI is, written by career strategist and AI Projects Lead Lucy Mukhethwa.",
      "/learning-hub/", article_what_is_ai, ""),
-    ("learning-hub/learn-ai/how-ai-chat-tools-work/index.html", "How ChatGPT & Claude Actually Work — Flow Corner Learning Hub",
+    ("learning-hub/learn-ai/how-ai-chat-tools-work/index.html", "How ChatGPT & Claude Actually Work | Flow Corner Learning Hub",
      "A plain-language look at how large language models generate answers, what they're good at, and where they fall short.",
      "/learning-hub/", article_how_ai_works, ""),
-    ("learning-hub/learn-ai/prompting-101/index.html", "Prompting 101 — Flow Corner Learning Hub",
-     "A practical, no-jargon guide to getting genuinely useful results from AI chat tools.",
+    ("learning-hub/learn-ai/prompting-101/index.html", "Prompting 101 | Flow Corner Learning Hub",
+     "A practical guide to getting better results from AI chat tools like ChatGPT and Claude.",
      "/learning-hub/", article_prompting_101, ""),
-    ("learning-hub/learn-ai/free-ai-tools/index.html", "Free AI Tools Worth Trying — Flow Corner Learning Hub",
-     "A grounded, no-hype tour of genuinely useful free AI tools, organised by what you're trying to do.",
+    ("learning-hub/learn-ai/free-ai-tools/index.html", "Free AI Tools Worth Trying | Flow Corner Learning Hub",
+     "The free AI tools worth your time, organised by what you're trying to do.",
      "/learning-hub/", article_free_ai_tools, ""),
-    ("learning-hub/learn-ai/ai-for-cv-linkedin/index.html", "Using AI to Sharpen Your CV & LinkedIn — Flow Corner Learning Hub",
-     "How to use AI as a drafting assistant for your CV and LinkedIn — without losing your own voice.",
+    ("learning-hub/learn-ai/ai-for-cv-linkedin/index.html", "Using AI to Sharpen Your CV & LinkedIn | Flow Corner Learning Hub",
+     "How to use AI as a drafting assistant for your CV and LinkedIn without losing your own voice.",
      "/learning-hub/", article_ai_for_cv, ""),
-    ("learning-hub/start-a-business/index.html", "Start a Business — Flow Corner Learning Hub",
+    ("learning-hub/start-a-business/index.html", "Start a Business | Flow Corner Learning Hub",
      "Free guides, funding options and official links for anyone in South Africa starting a small business.",
      "/learning-hub/", start_business_body, ""),
-    ("learning-hub/start-a-business/how-to-start-a-small-business/index.html", "How to Start a Small Business in South Africa — Flow Corner",
+    ("learning-hub/start-a-business/how-to-start-a-small-business/index.html", "How to Start a Small Business in South Africa | Flow Corner",
      "A step-by-step guide to starting a small business in South Africa: idea, structure, CIPC and SARS registration, money, customers and permits.",
      "/learning-hub/", article_how_to_start, ""),
-    ("learning-hub/start-a-business/funding-for-youth-and-entrepreneurs/index.html", "Funding for Youth & Entrepreneurs in South Africa — Flow Corner",
+    ("learning-hub/start-a-business/funding-for-youth-and-entrepreneurs/index.html", "Funding for Youth & Entrepreneurs in South Africa | Flow Corner",
      "NYDA, sefa, NEF, GEP and more: what each funder offers, who qualifies, how to get funding-ready and how to avoid scams.",
      "/learning-hub/", article_funding, ""),
-    ("learning-hub/start-a-business/useful-links/index.html", "Start a Business: Useful Links — Flow Corner",
+    ("learning-hub/start-a-business/useful-links/index.html", "Start a Business: Useful Links | Flow Corner",
      "Official South African links for registering a business, tax, free advice, funding, tenders and permits.",
      "/learning-hub/", useful_links_body, ""),
 ]
 
 # Pages generated but not listed in the sitemap
 EXTRA_PAGES = [
-    ("404.html", "Page not found — Flow Corner", "This page doesn't exist. Head back to the Flow Corner home page or Learning Hub.",
+    ("404.html", "Page not found | Flow Corner", "This page doesn't exist. Head back to the Flow Corner home page or Learning Hub.",
      None, not_found_body, "", "noindex"),
 ]
 
