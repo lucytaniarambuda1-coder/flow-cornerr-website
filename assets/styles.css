@@ -859,3 +859,40 @@
   @media (max-width: 900px) {
     .about-photo { width: 180px; height: 180px; margin-left: auto; margin-right: auto; }
   }
+
+  /* FREE VS PAID (home) */
+  .fp { background: var(--off-white); }
+  .fp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 3rem; max-width: 980px; margin-left: auto; margin-right: auto; }
+  .fp-card {
+    position: relative; background: var(--white); border-radius: var(--radius-lg);
+    padding: 2rem 1.8rem 1.8rem; border: 1px solid rgba(15,32,68,0.08);
+    box-shadow: 0 10px 30px rgba(15,32,68,0.06); display: flex; flex-direction: column;
+  }
+  .fp-paid { background: var(--navy); color: var(--white); border-color: transparent; }
+  .fp-badge {
+    display: inline-block; align-self: flex-start; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 0.3rem 0.8rem; border-radius: var(--radius-pill); background: var(--pink-pale); color: var(--pink-deep); margin-bottom: 0.9rem;
+  }
+  .fp-paid .fp-badge { background: var(--yellow); color: var(--navy); }
+  .fp-card h3 { font-family: 'Baloo 2', sans-serif; font-size: 1.45rem; font-weight: 800; color: var(--navy); line-height: 1.2; }
+  .fp-paid h3 { color: var(--white); }
+  .fp-lead { font-size: 0.88rem; color: var(--charcoal); opacity: 0.8; margin: 0.25rem 0 1.1rem; }
+  .fp-paid .fp-lead { color: rgba(255,255,255,0.75); opacity: 1; }
+  .fp-list { list-style: none; padding: 0; margin: 0 0 1.2rem; flex: 1; }
+  .fp-list li {
+    font-size: 0.9rem; line-height: 1.5; padding: 0.55rem 0 0.55rem 1.6rem; position: relative;
+    border-bottom: 1px solid rgba(15,32,68,0.07); color: var(--charcoal);
+  }
+  .fp-list li:last-child { border-bottom: 0; }
+  .fp-list li::before { content: "✓"; position: absolute; left: 0; top: 0.55rem; color: var(--pink-deep); font-weight: 700; }
+  .fp-paid .fp-list li { display: flex; justify-content: space-between; gap: 1rem; padding-left: 0; color: var(--white); border-bottom-color: rgba(255,255,255,0.12); }
+  .fp-paid .fp-list li::before { content: none; }
+  .fp-paid .fp-list li span:last-child { color: var(--yellow); font-weight: 700; white-space: nowrap; }
+  .fp-note { font-size: 0.8rem; color: rgba(255,255,255,0.7); margin: -0.4rem 0 1.1rem; }
+  .fp-link { font-size: 0.85rem; font-weight: 700; color: var(--pink-deep); text-decoration: none; }
+  .fp-paid .fp-link { color: var(--pink); }
+  .fp-link:hover { text-decoration: underline; }
+  @media (max-width: 760px) {
+    .fp-grid { grid-template-columns: 1fr; }
+    .fp-card { padding: 1.6rem 1.3rem 1.4rem; }
+  }

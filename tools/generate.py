@@ -41,10 +41,10 @@ home_body = f'''<!-- HERO -->
 <section class="hero">
   <div class="hero-blob-yellow"></div>
   <div class="hero-text">
-    <div class="hero-tag">Free AI Learning Hub · CV Check · Career Guidance</div>
+    <div class="hero-tag">Free Resources · Paid Career Services</div>
     <h1>Find Your <em>Flow.</em></h1>
     <p>You've sent the applications. You have the skills. But your CV isn't getting through, and your LinkedIn isn't showing up when it counts. <em style="color:var(--pink); font-style:normal;">I can help you fix that.</em></p>
-    <p>Everything here is free: plain-English guides to AI, the South African job sites worth your time, an instant CV check, and me, when you want a real person to look at your application.</p>
+    <p>The guides, tools and CV check on this site are free for everyone. When you want me to work on your CV, LinkedIn or career plan with you, that's a paid service, and your first 15-minute call is free.</p>
     <div class="hero-btns">
       <a href="/learning-hub/cv-check/" class="btn-primary">Try the Free CV Check</a>
       <a href="/learning-hub/" class="btn-secondary">Explore Learning Hub</a>
@@ -52,20 +52,20 @@ home_body = f'''<!-- HERO -->
   </div>
   <div class="hero-visual">
     <div class="hero-card">
-      <div class="label">What We Do</div>
-      <div class="value" style="font-size:1.25rem;">Find Your Flow</div>
-      <div class="sub">CVs, LinkedIn &amp; career plans</div>
+      <div class="label">Free for Everyone</div>
+      <div class="value" style="font-size:1.25rem;">Guides · CV Check · Career Tests</div>
+      <div class="sub">No sign-up, no cost</div>
     </div>
     <div class="stats-row">
       <div class="hero-card">
-        <div class="label">Free Tools</div>
-        <div class="value" style="font-size:1.1rem;">CV Check + Tests</div>
-        <div class="sub">Instant, No Sign-Up</div>
+        <div class="label">Paid Service</div>
+        <div class="value" style="font-size:1.1rem;">CV &amp; LinkedIn</div>
+        <div class="sub">From R300</div>
       </div>
       <div class="hero-card">
-        <div class="label">Learning Hub</div>
-        <div class="value" style="font-size:1.1rem;">AI · Jobs · Business</div>
-        <div class="sub">Written for South Africa</div>
+        <div class="label">Paid Service</div>
+        <div class="value" style="font-size:1.1rem;">Career Roadmap</div>
+        <div class="sub">From R500</div>
       </div>
     </div>
   </div>
@@ -76,6 +76,42 @@ home_body = f'''<!-- HERO -->
   <p>Flow is when work stops feeling like a fight: you're in a role that fits what you're good at and what you care about. <strong>Flow Corner is here to help you get there,</strong> with free tools, practical guides and one-on-one help when you need it.</p>
 </div>
 
+<!-- FREE VS PAID -->
+<section class="fp">
+  <div class="section-label reveal">What's Free, What's Paid</div>
+  <div class="section-title reveal">Free to learn. <em>Paid</em> when I work with you.</div>
+  <div class="divider reveal"></div>
+  <div class="fp-grid">
+    <div class="fp-card fp-free reveal">
+      <div class="fp-badge">Free</div>
+      <h3>Free resources</h3>
+      <p class="fp-lead">Use these as often as you like.</p>
+      <ul class="fp-list">
+        <li>Instant CV Check</li>
+        <li>Plain-English guides to using AI</li>
+        <li>South African job sites and how to stand out</li>
+        <li>Step-by-step guide to starting a small business</li>
+        <li>Career assessment, with a follow-up from me</li>
+        <li>Your first 15-minute call with me</li>
+      </ul>
+      <a href="/learning-hub/" class="fp-link">Go to the Learning Hub →</a>
+    </div>
+    <div class="fp-card fp-paid reveal">
+      <div class="fp-badge">Paid</div>
+      <h3>One-on-one services</h3>
+      <p class="fp-lead">Where I spend my time on your application.</p>
+      <ul class="fp-list">
+        <li><span>CV Revamp</span><span>from R300</span></li>
+        <li><span>LinkedIn Profile Revamp</span><span>from R350</span></li>
+        <li><span>Career Development Roadmap</span><span>from R500</span></li>
+        <li><span>Business Start-Up Support</span><span>quoted</span></li>
+      </ul>
+      <p class="fp-note">Founding clients pay half price while spots last.</p>
+      <a href="/services/" class="fp-link">See services &amp; pricing →</a>
+    </div>
+  </div>
+</section>
+
 <!-- EXPLORE -->
 <section class="explore">
   <div class="section-label reveal">Find Your Way Around</div>
@@ -85,13 +121,13 @@ home_body = f'''<!-- HERO -->
     <a href="/learning-hub/" class="explore-card reveal">
       <div class="explore-icon">{ICON['book']}</div>
       <div class="explore-title">Learning Hub</div>
-      <div class="explore-desc">Free AI tools, job-search resources, a CV check and a business start-up guide. The best place to start.</div>
+      <div class="explore-desc">Free AI guides, job-search resources, a CV check and a business start-up guide. The best place to start.</div>
       <span class="explore-arrow">Start here →</span>
     </a>
     <a href="/services/" class="explore-card reveal">
       <div class="explore-icon">{ICON['briefcase']}</div>
       <div class="explore-title">Services & Pricing</div>
-      <div class="explore-desc">CV, LinkedIn & career roadmaps, plus a limited founding-client offer.</div>
+      <div class="explore-desc">Paid one-on-one help with your CV, LinkedIn and career plan, plus a founding-client offer.</div>
       <span class="explore-arrow">See services →</span>
     </a>
     <a href="/about/" class="explore-card reveal">
@@ -927,7 +963,7 @@ not_found_body = '''<div class="page-header">
 
 PAGES = [
     ("index.html", "Flow Corner | Free AI Career Tools & Guidance",
-     "A free platform helping South Africans find career direction with AI-powered tools, a Learning Hub, and real guidance from career strategist Lucy Mukhethwa.",
+     "Free career guides, an instant CV check and job resources for South Africans, plus paid CV, LinkedIn and career roadmap services from career strategist Lucy Mukhethwa.",
      None, home_body, ""),
     ("about/index.html", "About Lucy | Flow Corner",
      "Meet Lucy Mukhethwa, a career strategist and HR professional pursuing a Masters in Industrial & Organisational Psychology.",
