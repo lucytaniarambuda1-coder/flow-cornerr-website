@@ -88,12 +88,12 @@
       } else if (name.endsWith('.docx')) {
         uploadedText = await extractDocxText(await file.arrayBuffer());
       } else {
-        filenameEl.textContent = 'Unsupported file type — please use .txt, .pdf, or .docx, or paste your text instead.';
+        filenameEl.textContent = 'Unsupported file type. Please use .txt, .pdf, or .docx, or paste your text instead.';
         analyzeBtn.disabled = false;
         return;
       }
       const wc = uploadedText.trim().split(/\s+/).filter(Boolean).length;
-      filenameEl.textContent = uploadedText.trim() ? (file.name + ' loaded (' + wc + ' words)') : (file.name + ' loaded, but no readable text was found — try pasting instead.');
+      filenameEl.textContent = uploadedText.trim() ? (file.name + ' loaded (' + wc + ' words)') : (file.name + ' loaded, but no readable text was found. Try pasting instead.');
     } catch (err) {
       filenameEl.textContent = 'Could not read that file. Try pasting your CV text instead.';
       uploadedText = '';
@@ -105,7 +105,7 @@
     const isPaste = pastePanel.classList.contains('active');
     const text = isPaste ? cvTextarea.value : uploadedText;
     if (!text || text.trim().split(/\s+/).filter(Boolean).length < 20) {
-      alert("Please paste or upload your CV first — there isn't enough text to check yet.");
+      alert("Please paste or upload your CV first. There isn't enough text to check yet.");
       return;
     }
     const results = analyzeCv(text, jdInput.value);
@@ -133,21 +133,21 @@
     const checks = { basics: [], structure: [], content: [], length: [] };
 
     if (wordCount < 150) {
-      checks.length.push({ status: 'fail', text: `Your CV is only about <strong>${wordCount} words</strong> — that usually reads as incomplete. Aim for at least 300–600 words.` });
+      checks.length.push({ status: 'fail', text: `Your CV is only about <strong>${wordCount} words</strong>, which usually reads as incomplete. Aim for at least 300–600 words.` });
     } else if (wordCount < 250) {
       checks.length.push({ status: 'warn', text: `At <strong>${wordCount} words</strong>, your CV is on the sparse side. A bit more detail on your achievements would help.` });
     } else if (wordCount > 1300) {
-      checks.length.push({ status: 'warn', text: `At <strong>${wordCount} words</strong>, your CV is quite long. Most recruiters expect 1–2 pages — consider trimming to your most relevant experience.` });
+      checks.length.push({ status: 'warn', text: `At <strong>${wordCount} words</strong>, your CV is quite long. Most recruiters expect 1–2 pages, so consider trimming to your most relevant experience.` });
     } else {
-      checks.length.push({ status: 'pass', text: `Length looks good — about <strong>${wordCount} words</strong>, roughly 1–2 pages.` });
+      checks.length.push({ status: 'pass', text: `Length looks good: about <strong>${wordCount} words</strong>, roughly 1–2 pages.` });
     }
 
     const hasEmail = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}/i.test(text);
     const hasPhone = /(\+?\d[\d\s\-()]{7,}\d)/.test(text);
     const hasLinkedIn = /linkedin\.com\/in\//i.test(text);
-    checks.basics.push({ status: hasEmail ? 'pass' : 'fail', text: hasEmail ? 'Email address found.' : 'No email address found — make sure it\'s clearly visible near the top.' });
-    checks.basics.push({ status: hasPhone ? 'pass' : 'fail', text: hasPhone ? 'Phone number found.' : 'No phone number found — add one so recruiters can reach you directly.' });
-    checks.basics.push({ status: hasLinkedIn ? 'pass' : 'warn', text: hasLinkedIn ? 'LinkedIn profile linked.' : 'No LinkedIn link found — adding one gives recruiters a fuller picture of you.' });
+    checks.basics.push({ status: hasEmail ? 'pass' : 'fail', text: hasEmail ? 'Email address found.' : 'No email address found. Make sure it\'s clearly visible near the top.' });
+    checks.basics.push({ status: hasPhone ? 'pass' : 'fail', text: hasPhone ? 'Phone number found.' : 'No phone number found. Add one so recruiters can reach you directly.' });
+    checks.basics.push({ status: hasLinkedIn ? 'pass' : 'warn', text: hasLinkedIn ? 'LinkedIn profile linked.' : 'No LinkedIn link found. Adding one gives recruiters a fuller picture of you.' });
 
     const sectionPatterns = {
       Summary: /\b(summary|profile|objective|about me)\b/i,
@@ -160,13 +160,13 @@
       const soft = label === 'Education' || label === 'Summary';
       checks.structure.push({
         status: found ? 'pass' : (soft ? 'warn' : 'fail'),
-        text: found ? `${label} section found.` : `No clear <strong>${label}</strong> section found — consider adding one so it's easy to scan.`,
+        text: found ? `${label} section found.` : `No clear <strong>${label}</strong> section found. Consider adding one so it's easy to scan.`,
       });
     }
 
     const bulletLines = lines.filter((l) => /^[•\-*▪◦]/.test(l) || /^\d+[.)]/.test(l));
     if (bulletLines.length === 0) {
-      checks.content.push({ status: 'warn', text: 'No bullet points detected — bulleted achievements are usually easier for recruiters to scan than paragraphs.' });
+      checks.content.push({ status: 'warn', text: 'No bullet points detected. Bulleted achievements are usually easier for recruiters to scan than paragraphs.' });
     } else {
       const strongCount = bulletLines.filter((l) => {
         const clean = l.toLowerCase().replace(/^[•\-*▪◦\d.)\s]+/, '');
@@ -174,20 +174,20 @@
       }).length;
       const weakCount = bulletLines.filter((l) => WEAK_OPENERS.some((w) => l.toLowerCase().includes(w))).length;
       if (weakCount > 0) {
-        checks.content.push({ status: 'warn', text: `Found ${weakCount} bullet(s) starting with weak phrasing like "responsible for" — try swapping in strong action verbs (led, built, delivered...) instead.` });
+        checks.content.push({ status: 'warn', text: `Found ${weakCount} bullet(s) starting with weak phrasing like "responsible for". Try swapping in strong action verbs (led, built, delivered...) instead.` });
       }
       if (strongCount >= Math.max(2, Math.floor(bulletLines.length * 0.4))) {
         checks.content.push({ status: 'pass', text: `Good use of strong action verbs across your ${bulletLines.length} bullet points.` });
       } else {
-        checks.content.push({ status: 'warn', text: `Only ${strongCount} of your ${bulletLines.length} bullet points open with a strong action verb — starting each one that way makes your impact clearer.` });
+        checks.content.push({ status: 'warn', text: `Only ${strongCount} of your ${bulletLines.length} bullet points open with a strong action verb. Starting each one that way makes your impact clearer.` });
       }
     }
 
     const meaningfulNumbers = (text.match(/\d+%|\bR\s?\d|\$\s?\d|\d+\s?(clients|projects|people|team|hours|months|years)/gi) || []).length;
     if (meaningfulNumbers === 0) {
-      checks.content.push({ status: 'warn', text: 'No quantified achievements found (numbers, %, R amounts). Adding measurable results makes your impact concrete — e.g. "reduced turnaround time by 20%".' });
+      checks.content.push({ status: 'warn', text: 'No quantified achievements found (numbers, %, R amounts). Adding measurable results makes your impact concrete, e.g. "reduced turnaround time by 20%".' });
     } else {
-      checks.content.push({ status: 'pass', text: `Found ${meaningfulNumbers} quantified result(s) — numbers make your achievements concrete, keep it up.` });
+      checks.content.push({ status: 'pass', text: `Found ${meaningfulNumbers} quantified result(s). Numbers make your achievements concrete, keep it up.` });
     }
 
     if (jdText && jdText.trim().split(/\s+/).filter(Boolean).length > 15) {
@@ -224,7 +224,7 @@
     return '<svg class="check-icon fail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>';
   }
 
-  const TIER_LABEL = { great: 'Great — Just a Few Tweaks', good: 'Good — Some Quick Wins Here', 'needs-work': "Needs Work — Let's Fix This" };
+  const TIER_LABEL = { great: 'Great! Just a Few Tweaks', good: 'Good, With Some Quick Wins', 'needs-work': "Needs Work. Let's Fix This" };
   const TIER_CLASS = { great: 'cv-tier-great', good: 'cv-tier-good', 'needs-work': 'cv-tier-needs-work' };
 
   function groupHtml(title, items) {
@@ -241,7 +241,7 @@
     html += groupHtml('Length', checks.length);
     html += `<div class="cv-cta-box">
       <h3>Want a professional to fix this with you?</h3>
-      <p>These are automated pointers — a real CV Revamp gets it recruiter-ready, tailored to the roles you actually want.</p>
+      <p>These are automated pointers. A real CV Revamp gets it recruiter-ready, tailored to the roles you're applying for.</p>
       <div class="cta-btns">
         <a href="/services/" class="btn-pink">Book the CV Revamp (R300)</a>
         <a href="https://wa.me/27832610754?text=Hi%20Lucy%2C%20I%20just%20used%20the%20free%20CV%20Check%20and%20would%20like%20help" class="btn-whatsapp" target="_blank" rel="noopener">Chat on WhatsApp</a>
