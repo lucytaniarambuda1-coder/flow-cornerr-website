@@ -1,0 +1,77 @@
+{
+  "updated": "20 November 2026",
+  "items": [
+    {
+      "title": "SAYouth.mobi",
+      "org": "SAYouth",
+      "type": "Job platform",
+      "province": "National",
+      "desc": "A free, mobile-friendly platform where young South Africans can find jobs, learnerships, internships and short courses, and build a profile that employers can see.",
+      "url": "https://sayouth.mobi/",
+      "tags": ["youth", "learnership", "internship", "free"]
+    },
+    {
+      "title": "Youth Employment Service (YES)",
+      "org": "YES",
+      "type": "Youth programme",
+      "province": "National",
+      "desc": "Year-long paid work experience placements with participating companies for young South Africans aged 18 to 35. Sign up and get matched.",
+      "url": "https://www.yes4youth.co.za/",
+      "tags": ["work experience", "youth", "placement"]
+    },
+    {
+      "title": "Harambee Youth Employment Accelerator",
+      "org": "Harambee",
+      "type": "Youth programme",
+      "province": "National",
+      "desc": "Connects young job-seekers to entry-level work opportunities and offers free work-readiness support before you apply.",
+      "url": "https://www.harambee.co.za/",
+      "tags": ["youth", "entry level", "work readiness"]
+    },
+    {
+      "title": "Public Service Vacancy Circular",
+      "org": "Department of Public Service and Administration",
+      "type": "Government",
+      "province": "National",
+      "desc": "The official, regularly updated list of vacancies across national and provincial government departments. Check the closing date on each post.",
+      "url": "https://www.dpsa.gov.za/",
+      "tags": ["government", "public service", "vacancies"]
+    },
+    {
+      "title": "NYDA programmes and support",
+      "org": "National Youth Development Agency",
+      "type": "Youth programme",
+      "province": "National",
+      "desc": "Youth development programmes, including skills training, business support and grants. Look for your nearest NYDA branch.",
+      "url": "https://www.nyda.gov.za/",
+      "tags": ["youth", "grants", "skills", "business"]
+    },
+    {
+      "title": "LinkedIn Jobs",
+      "org": "LinkedIn",
+      "type": "Job platform",
+      "province": "National",
+      "desc": "One of the most active platforms for professional roles in South Africa. Set a job alert for your target title so new roles come to you.",
+      "url": "https://www.linkedin.com/jobs",
+      "tags": ["jobs", "alerts", "professional"]
+    },
+    {
+      "title": "Indeed South Africa",
+      "org": "Indeed",
+      "type": "Job platform",
+      "province": "National",
+      "desc": "A large general job board covering roles in every industry, with company reviews and salary information.",
+      "url": "https://za.indeed.com/",
+      "tags": ["jobs", "all industries"]
+    },
+    {
+      "title": "PNet",
+      "org": "PNet",
+      "type": "Job platform",
+      "province": "National",
+      "desc": "A long-standing South African job board with listings from direct employers and recruitment agencies.",
+      "url": "https://www.pnet.co.za/",
+      "tags": ["jobs", "recruiters"]
+    }
+  ]
+}

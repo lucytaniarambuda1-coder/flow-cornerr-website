@@ -16,6 +16,7 @@ import sys
 sys.path.insert(0, os.path.dirname(__file__))
 from site_template import page, SITE_URL  # noqa: E402
 import business_pages as biz  # noqa: E402
+import free_tools_pages as ft  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -36,6 +37,8 @@ ICON = {
 }
 
 WHATSAPP_SVG = '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-3px; margin-right:0.3em;"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.06c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.11.11-1.79-.11-.41-.13-.95-.31-1.63-.6-2.87-1.24-4.74-4.12-4.88-4.31-.14-.19-1.17-1.56-1.17-2.98 0-1.42.74-2.12 1-2.41.26-.29.57-.36.76-.36.19 0 .38 0 .55.01.18.01.41-.07.64.49.24.58.81 2 .88 2.14.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.16.28.71 1.17 1.52 1.89 1.05.93 1.93 1.22 2.21 1.36.28.14.44.12.6-.07.16-.19.68-.79.87-1.06.19-.27.37-.22.63-.13.26.09 1.63.77 1.91.91.28.14.47.21.54.33.07.12.07.68-.17 1.36z"/></svg>'
+
+FT = ft.build(ICON, WHATSAPP_SVG)
 
 # ============================================================== HOME
 home_body = f'''<!-- HERO -->
@@ -77,6 +80,43 @@ home_body = f'''<!-- HERO -->
   <p>Flow is when work stops feeling like a fight: you're in a role that fits what you're good at and what you care about. <strong>Flow Corner is here to help you get there,</strong> with free tools, practical guides and one-on-one help when you need it.</p>
 </div>
 
+<!-- CHECK / BUILD / FIND / PRACTISE -->
+<section class="verbs">
+  <div class="section-label reveal">Free Career Tools</div>
+  <div class="section-title reveal">Check it. Build it. Find it. <em>Practise it.</em></div>
+  <div class="divider reveal"></div>
+  <div class="explore-grid">
+    <a href="/learning-hub/job-readiness/" class="explore-card reveal">
+      <div class="explore-icon">{ICON['zap']}</div>
+      <span class="verb-tag">Check it</span>
+      <div class="explore-title">How job-ready are you?</div>
+      <div class="explore-desc">Ten questions, a score out of 100 and a plan to fix your biggest gaps.</div>
+      <span class="explore-arrow">Get my score →</span>
+    </a>
+    <a href="/free-tools/" class="explore-card reveal">
+      <div class="explore-icon">{ICON['folder']}</div>
+      <span class="verb-tag">Build it</span>
+      <div class="explore-title">CV &amp; cover letter</div>
+      <div class="explore-desc">Build a clean CV and a professional cover letter, then save them as a PDF.</div>
+      <span class="explore-arrow">Open the tools →</span>
+    </a>
+    <a href="/opportunities/" class="explore-card reveal">
+      <div class="explore-icon">{ICON['search']}</div>
+      <span class="verb-tag">Find it</span>
+      <div class="explore-title">Jobs &amp; opportunities</div>
+      <div class="explore-desc">Job platforms, learnerships and youth programmes, each with the official link.</div>
+      <span class="explore-arrow">See what's open →</span>
+    </a>
+    <a href="/free-tools/interview-practice/" class="explore-card reveal">
+      <div class="explore-icon">{ICON['star']}</div>
+      <span class="verb-tag">Practise it</span>
+      <div class="explore-title">Interview practice</div>
+      <div class="explore-desc">Common questions, a two-minute timer and the STAR method for strong answers.</div>
+      <span class="explore-arrow">Start practising →</span>
+    </a>
+  </div>
+</section>
+
 <!-- FREE VS PAID -->
 <section class="fp">
   <div class="section-label reveal">What's Free, What's Paid</div>
@@ -88,7 +128,10 @@ home_body = f'''<!-- HERO -->
       <h3>Free resources</h3>
       <p class="fp-lead">Use these as often as you like.</p>
       <ul class="fp-list">
-        <li>Instant CV Check</li>
+        <li>Job-readiness score with an action plan</li>
+        <li>Instant CV Check, CV Builder and Cover Letter Generator</li>
+        <li>Interview practice with a timer</li>
+        <li>Opportunities board for jobs and youth programmes</li>
         <li>Plain-English guides to using AI</li>
         <li>South African job sites and how to stand out</li>
         <li>Step-by-step guide to starting a small business</li>
@@ -117,6 +160,16 @@ home_body = f'''<!-- HERO -->
       <p class="fp-note">Founding clients pay half price on the first three services while spots last.</p>
       <a href="/services/" class="fp-link">See services &amp; pricing →</a>
     </div>
+  </div>
+</section>
+
+<!-- WHY FREE -->
+<section class="why-free">
+  <div class="why-free-inner reveal">
+    <div class="section-label">Why it's free</div>
+    <h2>The basics shouldn't cost you anything.</h2>
+    <p>Job hunting is expensive enough: data, transport, printing. Nobody should have to pay just to find out where they stand, or to get a CV that doesn't embarrass them. So the tools and guides are free, with no sign-up and no email trap, and what you type never leaves your device.</p>
+    <p>What you pay for is my time. If you want me to rewrite your CV, fix your LinkedIn or build your career roadmap with you, that's the paid work, and it's what keeps the free part going.</p>
   </div>
 </section>
 
@@ -565,6 +618,18 @@ hub_body = f'''<div class="page-header">
       <div class="hub-card-title">Get Personalised Guidance</div>
       <div class="hub-card-desc">Take a free career assessment and I'll personally follow up with guidance for your situation.</div>
       <span class="hub-card-arrow">Take the test →</span>
+    </a>
+    <a href="/learning-hub/job-readiness/" class="hub-card reveal">
+      <div class="explore-icon">{ICON['zap']}</div>
+      <div class="hub-card-title">How Job-Ready Are You?</div>
+      <div class="hub-card-desc">Ten questions, a score out of 100 and a plan to close your biggest gaps.</div>
+      <span class="hub-card-arrow">Get my score →</span>
+    </a>
+    <a href="/free-tools/" class="hub-card reveal">
+      <div class="explore-icon">{ICON['folder']}</div>
+      <div class="hub-card-title">Free Career Tools</div>
+      <div class="hub-card-desc">A CV builder, cover letter generator and interview practice, plus the opportunities board.</div>
+      <span class="hub-card-arrow">Open the tools →</span>
     </a>
     <a href="/learning-hub/start-a-business/" class="hub-card hub-card-wide reveal">
       <div class="explore-icon">{ICON['rocket']}</div>
@@ -1202,6 +1267,24 @@ PAGES = [
     ("learning-hub/start-a-business/useful-links/index.html", "Start a Business: Useful Links | Flow Corner",
      "Official South African links for registering a business, tax, free advice, funding, tenders and permits.",
      "/learning-hub/", useful_links_body, ""),
+    ("learning-hub/job-readiness/index.html", "How Job-Ready Are You? Free Check | Flow Corner Learning Hub",
+     "Answer ten questions to get a job-readiness score out of 100, your biggest gaps and a practical action plan. Free, no sign-up.",
+     "/learning-hub/", FT["job_readiness"], '<script src="/assets/job-readiness.js" defer></script>\n'),
+    ("free-tools/index.html", "Free Career Tools | Flow Corner",
+     "Free tools for South African job-seekers: job-readiness check, CV check, CV builder, cover letter generator, interview practice and an opportunities board.",
+     "/free-tools/", FT["free_tools"], ""),
+    ("free-tools/cv-builder/index.html", "Free CV Builder | Flow Corner",
+     "Build a clean, recruiter-friendly CV in minutes and save it as a PDF. Free, no sign-up, and your details stay in your browser.",
+     "/free-tools/", FT["cv_builder"], '<script src="/assets/cv-builder.js" defer></script>\n'),
+    ("free-tools/cover-letter/index.html", "Free Cover Letter Generator | Flow Corner",
+     "Answer a few questions and get a professional cover letter draft to edit and send. Free, and nothing leaves your browser.",
+     "/free-tools/", FT["cover_letter"], '<script src="/assets/cover-letter.js" defer></script>\n'),
+    ("free-tools/interview-practice/index.html", "Free Interview Practice | Flow Corner",
+     "Practise common interview questions with a two-minute timer and the STAR method. Free, with tips for every question.",
+     "/free-tools/", FT["interview"], '<script src="/assets/interview-practice.js" defer></script>\n'),
+    ("opportunities/index.html", "Jobs & Opportunities in South Africa | Flow Corner",
+     "South African job platforms, learnerships and youth programmes with the official link for each, plus where to find fresh openings.",
+     "/opportunities/", FT["opportunities"], '<script src="/assets/opportunities.js" defer></script>\n'),
     ("get-hired/index.html", "Get Hired with AI | Flow Corner",
      "The South African job-seeker's kit: a 7-day guide, 45 AI prompts, 3 CV templates and an opportunities sheet. R149 founding price.",
      None, get_hired_body, ""),
