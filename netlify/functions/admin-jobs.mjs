@@ -56,4 +56,4 @@ export default async (req) => {
   }
 };
 
-export const config = { path: [BASE, BASE + '/*'] };
+export const config = { path: ['/api/admin/jobs', '/api/admin/jobs/*'] };
