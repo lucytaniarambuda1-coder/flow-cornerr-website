@@ -14,7 +14,7 @@ NAV_ITEMS = [
     ("/learning-hub/", "Learning Hub"),
     ("/free-tools/", "Free Tools"),
     ("/opportunities/", "Opportunities"),
-    ("/work/", "Work"),
+    ("/for-business/", "For Business"),
     ("/contact/", "Contact"),
 ]
 
@@ -31,13 +31,14 @@ def nav(active_path):
     (Learning Hub sub-pages pass '/learning-hub/' so the Learning Hub nav item still highlights)."""
     links = []
     for href, label in NAV_ITEMS:
-        cls = ' class="active"' if href == active_path else ''
+        classes = [c for c in ("active" if href == active_path else "", "nav-biz" if href == "/for-business/" else "") if c]
+        cls = f' class="{" ".join(classes)}"' if classes else ''
         links.append(f'    <li><a href="{href}"{cls}>{label}</a></li>')
     links_html = "\n".join(links)
     li_svg = SOCIAL_SVGS["linkedin"].format(size=18)
     ig_svg = SOCIAL_SVGS["instagram"].format(size=18)
     mobile_links = "\n".join(
-        f'  <a href="{href}" class="mobile-link{" active" if href == active_path else ""}">{label}</a>'
+        f'  <a href="{href}" class="mobile-link{" active" if href == active_path else ""}{" nav-biz" if href == "/for-business/" else ""}">{label}</a>'
         for href, label in NAV_ITEMS
     )
     return f'''<!-- NAV -->
@@ -79,6 +80,7 @@ def footer():
     <a href="https://www.linkedin.com/in/mukhethwa-lucytania-rambuda-836575169/" target="_blank" rel="noopener" aria-label="LinkedIn">{li_svg}</a>
     <a href="https://www.instagram.com/flow_cornerr/" target="_blank" rel="noopener" aria-label="Instagram">{ig_svg}</a>
   </div>
+  <p style="margin-top:0.6rem; font-size:0.78rem;"><a href="/for-business/" style="color:inherit;">Hiring? For Business</a> · <a href="/privacy/" style="color:inherit;">Privacy</a></p>
   <p style="margin-top:0.6rem; font-size:0.74rem;">© 2026 Lucy Mukhethwa. All rights reserved.</p>
 </footer>'''
 

@@ -17,6 +17,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 from site_template import page, SITE_URL  # noqa: E402
 import business_pages as biz  # noqa: E402
 import free_tools_pages as ft  # noqa: E402
+import employer_pages as emp  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -39,6 +40,7 @@ ICON = {
 WHATSAPP_SVG = '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-3px; margin-right:0.3em;"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.06c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.11.11-1.79-.11-.41-.13-.95-.31-1.63-.6-2.87-1.24-4.74-4.12-4.88-4.31-.14-.19-1.17-1.56-1.17-2.98 0-1.42.74-2.12 1-2.41.26-.29.57-.36.76-.36.19 0 .38 0 .55.01.18.01.41-.07.64.49.24.58.81 2 .88 2.14.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.16.28.71 1.17 1.52 1.89 1.05.93 1.93 1.22 2.21 1.36.28.14.44.12.6-.07.16-.19.68-.79.87-1.06.19-.27.37-.22.63-.13.26.09 1.63.77 1.91.91.28.14.47.21.54.33.07.12.07.68-.17 1.36z"/></svg>'
 
 FT = ft.build(ICON, WHATSAPP_SVG)
+EMP = emp.build(WHATSAPP_SVG)
 
 # ============================================================== HOME
 home_body = f'''<!-- HERO -->
@@ -211,7 +213,7 @@ home_body = f'''<!-- HERO -->
       <div class="explore-desc">My story, credentials, and the principles behind how I coach.</div>
       <span class="explore-arrow">Meet Lucy →</span>
     </a>
-    <a href="/work/" class="explore-card reveal">
+    <a href="/about/#experience" class="explore-card reveal">
       <div class="explore-icon">{ICON['folder']}</div>
       <div class="explore-title">Experience & Work</div>
       <div class="explore-desc">What I've done in HR, BPO operations and AI projects.</div>
@@ -1220,22 +1222,31 @@ not_found_body = '''<div class="page-header">
   </div>
 </section>'''
 
+# ============================================================== ABOUT + WORK (merged)
+# The old /work/ page now lives inside /about/ (nav was too crowded). Reuse its
+# experience + portfolio sections; drop its own page header and closing CTA.
+_work_main = work_body.split('</div>\n\n', 1)[1].rsplit('<section class="cta"', 1)[0]
+_work_main = _work_main.replace(
+    '<section class="experience">\n  <div class="exp-grid" style="margin-top: 0;">',
+    '<section class="experience" id="experience">\n  <div class="section-label reveal" style="justify-content:center; display:flex;">Professional Experience</div>\n  <div class="section-title reveal" style="text-align:center;">Where I\'ve <em>worked</em></div>\n  <div class="divider reveal" style="margin-left:auto; margin-right:auto;"></div>\n  <p class="reveal" style="text-align:center; color:var(--charcoal); font-size:0.95rem; margin:0 auto 2.5rem; max-width:560px;">6+ years across BPO, HR, and career development.</p>\n  <div class="exp-grid" style="margin-top: 0;">', 1)
+assert 'id="experience"' in _work_main
+_about_cta = '<section class="cta" style="padding: 5rem 5%;">'
+assert about_body.count(_about_cta) == 1
+about_full = about_body.replace(_about_cta, _work_main + _about_cta, 1)
+
 PAGES = [
     ("index.html", "Flow Corner | Free AI Career Tools & Guidance",
      "Free career guides, an instant CV check and job resources for South Africans, plus paid CV, LinkedIn and career roadmap services from career strategist Lucy Mukhethwa.",
      None, home_body, '<script src="/assets/hero-3d.js" defer></script>\n'),
     ("about/index.html", "About Lucy | Flow Corner",
-     "Meet Lucy Mukhethwa, a career strategist and AI Projects Manager studying a Masters in Industrial & Organisational Psychology, researching career psychology.",
-     "/about/", about_body, ""),
+     "Meet Lucy Mukhethwa, a career strategist and AI Projects Manager studying a Masters in Industrial & Organisational Psychology, plus 6+ years of HR, BPO and career development experience.",
+     "/about/", about_full, ""),
     ("how-it-works/index.html", "How It Works | Flow Corner",
      "Three simple steps to a career that finally fits: a free discovery call, a tailored strategy, and a stronger professional presence.",
      "/how-it-works/", how_body, ""),
     ("services/index.html", "Services & Pricing | Flow Corner",
      "Paid CV revamps from R100, LinkedIn rewrites from R150 and career roadmaps, plus digital products and a founding-client offer.",
      "/services/", services_body, ""),
-    ("work/index.html", "Experience & Work | Flow Corner",
-     "6+ years of HR, BPO, and career development experience: professional highlights from Lucy Mukhethwa.",
-     "/work/", work_body, ""),
     ("contact/index.html", "Contact | Flow Corner",
      "Book a free 15-minute discovery call or message Lucy Mukhethwa on WhatsApp.",
      "/contact/", contact_body, ""),
@@ -1299,6 +1310,18 @@ PAGES = [
     ("opportunities/index.html", "Jobs & Opportunities in South Africa | Flow Corner",
      "South African job platforms, learnerships and youth programmes with the official link for each, plus where to find fresh openings.",
      "/opportunities/", FT["opportunities"], '<script src="/assets/opportunities.js" defer></script>\n'),
+    ("for-business/index.html", "For Business | Hire Through Flow Corner",
+     "Hiring in South Africa? Share your role with Flow Corner's job-seeker audience, or get career development support for your team.",
+     "/for-business/", EMP["landing"], ""),
+    ("for-business/hire/index.html", "Tell Us About Your Role | Flow Corner For Business",
+     "Send Flow Corner your open role: company, province, how many people and how soon. Lucy replies within 24 hours.",
+     "/for-business/", EMP["hire"], ""),
+    ("for-business/services/index.html", "Business Services | Flow Corner For Business",
+     "Feature your role, get help finding the right people, or book career development for your team. Quoted on request.",
+     "/for-business/", EMP["services"], ""),
+    ("privacy/index.html", "Privacy Notice | Flow Corner",
+     "How Flow Corner collects, uses and protects your personal information under POPIA.",
+     None, EMP["privacy"], ""),
     ("get-hired/index.html", "Get Hired with AI | Flow Corner",
      "The South African job-seeker's kit: a 7-day guide, 45 AI prompts, 3 CV templates and an opportunities sheet. R149 founding price.",
      None, get_hired_body, ""),
@@ -1309,6 +1332,8 @@ OG_IMAGE_OVERRIDES = {"get-hired/index.html": SITE_URL + "/assets/get-hired/guid
 
 # Pages generated but not listed in the sitemap
 EXTRA_PAGES = [
+    ("for-business/thanks/index.html", "Thank you | Flow Corner For Business", "Your enquiry has been received.",
+     "/for-business/", EMP["thanks"], "", "noindex"),
     ("404.html", "Page not found | Flow Corner", "This page doesn't exist. Head back to the Flow Corner home page or Learning Hub.",
      None, not_found_body, "", "noindex"),
 ]
