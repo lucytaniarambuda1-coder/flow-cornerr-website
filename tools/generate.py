@@ -47,29 +47,43 @@ home_body = f'''<!-- HERO -->
   <div class="hero-text">
     <div class="hero-tag">Free Resources · Paid Career Services</div>
     <h1>Find Your <em>Flow.</em></h1>
-    <p>You've sent the applications. You have the skills. But your CV isn't getting through, and your LinkedIn isn't showing up when it counts. <em style="color:var(--pink); font-style:normal;">I can help you fix that.</em></p>
-    <p>The guides, tools and CV check on this site are free for everyone. My one-on-one services and digital products, like the Get Hired with AI kit, are paid. Your first 15-minute call with me is free.</p>
+    <p class="hero-lead">Your CV isn't getting through. Your LinkedIn isn't getting found. <em>Let's fix that.</em></p>
+    <p class="hero-sub">The tools and guides here are free for every South African job-seeker. When you want me on your CV or career plan, that's paid one-on-one help, and your first 15-minute call is free.</p>
     <div class="hero-btns">
       <a href="/learning-hub/cv-check/" class="btn-primary">Try the Free CV Check</a>
-      <a href="/learning-hub/" class="btn-secondary">Explore Learning Hub</a>
+      <a href="/free-tools/" class="btn-secondary">Explore Free Tools</a>
     </div>
+    <ul class="hero-trust">
+      <li>No sign-up</li>
+      <li>Runs in your browser</li>
+      <li>Made in South Africa</li>
+    </ul>
   </div>
   <div class="hero-visual">
-    <div class="hero-card">
-      <div class="label">Free for Everyone</div>
-      <div class="value" style="font-size:1.25rem;">Guides · CV Check · Career Tests</div>
-      <div class="sub">No sign-up, no cost</div>
-    </div>
-    <div class="stats-row">
-      <div class="hero-card">
-        <div class="label">Paid Service</div>
-        <div class="value" style="font-size:1.1rem;">CV &amp; LinkedIn</div>
-        <div class="sub">From R100</div>
-      </div>
-      <div class="hero-card">
-        <div class="label">Paid Service</div>
-        <div class="value" style="font-size:1.1rem;">Career Roadmap</div>
-        <div class="sub">From R500</div>
+    <div class="hero-stack" id="heroStack">
+      <a href="/free-tools/" class="hero-card hero-card-free">
+        <div class="label">Free for everyone</div>
+        <div class="value">Guides, tools &amp; career tests</div>
+        <ul class="hero-chips">
+          <li>Job-readiness score</li>
+          <li>CV Check</li>
+          <li>CV Builder</li>
+          <li>Cover letters</li>
+          <li>Interview practice</li>
+        </ul>
+        <div class="sub">No sign-up, no cost →</div>
+      </a>
+      <div class="hero-paid-row">
+        <a href="/services/" class="hero-card hero-card-paid">
+          <div class="label">Paid service</div>
+          <div class="value">CV &amp; LinkedIn</div>
+          <div class="sub">From R100</div>
+        </a>
+        <a href="/services/" class="hero-card hero-card-paid">
+          <div class="label">Paid service</div>
+          <div class="value">Career Roadmap</div>
+          <div class="sub">From R500</div>
+        </a>
       </div>
     </div>
   </div>
@@ -1209,7 +1223,7 @@ not_found_body = '''<div class="page-header">
 PAGES = [
     ("index.html", "Flow Corner | Free AI Career Tools & Guidance",
      "Free career guides, an instant CV check and job resources for South Africans, plus paid CV, LinkedIn and career roadmap services from career strategist Lucy Mukhethwa.",
-     None, home_body, ""),
+     None, home_body, '<script src="/assets/hero-3d.js" defer></script>\n'),
     ("about/index.html", "About Lucy | Flow Corner",
      "Meet Lucy Mukhethwa, a career strategist and AI Projects Manager studying a Masters in Industrial & Organisational Psychology, researching career psychology.",
      "/about/", about_body, ""),
