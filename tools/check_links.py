@@ -11,7 +11,7 @@ from concurrent.futures import ThreadPoolExecutor
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LINK = re.compile(r'href="(https?://[^"]+)"')
-SKIP = ("wa.me", "linkedin.com", "instagram.com", "fonts.googleapis.com", "flowcornerr.netlify.app")
+SKIP = ("wa.me", "linkedin.com", "instagram.com", "fonts.googleapis.com", "flowcornerr.netlify.app", "flowcorner.co.za")
 
 
 def collect():
