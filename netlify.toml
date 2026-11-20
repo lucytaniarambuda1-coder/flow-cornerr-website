@@ -1,0 +1,6 @@
+# Netlify settings for flowcorner.co.za.
+# The pages are generated and committed (python3 tools/generate.py), so the
+# build only has to copy the public files into dist/.
+[build]
+  command = "python3 tools/build_dist.py"
+  publish = "dist"
