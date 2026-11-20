@@ -1234,6 +1234,17 @@ _about_cta = '<section class="cta" style="padding: 5rem 5%;">'
 assert about_body.count(_about_cta) == 1
 about_full = about_body.replace(_about_cta, _work_main + _about_cta, 1)
 
+# ============================================================== ADMIN (private, noindex)
+admin_body = '''<div class="page-header">
+  <div class="section-label">Private</div>
+  <h1>Flow Corner <em>admin</em></h1>
+  <p>Manage jobs and opportunities, and read employer enquiries.</p>
+</div>
+<section class="adm-section">
+  <noscript><p>This page needs JavaScript.</p></noscript>
+  <div id="adminApp" class="adm-app"><p class="adm-msg">Loading…</p></div>
+</section>'''
+
 PAGES = [
     ("index.html", "Flow Corner | Free AI Career Tools & Guidance",
      "Free career guides, an instant CV check and job resources for South Africans, plus paid CV, LinkedIn and career roadmap services from career strategist Lucy Mukhethwa.",
@@ -1332,6 +1343,8 @@ OG_IMAGE_OVERRIDES = {"get-hired/index.html": SITE_URL + "/assets/get-hired/guid
 
 # Pages generated but not listed in the sitemap
 EXTRA_PAGES = [
+    ("admin/index.html", "Admin | Flow Corner", "Private admin for Flow Corner.",
+     None, admin_body, '<script src="/assets/admin.js" defer></script>\n', "noindex, nofollow"),
     ("for-business/thanks/index.html", "Thank you | Flow Corner For Business", "Your enquiry has been received.",
      "/for-business/", EMP["thanks"], "", "noindex"),
     ("404.html", "Page not found | Flow Corner", "This page doesn't exist. Head back to the Flow Corner home page or Learning Hub.",

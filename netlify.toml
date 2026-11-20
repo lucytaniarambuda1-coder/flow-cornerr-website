@@ -1,6 +1,17 @@
 # Netlify settings for flowcorner.co.za.
-# The pages are generated and committed (python3 tools/generate.py), so the
-# build only has to copy the public files into dist/.
+# Pages are generated and committed (python3 tools/generate.py). The build bundles the admin
+# script, then copies the public files into dist/. Functions live in netlify/functions/ and
+# database migrations in netlify/database/migrations/.
 [build]
-  command = "python3 tools/build_dist.py"
+  command = "npm run build"
   publish = "dist"
+
+[functions]
+  directory = "netlify/functions"
+
+# The admin page is private: never cached, never indexed.
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+    Cache-Control = "no-store"
