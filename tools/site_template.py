@@ -12,6 +12,8 @@ NAV_ITEMS = [
     ("/how-it-works/", "How It Works"),
     ("/services/", "Services"),
     ("/learning-hub/", "Learning Hub"),
+    ("/free-tools/", "Free Tools"),
+    ("/opportunities/", "Opportunities"),
     ("/work/", "Work"),
     ("/contact/", "Contact"),
 ]
