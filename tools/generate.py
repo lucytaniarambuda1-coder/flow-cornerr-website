@@ -213,7 +213,7 @@ home_body = f'''<!-- HERO -->
       <div class="explore-desc">My story, credentials, and the principles behind how I coach.</div>
       <span class="explore-arrow">Meet Lucy →</span>
     </a>
-    <a href="/work/" class="explore-card reveal">
+    <a href="/about/#experience" class="explore-card reveal">
       <div class="explore-icon">{ICON['folder']}</div>
       <div class="explore-title">Experience & Work</div>
       <div class="explore-desc">What I've done in HR, BPO operations and AI projects.</div>
@@ -1222,22 +1222,31 @@ not_found_body = '''<div class="page-header">
   </div>
 </section>'''
 
+# ============================================================== ABOUT + WORK (merged)
+# The old /work/ page now lives inside /about/ (nav was too crowded). Reuse its
+# experience + portfolio sections; drop its own page header and closing CTA.
+_work_main = work_body.split('</div>\n\n', 1)[1].rsplit('<section class="cta"', 1)[0]
+_work_main = _work_main.replace(
+    '<section class="experience">\n  <div class="exp-grid" style="margin-top: 0;">',
+    '<section class="experience" id="experience">\n  <div class="section-label reveal" style="justify-content:center; display:flex;">Professional Experience</div>\n  <div class="section-title reveal" style="text-align:center;">Where I\'ve <em>worked</em></div>\n  <div class="divider reveal" style="margin-left:auto; margin-right:auto;"></div>\n  <p class="reveal" style="text-align:center; color:var(--charcoal); font-size:0.95rem; margin:0 auto 2.5rem; max-width:560px;">6+ years across BPO, HR, and career development.</p>\n  <div class="exp-grid" style="margin-top: 0;">', 1)
+assert 'id="experience"' in _work_main
+_about_cta = '<section class="cta" style="padding: 5rem 5%;">'
+assert about_body.count(_about_cta) == 1
+about_full = about_body.replace(_about_cta, _work_main + _about_cta, 1)
+
 PAGES = [
     ("index.html", "Flow Corner | Free AI Career Tools & Guidance",
      "Free career guides, an instant CV check and job resources for South Africans, plus paid CV, LinkedIn and career roadmap services from career strategist Lucy Mukhethwa.",
      None, home_body, '<script src="/assets/hero-3d.js" defer></script>\n'),
     ("about/index.html", "About Lucy | Flow Corner",
-     "Meet Lucy Mukhethwa, a career strategist and AI Projects Manager studying a Masters in Industrial & Organisational Psychology, researching career psychology.",
-     "/about/", about_body, ""),
+     "Meet Lucy Mukhethwa, a career strategist and AI Projects Manager studying a Masters in Industrial & Organisational Psychology, plus 6+ years of HR, BPO and career development experience.",
+     "/about/", about_full, ""),
     ("how-it-works/index.html", "How It Works | Flow Corner",
      "Three simple steps to a career that finally fits: a free discovery call, a tailored strategy, and a stronger professional presence.",
      "/how-it-works/", how_body, ""),
     ("services/index.html", "Services & Pricing | Flow Corner",
      "Paid CV revamps from R100, LinkedIn rewrites from R150 and career roadmaps, plus digital products and a founding-client offer.",
      "/services/", services_body, ""),
-    ("work/index.html", "Experience & Work | Flow Corner",
-     "6+ years of HR, BPO, and career development experience: professional highlights from Lucy Mukhethwa.",
-     "/work/", work_body, ""),
     ("contact/index.html", "Contact | Flow Corner",
      "Book a free 15-minute discovery call or message Lucy Mukhethwa on WhatsApp.",
      "/contact/", contact_body, ""),

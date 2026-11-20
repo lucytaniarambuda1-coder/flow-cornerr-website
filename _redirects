@@ -1,2 +1,4 @@
 /assessment/*  /learning-hub/free-assessment/:splat  301
 /start-a-business  /learning-hub/start-a-business/  301
+/work  /about/#experience  301
+/work/  /about/#experience  301

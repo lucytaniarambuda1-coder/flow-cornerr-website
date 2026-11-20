@@ -15,7 +15,6 @@ NAV_ITEMS = [
     ("/free-tools/", "Free Tools"),
     ("/opportunities/", "Opportunities"),
     ("/for-business/", "For Business"),
-    ("/work/", "Work"),
     ("/contact/", "Contact"),
 ]
 
