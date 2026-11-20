@@ -110,7 +110,7 @@ SCRIPT = '''<script>
 
 import html as _html
 
-SITE_URL = "https://flowcornerr.netlify.app"
+SITE_URL = "https://flowcorner.co.za"
 OG_IMAGE = SITE_URL + "/assets/og-image.png"
 ICON_LINK = '''<link rel="icon" type="image/png" href="/assets/favicon.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">'''
