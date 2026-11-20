@@ -1,0 +1,17 @@
+{
+  "name": "flow-corner-site",
+  "private": true,
+  "type": "module",
+  "description": "Flow Corner website: generated static pages plus a small Netlify admin backend.",
+  "scripts": {
+    "build": "node tools/build_admin.mjs && python3 tools/build_dist.py"
+  },
+  "dependencies": {
+    "@netlify/database": "^2.0.3",
+    "@netlify/functions": "^6.1.1",
+    "@netlify/identity": "^2.0.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
+}

@@ -12,7 +12,7 @@ import shutil
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DIST = os.path.join(ROOT, "dist")
-EXCLUDE = {".git", ".github", "tools", "dist", "netlify", "node_modules", ".DS_Store",
+EXCLUDE = {".git", ".github", "tools", "dist", "netlify", "src", "node_modules", ".DS_Store",
            "netlify.toml", "package.json", "package-lock.json", "README.md", ".gitignore"}
 
 if os.path.isdir(DIST):

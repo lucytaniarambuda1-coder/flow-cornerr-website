@@ -245,6 +245,11 @@
 </footer>
 
 <script>
+  // Netlify Identity emails (invite / password reset) land on the home page with a token in the
+  // URL hash. Send those to the admin page, which knows how to finish them.
+  if (/(invite|recovery|confirmation|email_change)_token=/.test(location.hash) && location.pathname.indexOf('/admin') !== 0) {
+    location.replace('/admin/' + location.hash);
+  }
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
