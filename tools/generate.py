@@ -249,7 +249,7 @@ about_body = f'''<div class="page-header">
       <div class="sub">I&amp;O Psychology (studying)</div>
     </div>
   </div>
-  <p>"Passion. Purpose. Peace." <span style="opacity:0.6;">The title of my upcoming book, and how I try to show up every day.</span></p>
+  <p>"Passion. Purpose. Peace." <span style="opacity:0.6;">The title of my book, out now, and how I try to show up every day.</span> <a href="https://lucymukhethwa.flowcorner.co.za/book/" target="_blank" rel="noopener" style="color:var(--pink);">About the book →</a></p>
 </div>
 
 <section class="about">
@@ -268,7 +268,7 @@ about_body = f'''<div class="page-header">
     <div class="about-text">
       <p>I'm Lucy Mukhethwa, a South African career strategist based near Johannesburg. I have 6+ years in HR and operations. Today I work as an AI Projects Manager at a global BPO, and I support C-suite leadership, working directly with the COO across multi-country strategic initiatives.</p>
       <p>My background spans HR and administration, progressing from HR Assistant through to Generalist and into operations and leadership support. As an AI Projects Manager I run AI adoption projects (voice bots, chatbot integration and automation strategy), which gives me a hands-on, practitioner's view of how AI is reshaping modern workplaces, not just a theoretical one.</p>
-      <p>I'm studying a Masters in Industrial &amp; Organisational Psychology, with my research focused on career psychology. I'm also a Christian living author completing final review ahead of publication. What I want is simple: for capable people to stop getting filtered out because of a weak CV or a LinkedIn profile nobody can find.</p>
+      <p>I'm studying a Masters in Industrial &amp; Organisational Psychology, with my research focused on career psychology. I'm also a Christian living author: my book <em>Passion. Purpose. Peace.</em> came out on 14 November 2026. You can read my story, articles and more on <a href="https://lucymukhethwa.flowcorner.co.za/" target="_blank" rel="noopener" style="color:var(--pink);">my personal website</a>. What I want is simple: for capable people to stop getting filtered out because of a weak CV or a LinkedIn profile nobody can find.</p>
     </div>
   </div>
 </section>
@@ -552,8 +552,8 @@ work_body = f'''<div class="page-header">
     </div>
     <div class="port-card reveal">
       <div class="port-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
-      <div class="port-title">Book: Coming Soon</div>
-      <div class="port-desc">Authored a Christian living book end-to-end, from manuscript to cover design and editorial review. Currently under final review ahead of publication. Title: <em>Passion. Purpose. Peace: Becoming Whole in Christ</em>.</div>
+      <div class="port-title">Book: Out Now</div>
+      <div class="port-desc">Authored a Christian living book end-to-end, from manuscript to cover design and editorial review. Published on 14 November 2026 on Kindle and paperback. Title: <em>Passion. Purpose. Peace: Becoming Whole in Christ</em>. <a href="https://lucymukhethwa.flowcorner.co.za/book/" target="_blank" rel="noopener" style="color:var(--pink);">See the book →</a></div>
     </div>
   </div>
 </section>

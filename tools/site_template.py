@@ -76,6 +76,7 @@ def footer():
 <footer>
   <p><strong>Lucy Mukhethwa | Flow Corner</strong> · Career Strategist & Coach</p>
   <p style="margin-top:0.4rem;">Based in Johannesburg, South Africa · Available for remote services globally</p>
+  <p style="margin-top:0.4rem;">Author of <em>Passion. Purpose. Peace.</em> · <a href="https://lucymukhethwa.flowcorner.co.za/" target="_blank" rel="noopener" style="color:var(--pink);">Visit my personal website →</a></p>
   <div class="footer-social">
     <a href="https://www.linkedin.com/in/mukhethwa-lucytania-rambuda-836575169/" target="_blank" rel="noopener" aria-label="LinkedIn">{li_svg}</a>
     <a href="https://www.instagram.com/flow_cornerr/" target="_blank" rel="noopener" aria-label="Instagram">{ig_svg}</a>
